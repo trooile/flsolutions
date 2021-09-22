@@ -1,5 +1,5 @@
 <?php include "../includes/include_view.php";
-      include_once "../includes/configDB.php";
+      include "../includes/configDB.php";
       $sql = "SELECT name FROM school_unit";
       $names = mysqli_query($conn,$sql);
 ?>
@@ -17,6 +17,9 @@
         </div>
         <div class="mb-3">
           <input type="password" class="form-control" id="passwd" placeholder="Password">
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" id="confirmpasswd" placeholder="Confirm Password">
         </div>
         <div class="mb-3">
           <select type="text" class="form-control" id="unit">
