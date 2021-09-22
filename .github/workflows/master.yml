@@ -15,6 +15,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           server: ${{ secrets.FTP_HOSTNAME }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          local_path: './static/*'
           remote_path: '/var/www/html'
-          args: '-o ConnectTimeout=5'
