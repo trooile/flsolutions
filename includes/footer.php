@@ -32,7 +32,7 @@
             <i class="fas fa-envelope me-6"></i>
             contact@flsolutions.com
           </p>
-          <p><i class="fas fa-phone me-6"></i> + 55 19 99999-9999</p>
+          <p><i class="fas fa-phone me-6"></i> + 55 19 99999-1234</p>
         </div>
       </div>
     </div>
