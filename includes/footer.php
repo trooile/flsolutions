@@ -16,10 +16,10 @@
             Useful links
           </h6>
           <p>
-            <a href="https://www.facebook.com/Eholeo" target="_blank" class="text-reset">Facebook</a> 
+            <a href="https://www.facebook.com/" target="_blank" class="text-reset">Facebook</a> 
           </p>
           <p>
-            <a href="https://www.instagram.com/leocepedes/" target="_blank" class="text-reset">Instagram</a>
+            <a href="https://www.instagram.com/" target="_blank" class="text-reset">Instagram</a>
           </p>
         </div>
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -32,7 +32,7 @@
             <i class="fas fa-envelope me-6"></i>
             contact@flsolutions.com
           </p>
-          <p><i class="fas fa-phone me-6"></i> + 55 19 98242-4120</p>
+          <p><i class="fas fa-phone me-6"></i> + 55 19 99999-9999</p>
         </div>
       </div>
     </div>
