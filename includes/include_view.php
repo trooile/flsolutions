@@ -34,5 +34,7 @@
 // }else if(isset($_GET['language'])){
 //     include './includes/languages/'.$_GET['language'].'.php';
 // }?>
-<a href="?language=en-us.php">Inglês<i class="flag flag-us"></i></a>
+
+<a href="?language=en-us.php">Inglês<i class="flag flag-us"></i></a><br>
 <a href="?language=pt-br.php">Português<i class="flag flag-brazil"></i></a>
+
