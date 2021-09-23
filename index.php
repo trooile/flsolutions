@@ -14,7 +14,7 @@
   <br><br><br>
   <div class="container-fluid" style="margin-left:35px!important;">
     <label for="signup">Don't have an account?</label>
-    <a class="text-orange" href="./user/register.php"><b>Register</b></a>
+    <a class="text-orange" href="./user/register.php"><b>Register teste</b></a>
   </div>
  </body>
  <?php include_once "./includes/footer.php" ?>
