@@ -1,6 +1,6 @@
 <?php
     $_SESSION['register'] = 'Crie sua conta grátis';
-    $_SESSION['signup'] = 'Não possui conta?';
+    $_SESSION['signup1'] = 'Não possui conta?';
     $_SESSION['login'] = 'Entrar';
     $_SESSION['text-index'] = 'Veja seus projetos com clareza,<br>execute tudo na hora certa.<br>College Tool, uma maneira fácil de gerenciar suas tarefas.';
     $_SESSION['your-email'] = 'Seu email';

@@ -15,7 +15,7 @@
       </form>
     </div>
   </div>
-  <label for="signup"><?php echo $_SESSION['signup'];?></label>
+  <label for="signup"><?php echo $_SESSION['signup1'];?></label>
   <a class="text-orange" id="signup" href="register.php"><b><?php echo $_SESSION['register'];?></b></a>
 </div>
 <img src="../images/login-background.png" class="w-15 p-3" style="float:right">
