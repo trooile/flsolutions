@@ -1,5 +1,4 @@
 <?php include "include_view.php";
-      session_start();
       include "../includes/configDB.php";
       $sql = "SELECT * FROM school_unit";
       $names = mysqli_query($conn,$sql);
@@ -7,7 +6,7 @@
 
 <div id='register'>
   <div class="container-fluid" style="text-align:center;">
-    <a href="../index.php"><img src="../images/logo.png" class="w-15 p-3"></a>
+    <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
     <div class="panel panel-default" style="margin:auto;width:50%;border:3px;padding:10px;">
       <div class="panel-body">   
         <form>
@@ -40,4 +39,3 @@
   </div>
   <img src="../images/signin-background.png" class="w-15 p-3" style="float:left">
 </div>
-<?php include_once "../includes/footer.php" ?>

@@ -1,7 +1,7 @@
 <?php include "include_view.php"; ?>
 
 <div class="container-fluid" style="text-align:center;">
-  <a href="../index.php"><img src="../images/logo.png" class="w-15 p-3"></a>
+  <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
   <div class="panel panel-default" style="margin:auto;width:50%;border:3px;padding:10px;">
     <div class="panel-body">
     <form>
@@ -19,4 +19,11 @@
   <a class="text-orange" id="signup" href="register.php"><b><?php echo $_SESSION['register'];?></b></a>
 </div>
 <img src="../images/login-background.png" class="w-15 p-3" style="float:right">
-<?php include_once "../includes/footer.php"; ?>
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcwm4kcAAAAAJDchOGVncUglJZqxgYFBCsa9EAA"></script>
+<script>
+grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6Lcwm4kcAAAAAJDchOGVncUglJZqxgYFBCsa9EAA', {action: 'login'}).then(function(token) {
+       ...
+    });
+});
+</script>

@@ -8,22 +8,15 @@
 <link rel="stylesheet" href="https://use.typekit.net/eda6dmy.css">
 <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
-<link href="style.css" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="../includes/style.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcwm4kcAAAAAJDchOGVncUglJZqxgYFBCsa9EAA"></script>
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
 <meta charset="utf-8">
 </header>
-<style type="text/css">
-  .btn-orange {
-    background-color:#FF8000;
-    color:#FFFFFF
-  }
-  .text-orange{
-    color:#FF8000;
-  }
-</style>
 <a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
 <a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
+<?php include_once "footer.php"; ?>

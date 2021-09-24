@@ -1,8 +1,7 @@
 <?php include "include_view.php"; ?>
-
 <body background="./images/background.png" style="background-size:100%; background-repeat:repeat-x;">
   <div class="container-fluid">
-    <img src="./images/logo.svg" class="logo w-15 p-3">
+    <img src="./images/logo.svg" class="logo">
     <a type="button" class="btn btn-default btn-orange" href="./user/login.php"><?php echo $_SESSION['login'];?></a>
   </div>
   <br><br><br>
@@ -15,5 +14,5 @@
     <a class="text-orange" href="./user/register.php"><b><?php echo $_SESSION['register'];?></b></a>
   </div>
  </body>
- <?php include_once "./includes/footer.php"; ?>
+
 

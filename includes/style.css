@@ -6,3 +6,10 @@
     max-width:260px;
   }
 }
+.btn-orange {
+  background-color:#FF8000;
+  color:#FFFFFF
+}
+.text-orange{
+  color:#FF8000;
+}
