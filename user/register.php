@@ -1,4 +1,5 @@
 <?php include "include_view.php";
+      session_start();
       include "../includes/configDB.php";
       $sql = "SELECT * FROM school_unit";
       $names = mysqli_query($conn,$sql);

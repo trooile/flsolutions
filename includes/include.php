@@ -26,6 +26,5 @@
     color:#FF8000;
   }
 </style>
-<?php session_start(); ?>
 <a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
 <a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
