@@ -1,6 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
+//$password = "";
 $password = "FelipeFLSolutions";
 $dbname = "college_tool";
 header("Content-type: text/html; charset=utf-8"); 

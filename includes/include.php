@@ -26,15 +26,6 @@
     color:#FF8000;
   }
 </style>
-
-<?php
-// session_start();
-// if(!isset($_SESSION['language'])){
-//     $_SESSION['language'] = 'en-us.php';
-// }else if(isset($_GET['language'])){
-//     include './includes/languages/'.$_GET['language'].'.php';
-// }?>
-
-<a href="?language=en-us.php">Inglês<i class="flag flag-us"></i></a><br>
-<a href="?language=pt-br.php">Português<i class="flag flag-brazil"></i></a>
-
+<?php session_start(); ?>
+<a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
+<a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
