@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
 <meta charset="utf-8">
 </header>
-
+<?php include 'style.css'; ?>
 <style type="text/css">
   .btn-orange {
     background-color:#FF8000;
