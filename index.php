@@ -2,7 +2,7 @@
 
 <body background="./images/background.png" style="background-size:100%; background-repeat:repeat-x;">
   <div class="container-fluid">
-    <img src="./images/logo.svg" class="w-15 p-3">
+    <img src="./images/logo.svg" class="logo w-15 p-3">
     <a type="button" class="btn btn-default btn-orange" href="./user/login.php"><?php echo $_SESSION['login'];?></a>
   </div>
   <br><br><br>
