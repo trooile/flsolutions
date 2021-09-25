@@ -1,7 +1,5 @@
 <?php include "include_view.php";
-      include "../includes/configDB.php";
-      $sql = "SELECT * FROM school_unit";
-      $names = mysqli_query($conn,$sql);
+  $names = $controller->toSchoolUnit->getAll();
 ?>
 
 <div id='register'>
@@ -25,7 +23,7 @@
           <div class="mb-3">
             <select type="text" class="form-control" id="unit">
                 <option value="" selected disabled><?php echo $_SESSION['select-unit'];?></option>
-                <?php while($value = mysqli_fetch_array($names)){?>
+                <?php foreach($names as $value){?>
                   <option value='<?php echo $value['id_school_unit'] ?>'><?php echo $value['name'] ?></option>
                   <?php } ?>
             </select>

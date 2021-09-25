@@ -19,4 +19,33 @@
 </header>
 <a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
 <a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
-<?php include_once "footer.php"; ?>
+<?php include_once "footer.php"; 
+    function encrypt($data) {
+        try{     
+            $method = "AES-256-CBC";
+            $secret_key = gmdate('dmy').'c09275cbd16a911a00c3a077e36f379b';
+            $secret_iv = gmdate('dmy').'549d0aad4f261463b179c94c2ea3c736';
+            $key = hash('sha256', $secret_key);
+            $iv = substr(hash('sha256', $secret_iv), 0, 16);
+            $data = openssl_encrypt($data, $method, $key, 0, $iv);
+            $data = base64_encode($data);
+            return $data;
+        }catch(Exception $e){
+            throw $e;
+        } 
+    }
+    function decrypt($data){
+        try{
+            $data = base64_decode($data);
+            $method = "AES-256-CBC";
+            $secret_key = gmdate('dmy').'c09275cbd16a911a00c3a077e36f379b';
+            $secret_iv = gmdate('dmy').'549d0aad4f261463b179c94c2ea3c736';
+            $key = hash('sha256', $secret_key);
+            $iv = substr(hash('sha256', $secret_iv), 0, 16);
+            $data = openssl_decrypt($data, $method, $key, 0, $iv);
+            return $data;
+        }catch(Exception $e){
+            throw $e;
+        } 
+    }
+?>
