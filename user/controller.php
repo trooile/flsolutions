@@ -12,5 +12,15 @@ Class Controller extends DefaultControllers{
             throw $e;
         }
     }
+
+    public function submitNewUser($params){
+        try{
+            $here = 'test';
+            print_r($here);
+            $this->return();
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
 }
 ?>

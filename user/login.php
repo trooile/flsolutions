@@ -18,7 +18,7 @@
   <label for="signup"><?php echo $_SESSION['signup1'];?></label>
   <a class="text-orange" id="signup" href="register.php"><b><?php echo $_SESSION['register'];?></b></a>
 </div>
-<img src="../images/login-background.png" class="w-15 p-3" style="float:right">
+<img src="../images/login-background.svg" class="w-15 p-3" style="float:right">
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcwm4kcAAAAAJDchOGVncUglJZqxgYFBCsa9EAA"></script>
 <script>
 grecaptcha.enterprise.ready(function() {

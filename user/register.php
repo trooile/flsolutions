@@ -1,7 +1,7 @@
 <?php include "include_view.php";
   $names = $controller->toSchoolUnit->getAll();
 ?>
-
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
 <div id='register'>
   <div class="container-fluid" style="text-align:center;">
     <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
@@ -37,3 +37,15 @@
   </div>
   <img src="../images/signin-background.png" class="w-15 p-3" style="float:left">
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){ 
+    $('#submit').click(function(){
+      $.ajax({
+					type: 'POST',
+					url: "/user/actions.php?action=submitNewUser",
+				}).done(function () {
+          alert('OK')
+        })
+    });
+  });
+</script>
