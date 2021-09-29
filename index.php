@@ -13,4 +13,5 @@
     <label for="signup"><?php echo $_SESSION['signup1'];?></label>
     <a class="text-orange" href="./user/register.php"><b><?php echo $_SESSION['register'];?></b></a>
   </div>
+  
  </body>
