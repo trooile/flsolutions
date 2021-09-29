@@ -4,6 +4,7 @@
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.4.3/typescript.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcwm4kcAAAAAJDchOGVncUglJZqxgYFBCsa9EAA"></script>
 <link rel="stylesheet" href="https://use.typekit.net/eda6dmy.css">
 <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
