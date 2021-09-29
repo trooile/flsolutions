@@ -1,7 +1,7 @@
 <?php include "include_view.php";
   $names = $controller->toSchoolUnit->getAll();
 ?>
-<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+
 <div id='register'>
   <div class="container-fluid" style="text-align:center;">
     <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
