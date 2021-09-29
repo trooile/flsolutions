@@ -11,4 +11,5 @@
     $_SESSION['already-account'] = 'Already have an account?';
     $_SESSION['create-account'] = 'Create account';
     $_SESSION['signup'] = 'Sign up';
+    $_SESSION['verify'] = 'Check the fields';
 ?>
