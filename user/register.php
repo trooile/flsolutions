@@ -35,7 +35,7 @@
     <label><?php echo $_SESSION['already-account'];?></label>
     <a class="text-orange" href="./login.php"><b><?php echo $_SESSION['signup'];?></b></a>
   </div>
-  <img src="../images/signin-background.png" class="w-15 p-3" style="float:left">
+  <div class="signinlogo"></div>
 </div>
 <script type="text/javascript">
   $(document).ready(function(){ 

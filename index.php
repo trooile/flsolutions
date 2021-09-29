@@ -1,5 +1,5 @@
 <?php include "include_view.php"; ?>
-<body background="./images/background.svg" style="background-size:100%; background-repeat:no-repeat;">
+<body class="indexbody">
   <div class="container-fluid">
     <img src="./images/logo.svg" class="logo">
     <a type="button" class="btn btn-default btn-orange" href="./user/login.php"><?php echo $_SESSION['login'];?></a>
@@ -13,5 +13,4 @@
     <label for="signup"><?php echo $_SESSION['signup1'];?></label>
     <a class="text-orange" href="./user/register.php"><b><?php echo $_SESSION['register'];?></b></a>
   </div>
-  
- </body>
+</body>

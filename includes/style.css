@@ -8,8 +8,34 @@
 }
 .btn-orange {
   background-color:#FF8000;
-  color:#FFFFFF
+  color:#FFFFFF;
 }
 .text-orange{
   color:#FF8000;
+}
+.signinlogo{
+  content: url('../images/signin-background.svg');
+  bottom: 20;
+  position: absolute;
+  left: 0;
+  width: 15%;
+}
+
+.loginlogo{
+  content: url('../images/login-background.svg');
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  width: 15%;
+}
+
+.center{
+  text-align:center;
+}
+
+.indexbody{
+  background-image: url("/images/index-background.svg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  position:relative;
 }
