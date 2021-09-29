@@ -19,6 +19,7 @@
   <a class="text-orange" id="signup" href="register.php"><b><?php echo $_SESSION['register'];?></b></a>
 </div>
 <div class="loginlogo"></div>
+
 <script>
 grecaptcha.enterprise.ready(function() {
     grecaptcha.enterprise.execute('6Lcwm4kcAAAAAJDchOGVncUglJZqxgYFBCsa9EAA', {action: 'login'}).then(function(token) {
