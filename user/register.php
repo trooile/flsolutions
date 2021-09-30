@@ -3,7 +3,7 @@
 ?>
 
 <div id='register'>
-  <div class="container-fluid">
+  <div class="container-fluid center">
     <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
     <div class="panel panel-default">
       <div class="panel-body">
