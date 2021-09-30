@@ -3,10 +3,10 @@
 ?>
 
 <div id='register'>
-  <div class="container-fluid" style="text-align:center;">
+  <div class="container-fluid center">
     <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
-    <div class="panel panel-default" style="margin:auto;width:50%;border:3px;padding:10px;">
-      <div class="panel-body">   
+    <div class="panel panel-default">
+      <div class="panel-body">
         <form id="newuserform">
           <div class="mb-3">
             <input type="text" class="form-control" id="name"  placeholder="<?php echo $_SESSION['complete-name'];?>">
@@ -38,14 +38,14 @@
   <div class="signinlogo"></div>
 </div>
 <script type="text/javascript">
-  $(document).ready(function(){ 
+  $(document).ready(function(){
     $('#submit').click(function(){
       if($('#name').val() && $('#email').val() && $('#passwd').val() && $('#confirmpasswd').val()){
         var formData = $('#newuserform').serialize();
         $.ajax({
             type: 'POST',
             url: "/user/actions.php?action=submitNewUser",
-            data: formData,
+            data: {form: formData},
             dataType: 'json',
           }).done(function () {
             window.open('/user/login.php', '_self')
@@ -55,6 +55,6 @@
       }
     });
 
-    
+
   });
 </script>

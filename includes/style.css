@@ -30,12 +30,33 @@
 }
 
 .center{
-  text-align:center;
+  text-align: center;
 }
 
 .indexbody{
   background-image: url("/images/index-background.svg");
   background-repeat: no-repeat;
   background-position-x: right;
-  position:relative;
+  position: relative;
+}
+
+.panel-default {
+    margin: auto;
+    width: 50%;
+    border: 3px;
+    padding: 10px;
+}
+
+.index-text {
+    font-size: 28px;
+    margin-left: 35px !important;
+}
+
+.footer {
+    background-color: rgba(0,0,0,0.05);
+    flex-shrink: 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    padding-bottom: 0px;
 }

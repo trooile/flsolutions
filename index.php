@@ -5,7 +5,7 @@
     <a type="button" class="btn btn-default btn-orange" href="./user/login.php"><?php echo $_SESSION['login'];?></a>
   </div>
   <br><br><br>
-  <div  style="font-size:28px;margin-left:35px!important;">
+  <div  class="index-text">
     <label><b><?php echo $_SESSION['text-index']; ?></b></label>
   </div>
   <br><br><br>
@@ -14,3 +14,4 @@
     <a class="text-orange" href="./user/register.php"><b><?php echo $_SESSION['register'];?></b></a>
   </div>
 </body>
+<!- 35.199.109.22 ->

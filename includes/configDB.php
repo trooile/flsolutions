@@ -8,12 +8,12 @@ class ConfigDB{
     function __construct(){
         $dir = __DIR__;
 
-        $this->bd = [   'server'    => 'localhost', 
-                        'user'      => 'root', 
-                        //'pass'      => 'FelipeFLSolutions', 
-                        'pass'      => '', 
+        $this->bd = [   'server'    => 'localhost',
+                        'user'      => 'root',
+                        'pass'      => 'FelipeFLSolutions',
+                        //'pass'      => '',
                         'database'  => 'college_tool'
-                    ];        
+                    ];
     }
     public function executeQuery($query){
         $servername = $this->getDBServer();
