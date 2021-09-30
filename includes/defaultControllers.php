@@ -49,8 +49,8 @@ Class DefaultControllers{
     public function encrypt($data) {
         try{
             $method = "AES-256-CBC";
-            $secret_key = gmdate('dmy').'c09275cbd16a911a00c3a077e36f379b';
-            $secret_iv = gmdate('dmy').'549d0aad4f261463b179c94c2ea3c736';
+            $secret_key = gmdate('dmy').'hdFNsqZCjttS3RKGb4W7ZGiAeMUYnryj';
+            $secret_iv = gmdate('dmy').'8J3rL2b1Nj9yeyKb4twA0Pcu3rOhDY0H';
             $key = hash('sha256', $secret_key);
             $iv = substr(hash('sha256', $secret_iv), 0, 16);
             $data = openssl_encrypt($data, $method, $key, 0, $iv);
@@ -65,8 +65,8 @@ Class DefaultControllers{
         try{
             $data = base64_decode($data);
             $method = "AES-256-CBC";
-            $secret_key = gmdate('dmy').'c09275cbd16a911a00c3a077e36f379b';
-            $secret_iv = gmdate('dmy').'549d0aad4f261463b179c94c2ea3c736';
+            $secret_key = gmdate('dmy').'hdFNsqZCjttS3RKGb4W7ZGiAeMUYnryj';
+            $secret_iv = gmdate('dmy').'8J3rL2b1Nj9yeyKb4twA0Pcu3rOhDY0H';
             $key = hash('sha256', $secret_key);
             $iv = substr(hash('sha256', $secret_iv), 0, 16);
             $data = openssl_decrypt($data, $method, $key, 0, $iv);
