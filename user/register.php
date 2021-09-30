@@ -45,7 +45,7 @@
         $.ajax({
             type: 'POST',
             url: "/user/actions.php?action=submitNewUser",
-            data: formData,
+            data: {form: formData},
             dataType: 'json',
           }).done(function () {
             window.open('/user/login.php', '_self')
