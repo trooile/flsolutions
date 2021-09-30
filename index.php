@@ -14,4 +14,4 @@
     <a class="text-orange" href="./user/register.php"><b><?php echo $_SESSION['register'];?></b></a>
   </div>
 </body>
-//35.199.109.22
+<!- 35.199.109.22 ->
