@@ -1,8 +1,8 @@
 <?php include "include_view.php"; ?>
 
-<div class="container-fluid" style="text-align:center;">
+<div class="container-fluid">
   <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
-  <div class="panel panel-default" style="margin:auto;width:50%;border:3px;padding:10px;">
+  <div class="panel panel-default">
     <div class="panel-body">
     <form>
         <div class="mb-3">

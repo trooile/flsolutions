@@ -5,7 +5,7 @@
     <a type="button" class="btn btn-default btn-orange" href="./user/login.php"><?php echo $_SESSION['login'];?></a>
   </div>
   <br><br><br>
-  <div  style="font-size:28px;margin-left:35px!important;">
+  <div  class="index-text">
     <label><b><?php echo $_SESSION['text-index']; ?></b></label>
   </div>
   <br><br><br>
