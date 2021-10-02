@@ -41,7 +41,7 @@
   $(document).ready(function(){
     $('#submit').click(function(){
       if($('#name').val() && $('#email').val() && $('#passwd').val() && $('#confirmpasswd').val()){
-        var formData = $('#newuserform').serialize();
+        var formData = $('#newuserform').serializeObject();
         $.ajax({
             type: 'POST',
             url: "/user/actions.php?action=submitNewUser",
