@@ -7,7 +7,7 @@
     <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
     <div class="panel panel-default">
       <div class="panel-body">
-        <form id="newuserform">
+        <form id="newuserform" method="POST" action="">
           <div class="mb-3">
             <input type="text" class="form-control" id="name"  placeholder="<?php echo $_SESSION['complete-name'];?>">
           </div>
@@ -37,24 +37,3 @@
   </div>
   <div class="signinlogo"></div>
 </div>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#submit').click(function(){
-      if($('#name').val() && $('#email').val() && $('#passwd').val() && $('#confirmpasswd').val()){
-        var formData = $('#newuserform').serializeObject();
-        $.ajax({
-            type: 'POST',
-            url: "/user/actions.php?action=submitNewUser",
-            data: {form: formData},
-            dataType: 'json',
-          }).done(function () {
-            window.open('/user/login.php', '_self')
-          })
-      }else{
-        alert('<?php echo $_SESSION['verify'] ?>');
-      }
-    });
-
-
-  });
-</script>
