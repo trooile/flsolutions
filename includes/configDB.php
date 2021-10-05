@@ -20,7 +20,7 @@ class ConfigDB{
         $user = $this->getDBUser();
         $pass = $this->getDBPass();
         $database = $this->getDBName();
-        $conn = new mysqli($server, $user, $pass, $database);
+        $conn = new mysqli($servername, $user, $pass, $database);
         if (mysqli_connect_errno()) throw new Exception(mysqli_connect_error());
         $conn->query("SET NAMES 'utf8'");
         $conn->query('SET character_set_connection=utf8');
