@@ -67,7 +67,8 @@
 }
 
 img#imgmenu {
-  width: 40px;
+  top: 2;
+  width: 30px;
   position: relative;
   z-index: 9999;
 }
@@ -88,21 +89,25 @@ input#menu:checked ~ nav {
   
 }
 nav#navmenu {
-  background-color: rgba(255, 166, 0, 0.884);
   width: 350px;
   height: 300px;
   position: absolute;
   left: -350px;
+  transition: all 1s;
 }
 
 ul#ulmenu {
   background-color: blue;
-  top: 70px;
   position: absolute;
+  left: -45px;
+  height: 400px;
   width: 100%;
+  text-align: center;
 }
 
 a#linkmenu {
+  position: relative;
+  top: 70px;
   text-decoration: none;
   color: white;
   display: block;
@@ -112,6 +117,7 @@ a#linkmenu {
 a#linkmenu:hover {
   background-color: red;
   color: black;
+  
 }
 
 label#labelmenu {
