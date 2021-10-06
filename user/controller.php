@@ -17,20 +17,16 @@ Class Controller extends DefaultControllers{
 
     public function submitNewUser($params){
         try{
-            $name = $_POST['name'];
-            $mail = $_POST['email'];
-            $passwd = $this->encrypt($_POST['passwd']);
-            $confirmpasswd = $this->encrypt($_POST['confirmpasswd']);
-            
-            $unit = $_POST['unit'];
-            $data = [   'id_school_unit'    => $unit,
-                        'name'              => $name,
-                        'email'             => $mail,
-                        'passwd'            => $passwd];
-            $this->toUsers->insert($data);
+            $passwd = $this->encrypt($params['passwd']);
+            $params['id_school_unit'] = $params['unit'];
+            unset($params['unit']);
+            unset($params['confirmpasswd']);
+            unset($params['passwd']);
+            $params['passwd'] = $passwd;
+            $this->toUsers->insert($params);
             $this->return();
         }catch(Exception $e){
-            throw $e;
+            $this->return($e);
         }
     }
 }
