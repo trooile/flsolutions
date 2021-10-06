@@ -70,7 +70,7 @@ img#imgmenu {
   top: 2;
   width: 30px;
   position: relative;
-  z-index: 9999;
+  z-index: 1;
 }
 
 body#bodymenu {
@@ -103,6 +103,7 @@ ul#ulmenu {
   height: 400px;
   width: 100%;
   text-align: center;
+  z-index: 1;
 }
 
 a#linkmenu {
@@ -138,6 +139,9 @@ body#bodyprofile {
   background-image: linear-gradient(to bottom, #f0ab2d, white 70%);
 }
 
+div.container{
+  background-color: blue;
+}
 div.dados {
   position: absolute;
   background: green;
