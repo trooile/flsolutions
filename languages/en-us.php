@@ -12,4 +12,7 @@
     $_SESSION['create-account'] = 'Create account';
     $_SESSION['signup'] = 'Sign up';
     $_SESSION['verify'] = 'Check the fields';
+    $_SESSION['nameProfile'] = 'Name:';
+    $_SESSION['email'] = 'E-mail:';
+    $_SESSION['college'] = 'College:';
 ?>

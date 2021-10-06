@@ -1,19 +1,23 @@
-.logo{
-  max-width:560px;
+.logo {
+  max-width: 560px;
 }
-@media(max-width:800px){
-  .logo{
-    max-width:260px;
+
+@media(max-width:800px) {
+  .logo {
+    max-width: 260px;
   }
 }
+
 .btn-orange {
-  background-color:#FF8000;
-  color:#FFFFFF;
+  background-color: #FF8000;
+  color: #FFFFFF;
 }
-.text-orange{
-  color:#FF8000;
+
+.text-orange {
+  color: #FF8000;
 }
-.signinlogo{
+
+.signinlogo {
   content: url('../images/signin-background.svg');
   bottom: 20;
   position: absolute;
@@ -21,7 +25,7 @@
   width: 15%;
 }
 
-.loginlogo{
+.loginlogo {
   content: url('../images/login-background.svg');
   bottom: 0;
   position: absolute;
@@ -29,11 +33,11 @@
   width: 15%;
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-.indexbody{
+.indexbody {
   background-image: url("/images/index-background.svg");
   background-repeat: no-repeat;
   background-position-x: right;
@@ -41,22 +45,61 @@
 }
 
 .panel-default {
-    margin: auto;
-    width: 50%;
-    border: 3px;
-    padding: 10px;
+  margin: auto;
+  width: 50%;
+  border: 3px;
+  padding: 10px;
 }
 
 .index-text {
-    font-size: 28px;
-    margin-left: 35px !important;
+  font-size: 28px;
+  margin-left: 35px !important;
 }
 
 .footer {
-    background-color: rgba(0,0,0,0.05);
-    flex-shrink: 0;
-    bottom: 0;
-    width: 100%;
-    position: fixed;
-    padding-bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  padding-bottom: 0px;
+  z-index: 9999;
+}
+
+div#logoprofile {
+  width: 8%;
+  position: absolute;
+  left: 80%;
+  bottom: 95%;
+}
+
+body#bodyprofile {
+  background-image: linear-gradient(to bottom, #f0ab2d, white 70%);
+}
+
+div.dados {
+  position: absolute;
+  background: green;
+  right: 15%;
+}
+
+div.dados div {
+  background: red;
+  margin: 20px;
+  font-size: 26;
+  font-weight: bold;
+}
+
+div.dados label {
+  background: magenta;
+  margin: 20px;
+  font-size: 22pt;
+}
+
+div#profile-img {
+  position: absolute;
+  height: 100px;
+  background: green;
+  left: 15%;
+  bottom: 70%;
 }
