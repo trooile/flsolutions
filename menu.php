@@ -1,6 +1,4 @@
-<?php include "include_view.php";
-
-?>
+<?php include "include_view.php"; ?>
 
 <input type="checkbox" id="menu">
 <label for="menu" id="labelmenu"><img src="/images/icon-menu.svg" id="imgmenu"></label>

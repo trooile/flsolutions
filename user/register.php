@@ -39,23 +39,23 @@
 </div>
 
 <script type="text/javascript">
-$('#submit').click(function(){
-  if($('#passwd').val() == $('#confirmpasswd').val()){
-    var formdata = $('#newuserform').serializeArray();
-    $.ajax({
-          url: "/user/actions.php?action=submitNewUser",
-          type: 'POST',
-          data: formdata,
-          dataType: 'json',
-      }).done(function(back) {
-        if (back.error) {
-                alert(data.message)
-              } else {
-                alert('OK');
-              }
-      });
-  }else{
-    alert('<?php echo $_SESSION['invalidpasswd']; ?>')
-  }
-})
+  $('#submit').click(function(){
+    if($('#passwd').val() == $('#confirmpasswd').val()){
+      var formdata = $('#newuserform').serializeArray();
+      $.ajax({
+            url: "/user/actions.php?action=submitNewUser",
+            type: 'POST',
+            data: formdata,
+            dataType: 'json',
+        }).done(function(back) {
+          if (back.error) {
+                  alert(data.message)
+                } else {
+                  alert('OK');
+                }
+        });
+    }else{
+      alert('<?php echo $_SESSION['invalidpasswd']; ?>')
+    }
+  });
 </script>

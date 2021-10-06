@@ -11,7 +11,7 @@
         <div class="mb-3">
           <input type="password" class="form-control" id="passwd" placeholder="<?php echo $_SESSION['your-passwd'];?>">
         </div>
-        <button type="submit" class="btn btn-default btn-lg btn-orange"><?php echo $_SESSION['login'];?></button>
+        <button type="button" class="btn btn-default btn-lg btn-orange"><?php echo $_SESSION['login'];?></button>
       </form>
     </div>
   </div>
@@ -19,3 +19,24 @@
   <a class="text-orange" id="signup" href="register.php"><b><?php echo $_SESSION['register'];?></b></a>
 </div>
 <div class="loginlogo"></div>
+<script type="text/javascript">
+  $('#submit').click(function(){
+    if($('#passwd').val() == $('#confirmpasswd').val()){
+      var formdata = $('#newuserform').serializeArray();
+      $.ajax({
+            url: "/user/actions.php?action=submitNewUser",
+            type: 'POST',
+            data: formdata,
+            dataType: 'json',
+        }).done(function(back) {
+          if (back.error) {
+                  alert(data.message)
+                } else {
+                  alert('OK');
+                }
+        });
+    }else{
+      alert('<?php echo $_SESSION['invalidpasswd']; ?>')
+    }
+  });
+</script>

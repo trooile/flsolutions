@@ -144,5 +144,13 @@ class DefaultModels{
             throw $e;
         }
     }
+
+    public function getLastIdInserted(){
+        try{
+            return $this->masterMysqli->insert_id;
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
 }
 ?>
