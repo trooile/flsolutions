@@ -12,5 +12,11 @@
     $_SESSION['create-account'] = 'Criar conta';
     $_SESSION['signup'] = 'Acesse';
     $_SESSION['verify'] = 'Verifique os campos';
+<<<<<<< HEAD
     $_SESSION['invalidpasswd'] = 'Senhas não coincidem';
+=======
+    $_SESSION['nameProfile'] = 'Nome:';
+    $_SESSION['email'] = 'E-mail:';
+    $_SESSION['college'] = 'Faculdade:';
+>>>>>>> c67fc048efa649ed911ee0897dee0922165e38ce
 ?>
