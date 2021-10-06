@@ -10,8 +10,8 @@ class ConfigDB{
 
         $this->bd = [   'server'    => 'localhost',
                         'user'      => 'root',
-                        //'pass'      => 'FelipeFLSolutions',
-                        'pass'      => '',
+                        'pass'      => 'FelipeFLSolutions',
+                        //'pass'      => '',
                         'database'  => 'college_tool'
                     ];
     }
