@@ -26,6 +26,7 @@ class DefaultModels{
             throw $e;
         }
     }
+
     public function getAll($where = null){
         try{
             $query = "SELECT * FROM ".$this->table;
@@ -55,7 +56,6 @@ class DefaultModels{
             $params =  $this->prepareParams($params);
             $field = implode('`,`',array_keys($params));
             $values = implode(',',$params);
-
             return "INSERT INTO ".$this->table." (`".$field."`)"." VALUES (".$values.")";
         } catch (Exception $e) {
             throw $e;
@@ -123,17 +123,15 @@ class DefaultModels{
                             $params[$key] = "'".$value."'"; 
                         }
                     }     
-                }
-               
-            }
-            
+                }            
+            }           
             return $params;
         } catch (Exception $e) { 
             throw $e;
         }
     }
 
-    function convertData($value){
+    function convertDate($value){
         try{
             $dateParser = DateTime::createFromFormat("d/m/Y", $value);;
             if($dateParser){
@@ -153,4 +151,5 @@ class DefaultModels{
         }
     }
 }
+
 ?>
