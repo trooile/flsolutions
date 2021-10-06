@@ -1,5 +1,4 @@
 <?php include "include_view.php";
-include "menu.php";
 $user = $controller->toUsers->getAll("id_school_unit=13")[0]; //("id=1") ("nome='Augusto'") -> para pesquisar tudo relacionado //Pode remover o último colchete para puxar tudo
 $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
 
@@ -23,7 +22,6 @@ $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
   
 */
 ?>
-
 <body id="bodyprofile">
   <div id="logoprofile">
     <a href="/user/login.php"> <img src="/images/logo-bw.svg"></a>
@@ -33,7 +31,7 @@ $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
       <img src="/images/profile-img.svg">
     </div>
     <div class="dados">
-      <label><?php echo $_SESSION['nameProfile']; ?></label>
+      <label><?php echo $_SESSION['nameProfile'];?></label>
       <div>
         <?php echo $user["name"];  ?>
       </div>
@@ -46,8 +44,6 @@ $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
         <?php echo $school["name"]; ?>
       </div>
     </div>
+
   </div>
-
-
-
 </body>
