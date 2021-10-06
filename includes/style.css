@@ -66,6 +66,61 @@
   z-index: 9999;
 }
 
+img#imgmenu {
+  width: 40px;
+  position: relative;
+  z-index: 9999;
+}
+
+body#bodymenu {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul#ulmenu {
+  list-style: none;
+}
+
+input#menu {
+  display: none;
+}
+input#menu:checked ~ nav {
+  transform: translateX(350px);
+  
+}
+nav#navmenu {
+  background-color: rgba(255, 166, 0, 0.884);
+  width: 350px;
+  height: 300px;
+  position: absolute;
+  left: -350px;
+}
+
+ul#ulmenu {
+  background-color: blue;
+  top: 70px;
+  position: absolute;
+  width: 100%;
+}
+
+a#linkmenu {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 20px 5px;
+}
+
+a#linkmenu:hover {
+  background-color: red;
+  color: black;
+}
+
+label#labelmenu {
+  background-color: red;
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+}
+
 div#logoprofile {
   width: 8%;
   position: absolute;
