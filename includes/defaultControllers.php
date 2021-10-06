@@ -11,6 +11,7 @@ Class DefaultControllers{
             $config = new Includes\ConfigDB();
             $this->masterMysqli = new mysqli($config->getDBServer(),$config->getDBUser(),$config->getDBPass(),$config->getDBName());
             $this->masterMysqli->set_charset("utf8");
+            $this->back = ['error'=> false, 'data'=> array(), 'message'=>''];
 	        if (mysqli_connect_errno()) throw new Exception(mysqli_connect_error());
         }catch(Exception $e){
             throw $e;
@@ -31,7 +32,7 @@ Class DefaultControllers{
         try{
             if($exception == null){
                 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                    echo json_encode($this->retorno);
+                    echo json_encode($this->back);
                 }
             }else{
                 $this->return['error'] =  true;

@@ -12,4 +12,5 @@
     $_SESSION['create-account'] = 'Create account';
     $_SESSION['signup'] = 'Sign up';
     $_SESSION['verify'] = 'Check the fields';
+    $_SESSION['invalidpasswd'] = 'Passwords do not match';
 ?>
