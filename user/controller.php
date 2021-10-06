@@ -17,8 +17,6 @@ Class Controller extends DefaultControllers{
 
     public function submitNewUser($params){
         try{
-            var_dump($params);
-
             $passwd = $this->encrypt($params['passwd']);
             $params['id_school_unit'] = $params['unit'];
             unset($params['unit']);
