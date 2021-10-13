@@ -86,7 +86,6 @@ input#menu {
 }
 input#menu:checked ~ nav {
   transform: translateX(350px);
-  
 }
 nav#navmenu {
   width: 350px;
@@ -97,13 +96,13 @@ nav#navmenu {
 }
 
 ul#ulmenu {
-  background-color: blue;
-  position: absolute;
-  left: -45px;
-  height: 400px;
-  width: 100%;
-  text-align: center;
-  z-index: 1;
+    background-color: rgba(0, 0, 0, 0.05);
+    position: absolute;
+    left: -45px;
+    height: 400px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
 }
 
 a#linkmenu {
@@ -116,9 +115,9 @@ a#linkmenu {
 }
 
 a#linkmenu:hover {
-  background-color: red;
+  /*background-color: red;*/
   color: black;
-  
+
 }
 
 label#labelmenu {
