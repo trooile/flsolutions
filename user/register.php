@@ -9,31 +9,31 @@
       <div class="panel-body">
         <form id="newuserform">
           <div class="mb-3">
-            <input type="text" class="form-control" id="name" name="name" placeholder="<?php echo $_SESSION['complete-name'];?>">
+            <input type="text" class="form-control" id="name" name="name" placeholder="<?=$_SESSION['complete-name']?>">
           </div>
           <div class="mb-3">
-            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="<?php echo $_SESSION['your-email'];?>">
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="<?=$_SESSION['your-email']?>">
           </div>
           <div class="mb-3">
-            <input type="password" class="form-control" id="passwd" name="passwd" placeholder="<?php echo $_SESSION['your-passwd'];?>">
+            <input type="password" class="form-control" id="passwd" name="passwd" placeholder="<?=$_SESSION['your-passwd']?>">
           </div>
           <div class="mb-3">
-            <input type="password" class="form-control" id="confirmpasswd" name="confirmpasswd" placeholder="<?php echo $_SESSION['confirm-passwd'];?>">
+            <input type="password" class="form-control" id="confirmpasswd" name="confirmpasswd" placeholder="<?=$_SESSION['confirm-passwd']?>">
           </div>
           <div class="mb-3">
             <select type="text" class="form-control" id="unit" name="unit">
-                <option value="" selected disabled><?php echo $_SESSION['select-unit'];?></option>
+                <option value="" selected disabled><?=$_SESSION['select-unit']?></option>
                 <?php foreach($names as $value){?>
-                  <option value='<?php echo $value['id_school_unit'] ?>'><?php echo $value['name'] ?></option>
+                  <option value='<?=$value['id_school_unit']?>'><?=$value['name']?></option>
                   <?php } ?>
             </select>
           </div>
-          <button id="submit" type="button" class="btn btn-default btn-lg btn-orange "><?php echo $_SESSION['create-account'];?></button>
+          <button id="submit" type="button" class="btn btn-default btn-lg btn-orange "><?php=$_SESSION['create-account']?></button>
         </form>
       </div>
     </div>
-    <label><?php echo $_SESSION['already-account'];?></label>
-    <a class="text-orange" href="./login.php"><b><?php echo $_SESSION['signup'];?></b></a>
+    <label><?=$_SESSION['already-account']?></label>
+    <a class="text-orange" href="./login.php"><b><?=$_SESSION['signup']?></b></a>
   </div>
   <div class="signinlogo"></div>
 </div>
@@ -55,7 +55,7 @@
                 }
         });
     }else{
-      alert('<?php echo $_SESSION['invalidpasswd']; ?>')
+      alert('<?php=$_SESSION['invalidpasswd']?>')
     }
   });
 </script>
