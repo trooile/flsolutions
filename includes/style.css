@@ -1,169 +1,184 @@
-.logo {
-  max-width: 560px;
-}
-
-@media(max-width:800px) {
-  .logo {
-    max-width: 260px;
-  }
-}
-
-.btn-orange {
-  background-color: #FF8000;
-  color: #FFFFFF;
-}
-
-.text-orange {
-  color: #FF8000;
-}
-
-.signinlogo {
-  content: url('../images/signin-background.svg');
-  bottom: 20;
-  position: absolute;
-  left: 0;
-  width: 15%;
-}
-
-.loginlogo {
-  content: url('../images/login-background.svg');
-  bottom: 0;
-  position: absolute;
-  right: 0;
-  width: 15%;
-}
-
-.center {
-  text-align: center;
-}
-
-.indexbody {
-  background-image: url("/images/index-background.svg");
-  background-repeat: no-repeat;
-  background-position-x: right;
-  position: relative;
-}
-
-.panel-default {
-  margin: auto;
-  width: 50%;
-  border: 3px;
-  padding: 10px;
-}
-
-.index-text {
-  font-size: 28px;
-  margin-left: 35px !important;
-}
-
-.footer {
-  background-color: rgba(0, 0, 0, 0.05);
-  flex-shrink: 0;
-  bottom: 0;
-  width: 100%;
-  position: fixed;
-  padding-bottom: 0px;
-  z-index: 9999;
-}
-
-img#imgmenu {
-  top: 2;
-  width: 30px;
-  position: relative;
-  z-index: 1;
-}
-
-body#bodymenu {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-ul#ulmenu {
-  list-style: none;
-}
-
-input#menu {
-  display: none;
-}
-input#menu:checked ~ nav {
-  transform: translateX(350px);
-}
-nav#navmenu {
-  width: 350px;
-  height: 300px;
-  position: absolute;
-  left: -350px;
-  transition: all 1s;
-}
-
-ul#ulmenu {
-    background-color: rgba(0, 0, 0, 0.3);
-    position: absolute;
-    left: -45px;
-    height: 400px;
-    width: 100%;
-    text-align: center;
-    z-index: 1;
-}
-
-a#linkmenu {
-  position: relative;
-  top: 70px;
-  text-decoration: none;
-  color: white;
-  display: block;
-  padding: 20px 5px;
-}
-
-a#linkmenu:hover {
-  /*background-color: red;*/
-  color: black;
-
-}
-
-label#labelmenu {
-  /*background-color: red;*/
-  padding: 15px;
-  position: absolute;
-  z-index: 1;
-}
-
-div#logoprofile {
-  width: 8%;
-  position: absolute;
-  left: 80%;
-  bottom: 95%;
-}
-
-body#bodyprofile {
-  background-image: linear-gradient(to bottom, #f0ab2d, white 70%);
-}
-
-div.container{
-  background-color: blue;
-}
-div.dados {
-  position: absolute;
-  background: green;
-  right: 15%;
-}
-
-div.dados div {
-  background: red;
-  margin: 20px;
-  font-size: 26;
-  font-weight: bold;
-}
-
-div.dados label {
-  background: magenta;
-  margin: 20px;
-  font-size: 22pt;
-}
-
-div#profile-img {
-  position: absolute;
-  height: 100px;
-  background: green;
-  left: 15%;
-  bottom: 70%;
-}
+     .logo {
+         max-width: 560px;
+     }
+     
+     @media(max-width:800px) {
+         .logo {
+             max-width: 260px;
+         }
+     }
+     
+     .btn-orange {
+         background-color: #FF8000;
+         color: #FFFFFF;
+     }
+     
+     .text-orange {
+         color: #FF8000;
+     }
+     
+     .signinlogo {
+         content: url('../images/signin-background.svg');
+         bottom: 20;
+         position: absolute;
+         left: 0;
+         width: 15%;
+     }
+     
+     .loginlogo {
+         content: url('../images/login-background.svg');
+         bottom: 0;
+         position: absolute;
+         right: 0;
+         width: 15%;
+     }
+     
+     .center {
+         text-align: center;
+     }
+     
+     .indexbody {
+         background-image: url("/images/index-background.svg");
+         background-repeat: no-repeat;
+         background-position-x: right;
+         position: relative;
+     }
+     
+     .panel-default {
+         margin: auto;
+         width: 50%;
+         border: 3px;
+         padding: 10px;
+     }
+     
+     .index-text {
+         font-size: 28px;
+         margin-left: 35px !important;
+     }
+     
+     .footer {
+         background-color: rgba(0, 0, 0, 0.05);
+         flex-shrink: 0;
+         bottom: 0;
+         width: 100%;
+         position: fixed;
+         padding-bottom: 0px;
+         z-index: 9999;
+     }
+     /*Inicio das configurações de menu*/
+     
+     img#imgmenu {
+         width: 35px;
+         position: relative;
+         left: -10;
+         top: 45px;
+         z-index: 9999;
+     }
+     
+     body#bodymenu {
+         font-family: Arial, Helvetica, sans-serif;
+     }
+     
+     ul#ulmenu {
+         list-style: none;
+     }
+     
+     input#menu {
+         display: none;
+     }
+     
+     input#menu:checked~nav {
+         transform: translateX(350px);
+     }
+     
+     nav#navmenu {
+         width: 350px;
+         height: 300px;
+         position: absolute;
+         left: -350px;
+         transition: all 1.5s;
+         top: 8%;
+         z-index: 9998;
+     }
+     
+     ul#ulmenu {
+         background-color: rgba(0, 0, 0, 0.3);
+         position: relative;
+         left: -45px;
+         height: 85%;
+         width: 100%;
+         text-align: center;
+         background-color: white;
+     }
+     
+     ul#ulmenu a {
+         position: relative;
+         text-decoration: none;
+         color: black;
+         display: block;
+         padding: 20px 5px;
+         background-color: lightgrey;
+         background-color: rgb(250, 250, 250);
+     }
+     
+     ul#ulmenu a:hover {
+         background-color: lightgrey;
+         color: white;
+     }
+     
+     label#labelmenu {
+         top: 25px;
+         width: 0;
+         height: 0;
+         padding: 10px;
+         position: absolute;
+     }
+     /*Fim das configurações de menu*/
+     
+     div#logoprofile {
+         width: 150px;
+         position: absolute;
+         left: 80%;
+         bottom: 95%;
+     }
+     
+     body.profile {
+         background-image: linear-gradient(to bottom, #f0ab2d, white 70%);
+     }
+     
+     div.profile {
+         position: absolute;
+         background-color: white;
+         border-radius: 10px;
+         width: 70%;
+         top: 15%;
+         left: 15%;
+     }
+     
+     div.dados {
+         position: absolute;
+         right: 5%;
+         width: 40%;
+         top: 10%;
+     }
+     
+     div.dados div {
+         margin: 15px;
+         font-size: 29;
+     }
+     
+     div.dados label {
+         margin: 15px;
+         font-size: 25pt;
+         font-weight: bold;
+     }
+     
+     input#btnProfile {
+         position: absolute;
+         top: 110%;
+         right: 3%;
+         width: 500px;
+         height: 40px;
+         background-color: gray;
+         border-color: black;
+     }

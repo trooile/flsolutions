@@ -1,5 +1,5 @@
 <input type="checkbox" id="menu">
-<label for="menu" id="labelmenu"><span class="glyphicon glyphicon-align-justify"></span></label>
+<label for="menu" id="labelmenu" ><span><img src="/images/icon-menu.svg" id="imgmenu"></span><span class="glyphicon glyphicon-align-justify"></span></label>
 
 <body id="bodymenu">
     <nav id="navmenu">
