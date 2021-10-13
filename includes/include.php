@@ -14,6 +14,7 @@
 <script src="../includes/java/loadingoverlay.min.js"></script>
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
 <meta charset="utf-8">
+<?php include_once "menu.php"; ?>
 </header>
 <a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
 <a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
