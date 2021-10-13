@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
 <meta charset="utf-8">
 <?php
-if($_SERVER['REQUEST_URI'] != '/index.php'){
+if($_SERVER['REQUEST_URI'] != '' || $_SERVER['REQUEST_URI'] != '/index.php' || $_SERVER['REQUEST_URI'] != '/login.php' || $_SERVER['REQUEST_URI'] != '/register.php'){
 	include_once "menu.php";
 }?>
 </header>

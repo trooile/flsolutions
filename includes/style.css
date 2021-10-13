@@ -96,7 +96,7 @@ nav#navmenu {
 }
 
 ul#ulmenu {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
     left: -45px;
     height: 400px;
@@ -121,7 +121,7 @@ a#linkmenu:hover {
 }
 
 label#labelmenu {
-  background-color: red;
+  /*background-color: red;*/
   padding: 15px;
   position: absolute;
   z-index: 1;
