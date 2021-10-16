@@ -28,7 +28,7 @@
                   <?php } ?>
             </select>
           </div>
-          <button id="submit" type="button" class="btn btn-default btn-lg btn-orange "><?php=$_SESSION['create-account']?></button>
+          <button id="submit" type="button" class="btn btn-default btn-lg btn-orange "><?=$_SESSION['create-account']?></button>
         </form>
       </div>
     </div>
@@ -55,7 +55,7 @@
                 }
         });
     }else{
-      alert('<?php=$_SESSION['invalidpasswd']?>')
+      alert('<?=$_SESSION['invalidpasswd']?>')
     }
   });
 </script>
