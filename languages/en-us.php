@@ -15,4 +15,6 @@
     $_SESSION['nameProfile'] = 'Name:';
     $_SESSION['email'] = 'E-mail:';
     $_SESSION['college'] = 'College:';
+    $_SESSION['emailnotfound'] = 'Email not found';
+    $_SESSION['invalidpasswd'] = 'Invalid password';
 ?>

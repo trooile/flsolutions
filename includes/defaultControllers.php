@@ -11,7 +11,7 @@ Class DefaultControllers{
             $config = new Includes\ConfigDB();
             $this->masterMysqli = new mysqli($config->getDBServer(),$config->getDBUser(),$config->getDBPass(),$config->getDBName());
             $this->masterMysqli->set_charset("utf8");
-            $this->back = ['error'=> false, 'data'=> array(), 'message'=>''];
+            $this->back = ['error'=> false, 'data'=> [], 'message'=>''];
 	        if (mysqli_connect_errno()) throw new Exception(mysqli_connect_error());
         }catch(Exception $e){
             throw $e;
@@ -35,11 +35,11 @@ Class DefaultControllers{
                     echo json_encode($this->back);
                 }
             }else{
-                $this->return['error'] =  true;
-                $this->return['message'] =  $exception->getMessage();
-                $this->return['errorMessage'] =  $exception->getMessage();
+                $this->back['error'] =  true;
+                $this->back['message'] =  $exception->getMessage();
+                $this->back['errorMessage'] =  $exception->getMessage();
                 if($exception->getCode() == -1){
-                    $this->return['message'] =  $exception->getMessage();
+                    $this->back['message'] =  $exception->getMessage();
                 }
             }
         }catch(Exception $e){
