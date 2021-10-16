@@ -22,6 +22,5 @@ if($_SERVER['REQUEST_URI'] != '' && $_SERVER['REQUEST_URI'] != '/index.php' && $
 <a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
 <a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
 <?php include_once "footer.php"; ?>
-<?php include_once "../includes/menu.php"; ?>
 
 
