@@ -1,6 +1,7 @@
 <?php
 include './includes/include.php';
 session_start();
+
 if(!isset($_SESSION['language'])){
   $_SESSION['language'] = 'en-us.php';
   include './languages/en-us.php';
@@ -9,4 +10,5 @@ if(!isset($_SESSION['language'])){
   include './languages/'.$_GET['language'];
   $_SESSION['language'] = $_GET['language'];
   
-}?>
+}
+?>
