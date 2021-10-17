@@ -17,4 +17,5 @@
     $_SESSION['college'] = 'College:';
     $_SESSION['emailnotfound'] = 'Email not found';
     $_SESSION['invalidpasswd'] = 'Invalid password';
+    $_SESSION['header'] = 'College Tool - FLSolutions'
 ?>
