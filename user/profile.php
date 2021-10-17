@@ -32,17 +32,17 @@ $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
       <img src="/images/profile-img.svg">
     </div>
     <div class="dados">
-      <label><?=$_SESSION['nameProfile']?></label>
+      <label><?php echo $_SESSION['nameProfile']; ?></label>
       <div>
-        <?=$user["name"]?>
+        <?php echo $user["name"]; ?>
       </div>
-      <label><?=$_SESSION['email']?></label>
+      <label><?php echo $_SESSION['email']; ?></label>
       <div>
-        <?=$user["email"]?>
+        <?php echo $user["email"]; ?>
       </div>
-      <label><?=$_SESSION['college']?></label>
+      <label><?php echo $_SESSION['college']; ?></label>
       <div>
-        <?=$school["name"]?>
+        <?php echo $school["name"]; ?>
       </div>
     </div>
 

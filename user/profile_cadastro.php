@@ -13,17 +13,17 @@ $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
         </div>
         <div class="dados">
             <form id="form" method="POST" action="/idade">
-                <label><?=$_SESSION['nameProfile']?></label>
+                <label><?php echo $_SESSION['nameProfile']; ?></label>
                 <div>
-                    <input type="text" name="name" class="form-control" placeholder="<?=$user["name"]?>" />
+                    <input type="text" name="name" class="form-control" placeholder="<?php echo $user["name"]; ?>" />
                 </div>
-                <label><?=$_SESSION['email']; ?></label>
+                <label><?php echo $_SESSION['email']; ?></label>
                 <div>
-                    <input type="text" name="name" class="form-control" placeholder="<?=$user["email"]?>" />
+                    <input type="text" name="name" class="form-control" placeholder="<?php echo $user["email"]; ?>" />
                 </div>
-                <label><?=$_SESSION['college']?></label>
+                <label><?php echo $_SESSION['college']; ?></label>
                 <div>
-                    <input  type="text" name="name" class="form-control" placeholder="<?=$user["name"]?>" />
+                    <input  type="text" name="name" class="form-control" placeholder="<?php echo $user["name"]; ?>" />
                 </div>
                 <input id="btnProfile" type="submit" value="Enviar" class="btn btn-primary" />
             </form>
