@@ -2,7 +2,7 @@
 
 $user = $controller->toUsers->getAll("id_school_unit=13")[0]; //("id=1") ("nome='Augusto'") -> para pesquisar tudo relacionado //Pode remover o último colchete para puxar tudo
 $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
-$names = $controller->toSchoolUnit->insert(); //(["nome"=>"Augusto","lastname"=>"Cardone"])
+//$names = $controller->toSchoolUnit->insert(); //(["nome"=>"Augusto","lastname"=>"Cardone"])
 
 //$names = $controller->toSchoolUnit->getAll("id=1")[0]; se usar o final 0 no colchetes ele retorna só a posição 0 do array, não precisa usar o foreach
 // $names = $controller->toSchoolUnit->insert(); //(["nome"=>"Augusto","lastname"=>"Cardone"]) -> Inseri o nome Augusto dentro da coluna "nome", inseri o nome "Cardone" dentro da coluna "lastname"

@@ -118,7 +118,7 @@ class DefaultModels{
                             $value = str_replace(['\\r','\\n'],PHP_EOL,$value);
                             $value = str_replace(['\\\r','\\\n'],PHP_EOL,$value);
                             $value = str_replace('\\','',$value);
-                            $params[$key] = "'".$this->convertData($this->masterMysqli->real_escape_string($value))."'"; 
+                            $params[$key] = "'".$this->convertDate($this->masterMysqli->real_escape_string($value))."'"; 
                         }else{
                             $params[$key] = "'".$value."'"; 
                         }

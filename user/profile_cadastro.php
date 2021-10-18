@@ -1,11 +1,9 @@
 <?php include "include_view.php";
 $user = $controller->toUsers->getAll("id_school_unit=13")[0]; //("id=1") ("nome='Augusto'") -> para pesquisar tudo relacionado //Pode remover o último colchete para puxar tudo
 $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
+// $names = $controller->toUsers->insert(["name"=>"Augusto","email"=>"augusto.cardone@fatec.sp.gov.br","id_school_unit"=>"12"]); //(["nome"=>"Augusto","lastname"=>"Cardone"])
+ 
 
-
-function update(){
-    $controller->toSchoolUnit->update(); //(["nome"=>"Augusto","lastname"=>"Cardone"], "id=1") -> Atualizar no id "1" para o nome Augusto e last name Cardone     ---- Inserindo na coluna "nome" o nome Augusto ---- depois dos colchetes colocar o onde ("where")coluna=/valor
-}
 ?>
 
 <body class="profile">
@@ -17,18 +15,18 @@ function update(){
             <img src="/images/profile-img.svg">
         </div>
         <div class="dados">
-            <form id="form" method="POST">
+            <form id="form" method="POST" action ="/user/profile_cadastro_update.php">
                 <label><?php echo $_SESSION['nameProfile']; ?></label>
                 <div>
                     <input type="text" name="name" class="form-control" placeholder="<?php echo $user["name"]; ?>" />
                 </div>
                 <label><?php echo $_SESSION['email']; ?></label>
                 <div>
-                    <input type="text" name="name" class="form-control" placeholder="<?php echo $user["email"]; ?>" />
+                    <input type="text" name="email" class="form-control" placeholder="<?php echo $user["email"]; ?>" />
                 </div>
                 <label><?php echo $_SESSION['college']; ?></label>
                 <div>
-                    <input  type="text" name="name" class="form-control" placeholder="<?php echo $user["name"]; ?>" />
+                    <input  type="text" name="college" class="form-control" placeholder="<?php echo $user["name"]; ?>" />
                 </div>
                 <input id="btnProfile" type="submit" value="Enviar" class="btn btn-primary" />
             </form>
