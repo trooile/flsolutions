@@ -4,12 +4,12 @@
   <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
   <div class="panel panel-default">
     <div class="panel-body">
-    <form>
+    <form id="formLogin">
         <div class="mb-3">
-          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="<?=$_SESSION['your-email']?>">
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="<?=$_SESSION['your-email']?>">
         </div>
         <div class="mb-3">
-          <input type="password" class="form-control" id="passwd" placeholder="<?=$_SESSION['your-passwd']?>">
+          <input type="password" class="form-control" id="passwd" name="passwd" placeholder="<?=$_SESSION['your-passwd']?>">
         </div>
         <button type="button" class="btn btn-default btn-lg btn-orange"><?=$_SESSION['login']?></button>
       </form>
@@ -21,10 +21,9 @@
 <div class="loginlogo"></div>
 <script type="text/javascript">
   $('#submit').click(function(){
-    if($('#passwd').val() == $('#confirmpasswd').val()){
-      var formdata = $('#newuserform').serializeArray();
+      var formdata = $('#formLogin').serializeArray();
       $.ajax({
-            url: "/user/actions.php?action=submitNewUser",
+            url: "/user/actions.php?action=login",
             type: 'POST',
             data: formdata,
             dataType: 'json',
@@ -35,8 +34,5 @@
                   alert('OK');
                 }
         });
-    }else{
-      alert('<?=$_SESSION['invalidpasswd']?>')
-    }
   });
 </script>

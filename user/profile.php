@@ -33,9 +33,9 @@ $names = $controller->toSchoolUnit->insert(); //(["nome"=>"Augusto","lastname"=>
       <img src="/images/profile-img.svg">
     </div>
     <div class="dados">
-      <label><?php echo $_SESSION['nameProfile'];?></label>
+      <label><?php echo $_SESSION['nameProfile']; ?></label>
       <div>
-        <?php echo $user["name"];  ?>
+        <?php echo $user["name"]; ?>
       </div>
       <label><?php echo $_SESSION['email']; ?></label>
       <div>

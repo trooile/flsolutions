@@ -29,5 +29,26 @@ Class Controller extends DefaultControllers{
             $this->return($e);
         }
     }
+
+    public function login($params){
+        try{
+            $email = $params['email'];
+            $passwd = $params['passwd'];
+            $login = $this->toUsers->getAll('email ='.$email);
+            if(!empty($login)){
+                $passwdDB = $this->decrypt($login[0]['passwd']);
+                if($passwd == $passwdDB){
+                    $_SESSION['userLogged'] = $login[0]['id_user'];
+                }else{
+                    throw($_SESSION['invalidpasswd'], -1);
+                }
+            }else{
+                throw($_SESSION['emailnotfound'], -1);
+            }
+            $this->return();
+        }catch(Exception $e){
+            $this->return($e);
+        }
+    }
 }
 ?>
