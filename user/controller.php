@@ -40,10 +40,10 @@ Class Controller extends DefaultControllers{
                 if($passwd == $passwdDB){
                     $_SESSION['userLogged'] = $login[0]['id_user'];
                 }else{
-                    throw($_SESSION['invalidpasswd'] -1);
+                    throw($_SESSION['invalidpasswd'], -1);
                 }
             }else{
-                throw($_SESSION['emailnotfound'] -1);
+                throw($_SESSION['emailnotfound'], -1);
             }
             $this->return();
         }catch(Exception $e){
