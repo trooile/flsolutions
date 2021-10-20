@@ -35,6 +35,7 @@ Class Controller extends DefaultControllers{
             $email = $params['email'];
             $passwd = $params['passwd'];
             $login = $this->toUsers->getAll('email ='.$email);
+            print_r('aqui');
             if(!empty($login)){
                 $passwdDB = $this->decrypt($login[0]['passwd']);
                 if($passwd == $passwdDB){

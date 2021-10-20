@@ -1,4 +1,4 @@
-<?php include "include_view.php"; ?>
+<?=include "include_view.php"?>
 <body class="indexbody">
   <div class="container-fluid">
     <img src="./images/logo.svg" class="logo">
