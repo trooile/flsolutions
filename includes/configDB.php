@@ -10,10 +10,9 @@ class ConfigDB{
 
         $this->bd = [   'server'    => 'localhost',
                         'user'      => 'root',
-                        'pass'      => 'FelipeFLSolutions',
-                        //'pass'      => '', #Antes do commit, alterar para senha
                         'database'  => 'college_tool'
                     ];
+        $this->bd['pass'] = gethostname() == 'flsolutions' ? 'FelipeFLSolutions':'';
     }
     public function executeQuery($query){
         $servername = $this->getDBServer();
