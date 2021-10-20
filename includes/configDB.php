@@ -10,8 +10,8 @@ class ConfigDB{
 
         $this->bd = [   'server'    => 'localhost',
                         'user'      => 'root',
-                        //'pass'      => 'FelipeFLSolutions',
-                        'pass'      => '', #Antes do commit, alterar para senha
+                        'pass'      => 'FelipeFLSolutions',
+                        //'pass'      => '', #Antes do commit, alterar para senha
                         'database'  => 'college_tool'
                     ];
     }
