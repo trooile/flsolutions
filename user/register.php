@@ -47,6 +47,9 @@
             type: 'POST',
             data: formdata,
             dataType: 'json',
+            global:false,
+            processData: false,
+            contentType: false
         }).done(function(back) {
           if (back.error) {
                   alert(data.message)
@@ -55,7 +58,7 @@
                 }
         });
     }else{
-      alert('<?=$_SESSION['invalidpasswd']?>')
+      alert('<?=$_['invalidpasswd']?>')
     }
   });
 </script>

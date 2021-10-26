@@ -1,4 +1,4 @@
-<?php include "include_view.php"; ?>
+<?=include "include_view.php"?>
 
 <div class="container-fluid center">
   <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
@@ -19,6 +19,7 @@
   <a class="text-orange" id="signup" href="register.php"><b><?=$_SESSION['register']?></b></a>
 </div>
 <div class="loginlogo"></div>
+
 <script type="text/javascript">
   $('#submit').click(function(){
       var formdata = $('#formLogin').serializeArray();
@@ -27,6 +28,9 @@
             type: 'POST',
             data: formdata,
             dataType: 'json',
+            global:false,
+            processData: false,
+            contentType: false
         }).done(function(back) {
           if (back.error) {
                   alert(data.message)
@@ -35,4 +39,5 @@
                 }
         });
   });
+
 </script>
