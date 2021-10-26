@@ -1,4 +1,4 @@
-<header>
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -26,7 +26,7 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito:400,500,700,800,900" rel="stylesheet">
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-</header>
+</head>
 <a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
 <a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
 <?php
