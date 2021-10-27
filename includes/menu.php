@@ -1,6 +1,5 @@
 <input type="checkbox" id="menu">
-<script src="../includes/java/bootstrap/bootstrap.min.js"></script>
-<label for="menu" id="labelmenu" >MENu</span></label>
+<label for="menu" id="labelmenu"><span class="glyphicon glyphicon-align-justify"></span></label>
 <?php 
   if(!isset($_SESSION['language'])){
     $_SESSION['language'] = 'en-us.php';

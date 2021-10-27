@@ -1,5 +1,6 @@
 <?=include "include_view.php"?>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -28,8 +29,6 @@
   </div>
 </div>
 
-
-
 <div class="container-fluid">
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
 Add
@@ -37,6 +36,7 @@ Add
   <div class="boards overflow-auto p-0" id="boardsContainer">
   </div>
 </div>
+<?=include_once "../includes/footer.php"?>
 
 <script type="text/javascript">
 let cardBeignDragged;
@@ -89,14 +89,12 @@ $(document).ready(()=>{
 
 });
 
-
 function initializeBoards(){    
     dataColors.forEach(item=>{
         let htmlString = `
         <div class="board">
             <h3 class="text-center">${item.title.toUpperCase()}</h3>
             <div class="dropzone" id="${item.color}">
-                
             </div>
         </div>
         `
@@ -113,7 +111,6 @@ function initializeBoards(){
 
 function initializeCards(){
     cards = document.querySelectorAll('.kanbanCard');
-    
     cards.forEach(card=>{
         card.addEventListener('dragstart', dragstart);
         card.addEventListener('drag', drag);
