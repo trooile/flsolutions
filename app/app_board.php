@@ -1,7 +1,5 @@
 <?=include "include_view.php"?>
 
-
-
 <div class="controls p-3">
       <form class="form-inline">
           <label for="titleInput"><?=$_SESSION['title']?></label>
@@ -13,9 +11,6 @@
       </form>
     </div>
 <div class="container-fluid">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-Add
-</button>
   <div class="boards overflow-auto p-0" id="boardsContainer">
   </div>
 </div>
