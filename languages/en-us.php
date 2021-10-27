@@ -17,15 +17,15 @@
     $_SESSION['college'] = 'College:';
     $_SESSION['emailnotfound'] = 'Email not found';
     $_SESSION['invalidpasswd'] = 'Invalid password';
-    $_SESSION['home'] = 'Home';
-    $_SESSION['logout'] = 'Log out';
-    $_SESSION['settings'] = 'Settings';
-    $_SESSION['profile'] = 'Profile';
     $_SESSION['toDo'] = 'TO DO';
     $_SESSION['inprogress'] = 'IN PROGRESS';
     $_SESSION['done'] = 'DONE';
     $_SESSION['description'] = 'Description';
     $_SESSION['title'] = 'Title';
     $_SESSION['deleteall'] = 'Delete All';
+    $_SESSION['home'] = 'Home';
+    $_SESSION['profile'] = 'Profile';
+    $_SESSION['settings'] = 'Settings';
+    $_SESSION['logout'] = 'Log Out';
 
 ?>

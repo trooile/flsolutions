@@ -17,14 +17,14 @@
     $_SESSION['college'] = 'Faculdade:';
     $_SESSION['emailnotfound'] = 'E-mail não encontrado';
     $_SESSION['invalidpasswd'] = 'Senha Inválida';
-    $_SESSION['home'] = 'Inicio';
-    $_SESSION['logout'] = 'Deslogar';
-    $_SESSION['settings'] = 'Configurações';
-    $_SESSION['profile'] = 'Perfil';
     $_SESSION['toDo'] = 'A FAZER';
     $_SESSION['inprogress'] = 'EM PROGRESSO';
     $_SESSION['done'] = 'FINALIZADO';
     $_SESSION['description'] = 'Descrição';
     $_SESSION['title'] = 'Titulo';
     $_SESSION['deleteall'] = 'Remover Todos';
+    $_SESSION['home'] = 'Página Inicial';
+    $_SESSION['profile'] = 'Perfil';
+    $_SESSION['settings'] = 'Configurações';
+    $_SESSION['logout'] = 'Sair';
 ?>

@@ -24,6 +24,9 @@ $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
       <div>
         <?=$school["name"]?>
       </div>
+      <a href="/user/profile_cadastro.php">
+      <input id="btnProfile" type="submit" value="Alterar Dados" class="btn btn-primary" />
+    </a>
     </div>
 
   </div>
