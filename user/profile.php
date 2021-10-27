@@ -1,7 +1,6 @@
 <?php include "include_view.php";
 if(!isset($_SESSION['userLogged'])) $_SESSION['userLogged']  = 1;
-$_SESSION['userLogged']  = 1
-$user = $controller->toUsers->getAll("id_school_unit=13")[0];
+$user = $controller->toUsers->getAll("id_users=".$_SESSION['userLogged'])[0];
 $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
 ?>
 <body class="profile">
