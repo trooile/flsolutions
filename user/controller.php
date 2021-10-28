@@ -35,11 +35,11 @@ Class Controller extends DefaultControllers{
         try{
             $email = $params['email'];
             $passwd = $params['passwd'];
-            $login = $this->toUsers->getAll('email ='.$email);
+            $login = $this->toUsers->getAll("email ='".$email."'");
             if(!empty($login)){
                 $passwdDB = $this->decrypt($login[0]['passwd']);
                 if($passwd == $passwdDB){
-                    $_SESSION['userLogged'] = $login[0]['id_user'];
+                    $_SESSION['userLogged'] = $login[0]['id_users'];
                 }else{
                     throw new Exception($_SESSION['invalidpasswd'], -1);
                 }

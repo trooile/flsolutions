@@ -1,5 +1,8 @@
 <?php include "include_view.php";
   $names = $controller->toSchoolUnit->getAll();
+  if(isset($_SESSION['userLogged']) && !empty($_SESSION['userLogged'])){
+    echo "<script>window.location='/user/profile.php'</script>";
+  }
 ?>
 
 <div id='register'>
@@ -56,7 +59,8 @@
           if (back.error) {
                   alert(data.message)
                 } else {
-                  alert('OK');
+                  alert('Register');
+                  window.location.href = "login.php";
                 }
         });
     }else{

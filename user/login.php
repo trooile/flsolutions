@@ -1,4 +1,8 @@
-<?=include "include_view.php"?>
+<?php include "include_view.php";
+  if(isset($_SESSION['userLogged']) && !empty($_SESSION['userLogged'])){
+    echo "<script>window.location='/user/profile.php'</script>";
+  }
+?>
 
 <div class="container-fluid center">
   <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
@@ -31,12 +35,10 @@
           },
           dataType: "json",
       }).done(function(back) {
-        console.log(back)
         if (back.error) {
-          alert(data.message)
+          alert(back.message)
         } else {
-          console.log(back.data)
-          alert('OK');
+          window.location.href = "profile.php";
         }
       });
   });
