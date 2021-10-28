@@ -10,6 +10,7 @@ Class Controller extends DefaultControllers{
             parent::__construct();
             $this->toSchoolUnit = new ToSchoolUnit($this->masterMysqli);
             $this->toUsers = new ToUsers($this->masterMysqli);
+            $this->back = ['error'=> false, 'data'=> [], 'message'=>''];
         }catch(Exception $e){
             throw $e;
         }
@@ -35,16 +36,15 @@ Class Controller extends DefaultControllers{
             $email = $params['email'];
             $passwd = $params['passwd'];
             $login = $this->toUsers->getAll('email ='.$email);
-            print_r('aqui');
             if(!empty($login)){
                 $passwdDB = $this->decrypt($login[0]['passwd']);
                 if($passwd == $passwdDB){
                     $_SESSION['userLogged'] = $login[0]['id_user'];
                 }else{
-                    throw new Exception($_SESSION['invalidpasswd']);
+                    throw new Exception($_SESSION['invalidpasswd'], -1);
                 }
             }else{
-                throw new Exception($_SESSION['emailnotfound']);
+                throw new Exception($_SESSION['emailnotfound'], -1);
             }
             $this->return();
         }catch(Exception $e){

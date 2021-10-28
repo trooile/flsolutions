@@ -7,7 +7,7 @@
     <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
     <div class="panel panel-default">
       <div class="panel-body">
-        <form id="newuserform">
+        <form id="newuserform" name="newuserform">
           <div class="mb-3">
             <input type="text" class="form-control" id="name" name="name" placeholder="<?=$_SESSION['complete-name']?>">
           </div>
@@ -41,15 +41,17 @@
 <script type="text/javascript">
   $('#submit').click(function(){
     if($('#passwd').val() == $('#confirmpasswd').val()){
-      var formdata = $('#newuserform').serializeArray();
       $.ajax({
             url: "/user/actions.php?action=submitNewUser",
             type: 'POST',
-            data: formdata,
+            data: {
+              name: $('#name').val(),
+              email: $('#email').val(),
+              passwd: $('#passwd').val(),
+              confirmpasswd: $('#confirmpasswd').val(),
+              unit: $('#unit').val(),
+            },
             dataType: 'json',
-            global:false,
-            processData: false,
-            contentType: false
         }).done(function(back) {
           if (back.error) {
                   alert(data.message)
@@ -58,7 +60,7 @@
                 }
         });
     }else{
-      alert('<?=$_['invalidpasswd']?>')
+      alert('')
     }
   });
 </script>

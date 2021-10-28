@@ -22,22 +22,22 @@
 
 <script type="text/javascript">
   $('#submit').click(function(){
-      var formdata = $('#formLogin').serializeArray();
-      $.ajax({
-            url: "/user/actions.php?action=login",
-            type: 'POST',
-            data: formdata,
-            dataType: 'json',
-            global:false,
-            processData: false,
-            contentType: false
-        }).done(function(back) {
-          if (back.error) {
-                  alert(data.message)
-                } else {
-                  alert('OK');
-                }
-        });
+    $.ajax({
+          url: "/user/actions.php?action=login",
+          type: "POST",
+          data: {
+            email: $("#email").val(),
+            passwd: $("#passwd").val(),
+          },
+          dataType: "json",
+      }).done(function(back) {
+        console.log(back)
+        if (back.error) {
+          alert(data.message)
+        } else {
+          console.log(back.data)
+          alert('OK');
+        }
+      });
   });
-
 </script>
