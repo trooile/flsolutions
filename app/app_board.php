@@ -192,12 +192,6 @@ function dragover({target}){
     else if(this.id ==="green"){
         removeClasses(cardBeignDragged, "green");
     }
-    else if(this.id ==="blue"){
-        removeClasses(cardBeignDragged, "blue");
-    }
-    else if(this.id ==="purple"){
-        removeClasses(cardBeignDragged, "purple");
-    }
     else if(this.id ==="red"){
         removeClasses(cardBeignDragged, "red");
     }
