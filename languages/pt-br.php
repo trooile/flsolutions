@@ -43,5 +43,5 @@
     $_SESSION['seventh-semester'] = 'Sétimo Semestre';
     $_SESSION['eighth-semester'] = 'Oitavo Semestre';
     $_SESSION['ninth-semester'] = 'Nono Semestre';
-    $_SESSION['tenth-semester'] = 'décimo Semestre';
+    $_SESSION['tenth-semester'] = 'Décimo Semestre';
 ?>
