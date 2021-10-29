@@ -1,15 +1,71 @@
-<?=include "include_view.php"?>
+<?php include "include_view.php";
+    $courses = $controller->toCourses->getAll();
+?>
 
-<div class="controls p-3">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCard"><?=$_SESSION['studyplan']?></button>
+<button class="btn btn-danger mx-2" id="deleteAll"><?=$_SESSION['deleteall']?></button>
+
+<div class="modal fade" id="modalCard" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="controls p-3">
       <form class="form-inline">
-          <label for="titleInput"><?=$_SESSION['title']?></label>
+        <div class="form-group col-sm-12">
+          <label for="course"><?=$_SESSION['course']?></label>
+          <div class="input-group">
+          <select type="text" class="form-control" id="course" name="course">
+                <option value="" selected disabled><?=$_SESSION['select-course']?></option>
+                <?php foreach($courses as $value){?>
+                  <option value='<?=$value['id_courses']?>'><?=$value['name']?></option>
+                <?php } ?>
+            </select>
+        </div>
+        </div><p></p>
+        <div class="form-group col-sm-12">
+          <label for="semester"><?=$_SESSION['semester']?></label>
+          <div class="input-group">
+          <select type="text" class="form-control" id="semester" name="semester">
+            <option value="1"><?=$_SESSION['first-semester']?></option>
+            <option value="2"><?=$_SESSION['second-semester']?></option>
+            <option value="3"><?=$_SESSION['third-semester']?></option>
+            <option value="4"><?=$_SESSION['fourth-semester']?></option>
+            <option value="5"><?=$_SESSION['fifth-semester']?></option>
+            <option value="6"><?=$_SESSION['sixth-semester']?></option>
+            <option value="7"><?=$_SESSION['seventh-semester']?></option>
+            <option value="8"><?=$_SESSION['eighth-semester']?></option>
+            <option value="9"><?=$_SESSION['ninth-semester']?></option>
+            <option value="10"><?=$_SESSION['tenth-semester']?></option>
+          </select>
+        </div>
+        </div>
+        <div class="form-group col-sm-12">
+          <label for="titleInput"><?=$_SESSION['subject']?></label>
+          <div class="input-group">
           <input class="form-control form-control-sm" type="text" name="title" id="titleInput" autocomplete="off">
+        </div>
+        </div>
+        <div class="form-group col-sm-12">
           <label for="descriptionInput"><?=$_SESSION['description']?></label>
-          <input class="form-control form-control-sm" type="text" name="description" id="descriptionInput" autocomplete="off">
-          <button class="btn btn-dark" id="add">Add</button>
-          <button class="btn btn-danger mx-2" id="deleteAll"><?=$_SESSION['deleteall']?></button>
+          <div class="input-group">
+          <input class="form-control form-control-sm" type="text" name="description" id="descriptionInput" autocomplete="off"> 
+        </div>
+        </div>
       </form>
+      <img src="../images/studyplan-background.svg" class="logo">
     </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="add"><?=$_SESSION['save']?></button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container-fluid">
   <div class="boards overflow-auto p-0" id="boardsContainer">
   </div>
@@ -58,6 +114,7 @@ $(document).ready(()=>{
             save();
             appendComponents(newCard);
             initializeCards();
+            saveInBank(newCard);
         }
     });
     $("#deleteAll").click(()=>{
@@ -66,6 +123,24 @@ $(document).ready(()=>{
     });
 
 });
+
+function saveInBank(card){
+    console.log(card);
+    $.ajax({
+          url: "/app/actions.php?action=saveCard",
+          type: "POST",
+          data: {
+            card: card
+          },
+          dataType: "json",
+      }).done(function(back) {
+        if (back.error) {
+          alert(back.message)
+        } else {
+          alert('OK')
+        }
+      });
+  };
 
 function initializeBoards(){    
     dataColors.forEach(item=>{

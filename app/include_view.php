@@ -1,4 +1,5 @@
 <?php
+session_start();
   include '../includes/include.php';
   include __DIR__."/controller.php";
   $controller = new Controller(); 

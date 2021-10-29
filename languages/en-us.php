@@ -27,5 +27,21 @@
     $_SESSION['profile'] = 'Profile';
     $_SESSION['settings'] = 'Settings';
     $_SESSION['logout'] = 'Log Out';
-
+    $_SESSION['save'] = 'Save';
+    $_SESSION['close'] = 'Close';
+    $_SESSION['studyplan'] = 'Study Plan';
+    $_SESSION['subject'] = 'Subject';
+    $_SESSION['course'] = 'Course';
+    $_SESSION['select-course'] = 'Select course';
+    $_SESSION['semester'] = 'Semester';
+    $_SESSION['first-semester'] = 'First Semester';
+    $_SESSION['second-semester'] = 'Second Semester';
+    $_SESSION['third-semester'] = 'Third Semester';
+    $_SESSION['fourth-semester'] = 'Fourth Semester';
+    $_SESSION['fifth-semester'] = 'Fifth Semester';
+    $_SESSION['sixth-semester'] = 'Sixth Semester';
+    $_SESSION['seventh-semester'] = 'Seventh Semester';
+    $_SESSION['eighth-semester'] = 'Eighth Semester';
+    $_SESSION['ninth-semester'] = 'Ninth Semester';
+    $_SESSION['tenth-semester'] = 'Tenth Semester';
 ?>
