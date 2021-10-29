@@ -24,7 +24,7 @@ Class Controller extends DefaultControllers{
 
     public function saveCard($params){
         try{
-            
+            var_dump($params);
             $this->return();
         }catch(Exception $e){
             $this->return($e);

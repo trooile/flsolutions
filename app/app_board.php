@@ -1,7 +1,6 @@
 <?php include "include_view.php";
     $courses = $controller->toCourses->getAll();
 ?>
-
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCard"><?=$_SESSION['studyplan']?></button>
 <button class="btn btn-danger mx-2" id="deleteAll"><?=$_SESSION['deleteall']?></button>
 
@@ -71,7 +70,6 @@
   </div>
 </div>
 <?=include_once "../includes/footer.php"?>
-
 <script type="text/javascript">
 let cardBeignDragged;
 let dropzones = document.querySelectorAll('.dropzone');
@@ -98,6 +96,8 @@ $(document).ready(()=>{
     $('#add').click(()=>{
         const title = $('#titleInput').val()!==''?$('#titleInput').val():null;
         const description = $('#descriptionInput').val()!==''?$('#descriptionInput').val():null;
+        const course = $('#course').find(":selected").val();
+        const semester = $('#semester').find(":selected").val();
         $('#titleInput').val('');
         $('#descriptionInput').val('');
         if(title && description){
@@ -114,7 +114,13 @@ $(document).ready(()=>{
             save();
             appendComponents(newCard);
             initializeCards();
-            saveInBank(newCard);
+            newCardDB = {
+                newCard,
+                    course,
+                    semester
+            }
+            saveInDB(newCardDB);
+            // $('#modalCard').modal('hide');
         }
     });
     $("#deleteAll").click(()=>{
@@ -124,7 +130,7 @@ $(document).ready(()=>{
 
 });
 
-function saveInBank(card){
+function saveInDB(card){
     console.log(card);
     $.ajax({
           url: "/app/actions.php?action=saveCard",
