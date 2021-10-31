@@ -2,6 +2,7 @@
 include_once '../includes/defaultControllers.php';
 include_once '../includes/models/toSchoolUnit.php';
 include_once '../includes/models/toUsers.php';
+include_once '../includes/models/toCourses.php';
 
 Class Controller extends DefaultControllers{
 
@@ -10,6 +11,7 @@ Class Controller extends DefaultControllers{
             parent::__construct();
             $this->toSchoolUnit = new ToSchoolUnit($this->masterMysqli);
             $this->toUsers = new ToUsers($this->masterMysqli);
+            $this->toCourses = new toCourses($this->masterMysqli);
             $this->back = ['error'=> false, 'data'=> [], 'message'=>''];
         }catch(Exception $e){
             throw $e;
