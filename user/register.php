@@ -4,6 +4,12 @@
     echo "<script>window.location='/user/profile.php'</script>";
   }
 ?>
+<div class="alert alert-danger alert-dismissible fade" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 
 <div id='register'>
   <div class="container-fluid center">
@@ -64,7 +70,7 @@
                 }
         });
     }else{
-      alert('')
+      $('.alert').alert()
     }
   });
 </script>

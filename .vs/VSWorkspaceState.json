@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\includes"
   ],
-  "SelectedNode": "\\index.php",
+  "SelectedNode": "\\includes\\include.php",
   "PreviewInSolutionExplorer": false
 }
