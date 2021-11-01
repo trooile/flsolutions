@@ -6,35 +6,50 @@ $unit = $controller->toSchoolUnit->getAll();
 $courses = $controller->toCourses->getAll("id_courses=13")[0];
 ?>
 
-<body class="profile">
-    <div id="logoprofile">
-        <a href="/user/login.php"> <img src="/images/logo-bw.svg"></a>
-    </div>
-    <div class="container" id="bodyprofile">    
-            <div class="panel-body">
-            </div>
-            <form id="formprofile" method="POST" action="/user/profile_cadastro_update.php">
-                <div class="mb-3">
-                    <input type="text" class="form" id="nameprofile" name="nameprofile" placeholder="<?= $user["name"] ?>">
-                </div>
-                <div class="mb-3">
-                    <input type="password" class="form" id="emailprofile" name="emailprofile" placeholder="<?= $user["email"] ?>">
-                </div>
-                <div class="mb-3">
-                    <input type="password" class="form" id="courseprofile" name="courseprofile" placeholder="<?= $courses["name"] ?>">
-                </div>
-                <div class="mb-3">
-                    <input type="password" class="form" id="semesterprofile" name="semesterprofile" placeholder="Semestre?">
-                </div>
-                <div class="mb-3">
-                    <select type="text" class="form" id="unit" name="unit">
-                        <option value="" selected disabled><?= $_SESSION['select-unit'] ?></option>
-                        <?php foreach ($unit as $value) { ?>
-                            <option value='<?= $value['id_school_unit'] ?>'><?= $value['name'] ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-                <button type="button" id="changeprofile" class="btn btn-default btn-lg btn-orange">Alterar Dados</button>
-            </form>
+<div class="container" id="profile">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" id="profile">
+            <label id="profile"><?= $_SESSION['nameProfile'] ?></label><br>
+            <p id="profile"><?= $user["name"] ?></p>
+        </div>
+        <div class="col" id="profile">
+            <br><br><a id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
         </div>
     </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" id="profile">
+            <label id="profile"><?= $_SESSION['email'] ?></label><br>
+            <p id="profile"><?= $user["email"] ?></p>
+        </div>
+        <div class="col" id="profile">
+            <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" id="profile">
+            <label id="profile"><?= $_SESSION['college'] ?></label> <br>
+            <p id="profile"><?= $school["name"] ?></p>
+        </div>
+        <div class="col" id="profile">
+            <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" id="profile">
+            <label id="profile"><?= $_SESSION['nameProfile'] ?></label><br>
+            <p id="profile"><?= $user["name"] ?></p>
+        </div>
+        <div class="col" id="profile">
+            <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" id="profile">
+            <label id="profile"><?= $_SESSION['nameProfile'] ?></label><br>
+            <p id="profile"><?= $user["name"] ?></p>
+        </div>
+        <div class="col" id="profile">
+            <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
+        </div>
+    </div>
+</div>

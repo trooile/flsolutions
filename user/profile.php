@@ -1,33 +1,59 @@
 <?php include "include_view.php";
-$user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged']: 1;
-$user = $controller->toUsers->getAll("id_users =".$user)[0];
-$school = $controller->toSchoolUnit->getAll('id_school_unit = '.$user["id_school_unit"])[0];
+$user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged'] : 1;
+$user = $controller->toUsers->getAll("id_users =" . $user)[0];
+$school = $controller->toSchoolUnit->getAll('id_school_unit = ' . $user["id_school_unit"])[0];
+$unit = $controller->toSchoolUnit->getAll();
+$courses = $controller->toCourses->getAll("id_courses=13")[0];
 ?>
-<body class="profile">
-  <div id="logoprofile">
-    <a href="/user/login.php"> <img src="/images/logo-bw.svg"></a>
-  </div>
-  <div class="profile">
-    <div id="profile-img">
-      <img src="/images/profile-img.svg">
-    </div>
-    <div class="dados">
-      <label><?=$_SESSION['nameProfile']?></label>
-      <div>
-        <?=$user["name"]?>
-      </div>
-      <label><?=$_SESSION['email']?></label>
-      <div>
-        <?=$user["email"]?>
-      </div>
-      <label><?=$_SESSION['college']?></label>
-      <div>
-        <?=$school["name"]?>
-      </div>
-      <a href="/user/profile_cadastro.php">
-      <input id="btnProfile" type="submit" value="Alterar Dados" class="btn btn-primary" />
-    </a>
-    </div>
 
+<body class="profile">
+
+
+  <div class="container" id="profile">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto" id="profile">
+        <label id="profile"><?= $_SESSION['nameProfile'] ?></label><br>
+        <p id="profile"><?= $user["name"] ?></p>
+      </div>
+      <div class="col" id="profile">
+        <br><br><a id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto" id="profile">
+        <label id="profile"><?= $_SESSION['email'] ?></label><br>
+        <p id="profile"><?= $user["email"] ?></p>
+      </div>
+      <div class="col" id="profile">
+        <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto" id="profile">
+        <label id="profile"><?= $_SESSION['college'] ?></label> <br>
+        <p id="profile"><?= $school["name"] ?></p>
+      </div>
+      <div class="col" id="profile">
+        <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto" id="profile">
+        <label id="profile"><?= $_SESSION['nameProfile'] ?></label><br>
+        <p id="profile"><?= $user["name"] ?></p>
+      </div>
+      <div class="col" id="profile">
+        <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto" id="profile">
+        <label id="profile"><?= $_SESSION['nameProfile'] ?></label><br>
+        <p id="profile"><?= $user["name"] ?></p>
+      </div>
+      <div class="col" id="profile">
+        <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
+      </div>
+    </div>
   </div>
 </body>
