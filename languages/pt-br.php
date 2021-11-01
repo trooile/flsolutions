@@ -44,4 +44,8 @@
     $_SESSION['eighth-semester'] = 'Oitavo Semestre';
     $_SESSION['ninth-semester'] = 'Nono Semestre';
     $_SESSION['tenth-semester'] = 'Décimo Semestre';
+    $_SESSION['shit'] = 'Ah Merda!';
+    $_SESSION['verify-error'] = 'Há algo errado, verifique e tente novamente.';
+    $_SESSION['success'] = 'Sucesso!';
+    $_SESSION['verify-success'] = 'Agora você pode entrar.';
 ?>

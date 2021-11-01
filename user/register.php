@@ -4,9 +4,9 @@
     echo "<script>window.location='/user/profile.php'</script>";
   }
 ?>
-<div class="alert alert-danger alert-dismissible fade" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<div id="alert-error" class="alert alert-danger alert-dismissible fade hide" role="alert">
+  <strong><?=$_SESSION['shit']?></strong> <?=$_SESSION['verify-error']?>
+  <button type="button" class="close" id="close-modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -48,6 +48,9 @@
 </div>
 
 <script type="text/javascript">
+$(function(){
+
+});
   $('#submit').click(function(){
     if($('#passwd').val() == $('#confirmpasswd').val()){
       $.ajax({
@@ -65,12 +68,21 @@
           if (back.error) {
                   alert(data.message)
                 } else {
-                  alert('Register');
-                  window.location.href = "login.php";
+                  window.location.href = "login.php?registerSucess";
                 }
         });
     }else{
-      $('.alert').alert()
+      toggleAlert(); 
     }
   });
+
+ $('#close-modal').click(function(){
+  toggleAlert();
+ });
+
+function toggleAlert(){
+  $(".alert").toggleClass('show hide'); 
+  return false;
+}
+
 </script>

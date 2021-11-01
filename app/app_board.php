@@ -1,4 +1,7 @@
 <?php include "include_view.php";
+  if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
+    echo "<script>window.location='/user/login.php'</script>";
+  }
     $courses = $controller->toCourses->getAll();
 ?>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCard"><?=$_SESSION['studyplan']?></button>
@@ -115,7 +118,7 @@ $(document).ready(()=>{
             appendComponents(newCard);
             initializeCards();
             newCardDB = {
-                newCard,
+                    newCard,
                     course,
                     semester
             }

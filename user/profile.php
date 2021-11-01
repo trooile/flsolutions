@@ -1,4 +1,7 @@
 <?php include "include_view.php";
+  if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
+    echo "<script>window.location='/user/login.php'</script>";
+  }
 $user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged']: 1;
 $user = $controller->toUsers->getAll("id_users =".$user)[0];
 $school = $controller->toSchoolUnit->getAll('id_school_unit = '.$user["id_school_unit"])[0];

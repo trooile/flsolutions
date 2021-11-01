@@ -3,6 +3,12 @@
     echo "<script>window.location='/user/profile.php'</script>";
   }
 ?>
+<div id="alert-error" class="alert alert-success alert-dismissible fade hide" role="alert">
+  <strong><?=$_SESSION['success']?></strong> <?=$_SESSION['verify-success']?>
+  <button type="button" class="close" id="close-modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 
 <div class="container-fluid center">
   <a href="../index.php"><img src="../images/logo.svg" class="logo"></a>
@@ -25,6 +31,11 @@
 <div class="loginlogo"></div>
 
 <script type="text/javascript">
+$(function(){
+<?php if (isset($_REQUEST['registerSucess'])){?>
+  toggleAlert();
+<?php } ?>
+});
   $('#submit').click(function(){
     $.ajax({
           url: "/user/actions.php?action=login",
@@ -42,4 +53,13 @@
         }
       });
   });
+
+$('#close-modal').click(function(){
+  toggleAlert();
+ });
+
+function toggleAlert(){
+  $(".alert").toggleClass('show hide'); 
+  return false;
+}
 </script>
