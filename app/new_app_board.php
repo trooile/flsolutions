@@ -15,15 +15,6 @@ $_SESSION['userLogged'] = 1;
                 <input type="text" value="<?=$unit[0]['name']?>" disabled>
                 <input id="id_school_unit" type="hidden" value="<?=$unit[0]['id_school_unit']?>">
             </div>
-            <div class="form-group">
-                <input id="changepassword" type="text" name="newpassword" placeholder="<?= $_SESSION['new-password'] ?>">
-            </div>
-            <div class="form-group">
-                <input id="changepassword" type="text" name="confirmpassword" placeholder="<?= $_SESSION['confirm-password'] ?>">
-            </div>
-            <div class="form-group">
-                <input id="btnAddBoard" type="submit" value="<?= $_SESSION['save'] ?>" class="btn btn-default btn-orange">
-            </div>
         </form>
     </div>
 </div>
