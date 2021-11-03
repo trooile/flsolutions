@@ -55,4 +55,5 @@
     $_SESSION['change'] = 'Alterar';  
     $_SESSION['security'] = 'Segurança';  
     $_SESSION['changeprofile'] = 'Alterar Cadastro'; 
+    $_SESSION['current-password'] = 'Senha Atual'; 
 ?>
