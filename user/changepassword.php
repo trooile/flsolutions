@@ -1,8 +1,6 @@
 <?php include "include_view.php";
 ?>
 
-
-
 <body class="changepassword">
     <form id="formchangepassword" method="POST" action="/user/profile_cadastro_update.php">
         <div class="container offset-sm-7" id="changepassword">
