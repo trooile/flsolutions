@@ -154,9 +154,18 @@ div.container#profile {
     margin-top: 5%;
 }
 
+div.col#profile {
+    width: 25%;
+}
+
+div.col-md-auto#profile {
+    width: 75%;
+}
+
 div.container#profile label {
     font-size: 24pt;
     font-weight: bolder;
+    margin: 5px;
 }
 
 div.container#profile p {
@@ -166,19 +175,37 @@ div.container#profile p {
     border-width: 1px;
     font-size: 28pt;
     word-break: break-all;
+    padding: 5px;
+}
+
+div.container#profile input#profile {
+    border: orangered;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 28pt;
+    word-break: break-all;
+    padding: 5px;
+    margin: 5px;
+}
+
+select#profile {
+    border: orangered;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 18pt;
+    word-break: break-all;
+    padding: 5px;
+    margin: 5px;
 }
 
 div.container#profile button {
-    margin-top: 10px;
-    font-size: 16pt;
+    width: 65%;
 }
 
-div.col#profile {
-    width: 25%;
-}
-
-div.col-md-auto#profile {
-    width: 75%;
+div.container#profile input#btnProfile {
+    width: 65%;
 }
 
 

@@ -1,12 +1,12 @@
 <?php include "include_view.php";
-  if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
-    echo "<script>window.location='/user/login.php'</script>";
-  }
+if (!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])) {
+  echo "<script>window.location='/user/login.php'</script>";
+}
 $user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged'] : 1;
 $user = $controller->toUsers->getAll("id_users =" . $user)[0];
 $school = $controller->toSchoolUnit->getAll('id_school_unit = ' . $user["id_school_unit"])[0];
 $unit = $controller->toSchoolUnit->getAll();
-$courses = $controller->toCourses->getAll("id_courses=13")[0];
+$course = $controller->toCourses->getAll("id_courses=13")[0];
 ?>
 
 <body class="profile">
@@ -18,17 +18,11 @@ $courses = $controller->toCourses->getAll("id_courses=13")[0];
         <label id="profile"><?= $_SESSION['nameProfile'] ?></label><br>
         <p id="profile"><?= $user["name"] ?></p>
       </div>
-      <div class="col" id="profile">
-        <br><br><a id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
-      </div>
     </div>
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
         <label id="profile"><?= $_SESSION['email'] ?></label><br>
         <p id="profile"><?= $user["email"] ?></p>
-      </div>
-      <div class="col" id="profile">
-        <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
       </div>
     </div>
     <div class="row justify-content-md-center">
@@ -36,26 +30,16 @@ $courses = $controller->toCourses->getAll("id_courses=13")[0];
         <label id="profile"><?= $_SESSION['college'] ?></label> <br>
         <p id="profile"><?= $school["name"] ?></p>
       </div>
-      <div class="col" id="profile">
-        <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
-      </div>
     </div>
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
-        <label id="profile"><?= $_SESSION['nameProfile'] ?></label><br>
-        <p id="profile"><?= $user["name"] ?></p>
+        <label id="profile"><?= $_SESSION['course'] ?></label><br>
+        <p id="profile"><?= $course["name"] ?></p>
       </div>
-      <div class="col" id="profile">
-        <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
-      </div>
-    </div>
+    </div>    
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
-        <label id="profile"><?= $_SESSION['nameProfile'] ?></label><br>
-        <p id="profile"><?= $user["name"] ?></p>
-      </div>
-      <div class="col" id="profile">
-        <br><br><a class="offset-sm" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-lg btn-orange"> Alterar</button></a>
+        <a class="offset-sm-2" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-orange">Alterar</button></a>
       </div>
     </div>
   </div>
