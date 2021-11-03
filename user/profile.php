@@ -6,7 +6,8 @@ $user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged'] : 1;
 $user = $controller->toUsers->getAll("id_users =" . $user)[0];
 $school = $controller->toSchoolUnit->getAll('id_school_unit = ' . $user["id_school_unit"])[0];
 $unit = $controller->toSchoolUnit->getAll();
-$course = $controller->toCourses->getAll("id_courses=13")[0];
+$course = $controller->toCourses->getAll("id_courses =".$user['id_courses']);
+$id_course = isset($course[0]) && !empty($course[0]) ? $course[0]['name']:$_SESSION['notregistered'];
 ?>
 
 <body class="profile">
@@ -34,12 +35,12 @@ $course = $controller->toCourses->getAll("id_courses=13")[0];
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
         <label id="profile"><?= $_SESSION['course'] ?></label><br>
-        <p id="profile"><?= $course["name"] ?></p>
+        <p id="profile"><?= $id_course ?></p>
       </div>
-    </div>    
+    </div>
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
-        <a class="offset-sm-2" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-orange">Alterar</button></a>
+        <a class="offset-sm-2" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-orange"><?=$_SESSION['modify']?></button></a>
       </div>
     </div>
   </div>
