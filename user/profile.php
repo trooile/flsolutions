@@ -11,7 +11,7 @@ $course = $controller->toCourses->getAll("id_courses=" . $user["id_courses"])[0]
 ?>
 
 <body class="profile">
-  
+
   <div class="container" id="profile">
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
@@ -39,7 +39,7 @@ $course = $controller->toCourses->getAll("id_courses=" . $user["id_courses"])[0]
     </div>    
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
-        <a class="offset-sm-2" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-orange">Alterar</button></a>
+        <a class="offset-sm-2" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-orange"><?=$_SESSION['change']?></button></a>
       </div>
     </div>
   </div>

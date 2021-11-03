@@ -52,4 +52,9 @@
     $_SESSION['modify'] = 'Modify';
     $_SESSION['accounterror'] = 'Your account or password is incorrect.';
     $_SESSION['loginerror'] = 'Login error';
+    $_SESSION['change'] = 'Change';
+    $_SESSION['security'] = 'Security';
+    $_SESSION['changeprofile'] = 'Change Profile';
+    
+    
 ?>

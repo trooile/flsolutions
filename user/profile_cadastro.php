@@ -55,7 +55,7 @@ $course = $controller->toCourses->getAll("id_courses=" . $user["id_courses"])[0]
             </div>
             <div class="row justify-content-md-center">
                 <div class="col-md-auto" id="profile">
-                    <br><input id="btnProfile" type="submit" value="Enviar" class="btn btn-default btn-orange offset-sm-2" />
+                    <br><input id="btnProfile" type="submit" value="<?= $_SESSION['save']?>" class="btn btn-default btn-orange offset-sm-2" />
                 </div>
             </div>
         </div>

@@ -52,4 +52,7 @@
     $_SESSION['modify'] = 'Alterar';
     $_SESSION['accounterror'] = 'Sua conta ou senha estão incorretos.';
     $_SESSION['loginerror'] = 'Erro ao entrar';
+    $_SESSION['change'] = 'Alterar';  
+    $_SESSION['security'] = 'Segurança';  
+    $_SESSION['changeprofile'] = 'Alterar Cadastro'; 
 ?>
