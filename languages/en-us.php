@@ -48,4 +48,8 @@
     $_SESSION['verify-error'] = 'There is something wrong, check and try again.';
     $_SESSION['success'] = 'Success!';
     $_SESSION['verify-success'] = 'Now you can login.';
+    $_SESSION['notregistered'] = 'Not registered';
+    $_SESSION['modify'] = 'Modify';
+    $_SESSION['accounterror'] = 'Your account or password is incorrect.';
+    $_SESSION['loginerror'] = 'Login error';
 ?>

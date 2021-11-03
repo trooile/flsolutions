@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\includes"
+    "\\app",
+    "\\languages",
+    "\\user"
   ],
-  "SelectedNode": "\\includes\\include.php",
+  "SelectedNode": "\\languages\\pt-br.php",
   "PreviewInSolutionExplorer": false
 }

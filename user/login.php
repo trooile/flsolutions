@@ -3,9 +3,16 @@
     echo "<script>window.location='/user/profile.php'</script>";
   }
 ?>
-<div id="alert-error" class="alert alert-success alert-dismissible fade hide" role="alert">
+<div id="alert-success" class="alert alert-success alert-dismissible fade hide" role="alert">
   <strong><?=$_SESSION['success']?></strong> <?=$_SESSION['verify-success']?>
-  <button type="button" class="close" id="close-modal" aria-label="Close">
+  <button type="button" class="close" id="close-modal-success" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div id="alert-error-login" class="alert alert-danger alert-dismissible fade hide" role="alert">
+  <strong><?=$_SESSION['loginerror']?></strong> <?=$_SESSION['accounterror']?>
+  <button type="button" class="close" id="close-modal-error" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -33,7 +40,7 @@
 <script type="text/javascript">
 $(function(){
 <?php if (isset($_REQUEST['registerSucess'])){?>
-  toggleAlert();
+  toggleAlertSuccess();
 <?php } ?>
 });
   $('#submit').click(function(){
@@ -47,19 +54,29 @@ $(function(){
           dataType: "json",
       }).done(function(back) {
         if (back.error) {
-          alert(back.message)
+            toggleAlertError();
         } else {
           window.location.href = "profile.php";
         }
       });
   });
 
-$('#close-modal').click(function(){
-  toggleAlert();
+$('#close-modal-success').click(function(){
+  toggleAlertSuccess();
  });
 
-function toggleAlert(){
-  $(".alert").toggleClass('show hide'); 
+function toggleAlertSuccess(){
+  $("#alert-success").toggleClass('show hide');
   return false;
 }
+
+$('#close-modal-error').click(function(){
+  toggleAlertError();
+ });
+
+function toggleAlertError(){
+  $("#alert-error-login").toggleClass('show hide');
+  return false;
+}
+
 </script>
