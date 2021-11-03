@@ -54,7 +54,7 @@ $(function(){
           dataType: "json",
       }).done(function(back) {
         if (back.error) {
-          alert(back.message)
+            toggleAlertError();
         } else {
           window.location.href = "profile.php";
         }
@@ -71,7 +71,7 @@ function toggleAlertSuccess(){
 }
 
 $('#close-modal-error').click(function(){
-  toggleAlertSuccess();
+  toggleAlertError();
  });
 
 function toggleAlertError(){
