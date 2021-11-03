@@ -11,8 +11,7 @@ $course = $controller->toCourses->getAll("id_courses=" . $user["id_courses"])[0]
 ?>
 
 <body class="profile">
-
-
+  
   <div class="container" id="profile">
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">

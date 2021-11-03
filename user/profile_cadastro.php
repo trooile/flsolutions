@@ -14,24 +14,6 @@ $user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged'] : 1;
 $user = $controller->toUsers->getAll("id_users =" . $user)[0];
 $school = $controller->toSchoolUnit->getAll('id_school_unit = ' . $user["id_school_unit"])[0];
 $course = $controller->toCourses->getAll("id_courses=" . $user["id_courses"])[0];
-
-
-/*
-
-<div class="row justify-content-md-center">
-                <div class="col-md-auto" id="profile">
-                    <label id="profile"><?= $_SESSION['course'] ?></label><br>
-                    <select id="profile" type="text" class="form-control" id="course" name="course">
-                        <option value="<?= $course["name"] ?>" selected disabled><?= $course["name"] ?></option>
-                        <?php foreach ($courses as $value) { ?>
-                            <option value='<?= $value['id_courses'] ?>'><?= $value['name'] ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-            </div>
-*/
-
-
 ?>
 
 <body class="profile">
@@ -78,10 +60,4 @@ $course = $controller->toCourses->getAll("id_courses=" . $user["id_courses"])[0]
             </div>
         </div>
     </form>
-
-
-
-    </form>
-
-
 </body>
