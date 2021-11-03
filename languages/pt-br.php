@@ -50,4 +50,6 @@
     $_SESSION['verify-success'] = 'Agora você pode entrar.';
     $_SESSION['notregistered'] = 'Não cadastrado';
     $_SESSION['modify'] = 'Alterar';
+    $_SESSION['accounterror'] = 'Sua conta ou senha estão incorretos.';
+    $_SESSION['loginerror'] = 'Erro ao entrar';
 ?>
