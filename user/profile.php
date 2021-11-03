@@ -6,7 +6,8 @@ $user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged'] : 1;
 $user = $controller->toUsers->getAll("id_users =" . $user)[0];
 $school = $controller->toSchoolUnit->getAll('id_school_unit = ' . $user["id_school_unit"])[0];
 $unit = $controller->toSchoolUnit->getAll();
-$course = $controller->toCourses->getAll("id_courses=13")[0];
+$course = $controller->toCourses->getAll("id_courses=" . $user["id_courses"])[0];
+
 ?>
 
 <body class="profile">
