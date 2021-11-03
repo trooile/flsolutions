@@ -55,5 +55,7 @@
     $_SESSION['change'] = 'Change';
     $_SESSION['security'] = 'Security';
     $_SESSION['changeprofile'] = 'Change Profile';
-    $_SESSION['current-password'] = 'Current Password';    
+    $_SESSION['current-password'] = 'Current Password';
+    $_SESSION['new-password'] = 'New Password'; 
+    $_SESSION['confirm-password'] = 'Confirm Password';   
 ?>
