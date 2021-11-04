@@ -30,7 +30,7 @@
 <a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
 <a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
 <?php
-if ($_SERVER['REQUEST_URI'] == '/user/profile.php?language=pt-br.php' ||  $_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php?language=pt-br.php' || $_SERVER['REQUEST_URI'] == '/user/profile.php?language=en-us.php' ||  $_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php?language=en-us.php' || $_SERVER['REQUEST_URI'] == '/user/profile.php' ||  $_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php'||  $_SERVER['REQUEST_URI'] == '/user/settings.php?language=en-us.php'||  $_SERVER['REQUEST_URI'] == '/user/settings.php?language=pt-br.php'||  $_SERVER['REQUEST_URI'] == '/user/settings.php') {
+if ($_SERVER['REQUEST_URI'] == '/user/profile.php?language=pt-br.php' ||  $_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php?language=pt-br.php' || $_SERVER['REQUEST_URI'] == '/user/profile.php?language=en-us.php' ||  $_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php?language=en-us.php' || $_SERVER['REQUEST_URI'] == '/user/profile.php' ||  $_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php'||  $_SERVER['REQUEST_URI'] == '/user/settings.php?language=en-us.php'||  $_SERVER['REQUEST_URI'] == '/user/settings.php?language=pt-br.php'||  $_SERVER['REQUEST_URI'] == '/user/settings.php'||  $_SERVER['REQUEST_URI'] == '/user/changepassword.php'||  $_SERVER['REQUEST_URI'] == '/user/changepassword.php?language=pt-br.php'||  $_SERVER['REQUEST_URI'] == '/user/changepassword.php?language=en-us.php') {
 	include "menu.php";
 }
 // session_start();

@@ -1,10 +1,8 @@
 <?php include "include_view.php";
 ?>
 
-
-
 <body class="changepassword">
-    <form id="formchangepassword" method="POST" action="/user/profile_cadastro_update.php">
+    
         <div class="container offset-sm-7" id="changepassword">
             <div class="row justify-content-md-center">
                 <div class="col-md-auto" id="changepassword">
@@ -27,5 +25,26 @@
                 </div>
             </div>
         </div>
-    </form>
+    
 </body>
+<script type="text/javascript">
+ $('#submit').click(function(){
+    $.ajax({
+          url: "/user/actions.php?action=changepassword",
+          type: "POST",
+          data: {
+            passwd: $("#password"),
+            newpasswd: $("#newpassword"),
+            newpasswd: $("#confirmpassword")
+          },
+          dataType: "json",
+      }).done(function(back) {
+        if (back.error) {
+            toggleAlertError();
+        } else {
+          
+        }
+      });
+  });
+
+  </script>
