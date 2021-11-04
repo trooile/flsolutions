@@ -10,6 +10,7 @@ $course_name = isset($course[0]) ? $course[0]['name']:'Not Found';
 
 ?>
 <body class="profile">
+<!--
 <div class="profile-pic-wrapper">
   <div class="pic-holder">
     <img id="profilePic" class="pic" src="../images/profile-img.svg">
@@ -28,6 +29,7 @@ $course_name = isset($course[0]) ? $course[0]['name']:'Not Found';
   </hr>
   <p class="text-info text-center small">Note: Selected image will not be uploaded anywhere.</p>
 </div>
+-->
   <div class="container" id="profile">
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
@@ -52,7 +54,7 @@ $course_name = isset($course[0]) ? $course[0]['name']:'Not Found';
         <label id="profile"><?= $_SESSION['course'] ?></label><br>
         <p id="profile"><?= $course_name ?></p>
       </div>
-    </div>    
+    </div>
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
         <a class="offset-sm-2" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-orange"><?=$_SESSION['change']?></button></a>
@@ -60,8 +62,9 @@ $course_name = isset($course[0]) ? $course[0]['name']:'Not Found';
     </div>
   </div>
 </body>
+
+<script type="text/javascript">
 /*
-<script type="text/javascript"> 
 $(document).on("change", ".uploadProfileInput", function () {
   var triggerInput = this;
   var currentImg = $(this).closest(".pic-holder").find(".pic").attr("src");
@@ -73,8 +76,8 @@ $(document).on("change", ".uploadProfileInput", function () {
     return;
   }
   if (/^image/.test(files[0].type)) {
-    var reader = new FileReader(); 
-    reader.readAsDataURL(files[0]); 
+    var reader = new FileReader();
+    reader.readAsDataURL(files[0]);
 
     reader.onloadend = function () {
       $(holder).addClass("uploadInProgress");
@@ -118,9 +121,11 @@ $(document).on("change", ".uploadProfileInput", function () {
     }, 3000);
   }
 });
+*/
 </script>
 
 <style>
+/*
   .profile-pic-wrapper {
     height: 100vh;
     width: 100%;
@@ -142,7 +147,7 @@ $(document).on("change", ".uploadProfileInput", function () {
     align-items: center;
     margin-bottom: 20px;
   }
-  
+
   .pic-holder .pic {
     height: 100%;
     width: 100%;
@@ -151,7 +156,7 @@ $(document).on("change", ".uploadProfileInput", function () {
     -o-object-position: center;
     object-position: center;
   }
-  
+
   .pic-holder .upload-file-block,
   .pic-holder .upload-loader {
     position: absolute;
@@ -169,23 +174,23 @@ $(document).on("change", ".uploadProfileInput", function () {
     justify-content: center;
     transition: all 0.2s;
   }
-  
+
   .pic-holder .upload-file-block {
     cursor: pointer;
   }
-  
+
   .pic-holder:hover .upload-file-block {
     opacity: 1;
   }
-  
-  .pic-holder.uploadInProgress .upload-file-block {
+
+  .pic-holder.uploadinprogress .upload-file-block {
     display: none;
   }
-  
-  .pic-holder.uploadInProgress .upload-loader {
+
+  .pic-holder.uploadinprogress .upload-loader {
     opacity: 1;
   }
-  
+
   .snackbar {
     visibility: hidden;
     min-width: 250px;
@@ -199,15 +204,15 @@ $(document).on("change", ".uploadProfileInput", function () {
     left: 50%;
     bottom: 30px;
     font-size: 14px;
-    transform: translateX(-50%);
+    transform: translatex(-50%);
   }
-  
+
   .snackbar.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
   }
-  
+
   @-webkit-keyframes fadein {
     from {
       bottom: 0;
@@ -218,7 +223,7 @@ $(document).on("change", ".uploadProfileInput", function () {
       opacity: 1;
     }
   }
-  
+
   @keyframes fadein {
     from {
       bottom: 0;
@@ -229,7 +234,7 @@ $(document).on("change", ".uploadProfileInput", function () {
       opacity: 1;
     }
   }
-  
+
   @-webkit-keyframes fadeout {
     from {
       bottom: 30px;
@@ -240,7 +245,7 @@ $(document).on("change", ".uploadProfileInput", function () {
       opacity: 0;
     }
   }
-  
+
   @keyframes fadeout {
     from {
       bottom: 30px;
@@ -250,5 +255,5 @@ $(document).on("change", ".uploadProfileInput", function () {
       bottom: 0;
       opacity: 0;
     }
-  }
-</style> */
+  }*/
+</style>
