@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_URI'] == '/user/profile.php?language=pt-br.php' ||
 	$_SERVER['REQUEST_URI'] == '/user/settings.php?language=en-us.php'||
 	$_SERVER['REQUEST_URI'] == '/user/settings.php?language=pt-br.php'||
 	$_SERVER['REQUEST_URI'] == '/user/settings.php' ||
+	$_SERVER['REQUEST_URI'] == '/user/changepassword.php' ||
 	$_SERVER['REQUEST_URI'] == '/app/app_board.php' ||
 	$_SERVER['REQUEST_URI'] == '/app/new_app_board.php') {
 	include "menu.php";
