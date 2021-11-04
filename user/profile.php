@@ -60,7 +60,7 @@ $course_name = isset($course[0]) ? $course[0]['name']:'Not Found';
     </div>
   </div>
 </body>
-
+/*
 <script type="text/javascript"> 
 $(document).on("change", ".uploadProfileInput", function () {
   var triggerInput = this;
@@ -251,4 +251,4 @@ $(document).on("change", ".uploadProfileInput", function () {
       opacity: 0;
     }
   }
-</style>
+</style> */
