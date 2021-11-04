@@ -52,11 +52,12 @@
     $_SESSION['modify'] = 'Alterar';
     $_SESSION['accounterror'] = 'Sua conta ou senha estão incorretos.';
     $_SESSION['loginerror'] = 'Erro ao entrar';
-    $_SESSION['change'] = 'Alterar';  
-    $_SESSION['security'] = 'Segurança';  
-    $_SESSION['changeprofile'] = 'Alterar Cadastro'; 
+    $_SESSION['change'] = 'Alterar';
+    $_SESSION['security'] = 'Segurança';
+    $_SESSION['changeprofile'] = 'Alterar Cadastro';
     $_SESSION['current-password'] = 'Senha Atual';
-    $_SESSION['new-password'] = 'Nova Senha'; 
+    $_SESSION['new-password'] = 'Nova Senha';
     $_SESSION['confirm-password'] = 'Confirme a Senha';
-    $_SESSION['nameboard'] = 'Digite um nome para o kanban';    
+    $_SESSION['nameboard'] = 'Digite um nome para o kanban';
+    $_SESSION['alert'] = 'Aviso';
 ?>

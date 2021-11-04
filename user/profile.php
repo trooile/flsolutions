@@ -36,7 +36,7 @@ $course = $controller->toCourses->getAll("id_courses=" . $user["id_courses"])[0]
         <label id="profile"><?= $_SESSION['course'] ?></label><br>
         <p id="profile"><?= $course["name"] ?></p>
       </div>
-    </div>    
+    </div>
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
         <a class="offset-sm-2" id="profile" href="/user/profile_cadastro.php"><button type="button" id="btnprofile" type="submit" class="btn btn-default btn-orange"><?=$_SESSION['change']?></button></a>

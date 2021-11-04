@@ -56,7 +56,8 @@
     $_SESSION['security'] = 'Security';
     $_SESSION['changeprofile'] = 'Change Profile';
     $_SESSION['current-password'] = 'Current Password';
-    $_SESSION['new-password'] = 'New Password'; 
-    $_SESSION['confirm-password'] = 'Confirm Password';   
+    $_SESSION['new-password'] = 'New Password';
+    $_SESSION['confirm-password'] = 'Confirm Password';
     $_SESSION['nameboard'] = 'Enter a name for the kanban';
+    $_SESSION['alert'] = 'Alert';
 ?>

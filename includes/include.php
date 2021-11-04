@@ -30,14 +30,14 @@
 <a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
 <a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
 <?php
-if ($_SERVER['REQUEST_URI'] == '/user/profile.php?language=pt-br.php' ||  
-	$_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php?language=pt-br.php' || 
-	$_SERVER['REQUEST_URI'] == '/user/profile.php?language=en-us.php' ||  
-	$_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php?language=en-us.php' || 
-	$_SERVER['REQUEST_URI'] == '/user/profile.php' ||  
-	$_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php'||  
-	$_SERVER['REQUEST_URI'] == '/user/settings.php?language=en-us.php'||  
-	$_SERVER['REQUEST_URI'] == '/user/settings.php?language=pt-br.php'||  
+if ($_SERVER['REQUEST_URI'] == '/user/profile.php?language=pt-br.php' ||
+	$_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php?language=pt-br.php' ||
+	$_SERVER['REQUEST_URI'] == '/user/profile.php?language=en-us.php' ||
+	$_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php?language=en-us.php' ||
+	$_SERVER['REQUEST_URI'] == '/user/profile.php' ||
+	$_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php'||
+	$_SERVER['REQUEST_URI'] == '/user/settings.php?language=en-us.php'||
+	$_SERVER['REQUEST_URI'] == '/user/settings.php?language=pt-br.php'||
 	$_SERVER['REQUEST_URI'] == '/user/settings.php' ||
 	$_SERVER['REQUEST_URI'] == '/app/app_board.php' ||
 	$_SERVER['REQUEST_URI'] == '/app/new_app_board.php') {
@@ -45,3 +45,19 @@ if ($_SERVER['REQUEST_URI'] == '/user/profile.php?language=pt-br.php' ||
 }
 
 include_once "footer.php"; ?>
+
+<div class="modal fade" id="modalAlert" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><?=$_SESSION['alert']?></h5>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
