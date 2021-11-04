@@ -454,3 +454,9 @@ body::-webkit-scrollbar-thumb:horizontal {
     }
 }
 
+.class_form {
+    place-content : center;
+    min-height    : 80vh;
+    width: 620px;
+    text-align: center;
+ }

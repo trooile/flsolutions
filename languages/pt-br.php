@@ -57,5 +57,6 @@
     $_SESSION['changeprofile'] = 'Alterar Cadastro'; 
     $_SESSION['current-password'] = 'Senha Atual';
     $_SESSION['new-password'] = 'Nova Senha'; 
-    $_SESSION['confirm-password'] = 'Confirme a Senha';    
+    $_SESSION['confirm-password'] = 'Confirme a Senha';
+    $_SESSION['nameboard'] = 'Digite um nome para o kanban';    
 ?>
