@@ -41,7 +41,7 @@ if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
       }).done(function(back) {
         if (back.error) {
             $('#modalAlert .modal-body').html(back.message);
-             $('#modalAlert').modal('toggle');
+            $('#modalAlert').modal('toggle');
         } else {
             $('#modalAlert .modal-body').html(<?=$_SESSION['success']?>);
             $('#modalAlert').modal('toggle');

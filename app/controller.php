@@ -26,7 +26,12 @@ Class Controller extends DefaultControllers{
 
     public function saveCard($params){
         try{
-            var_dump($params);
+            if(!empty($params['card']['course']) && !empty($params['card']['semester']) && !empty($params['card']['newCard']['id'])){
+                // $this->ToCards->insert();
+            }else{
+                $this->back['error'] = true;
+                $this->back['message'] = 'Error';
+            }
             $this->return();
         }catch(Exception $e){
             $this->return($e);

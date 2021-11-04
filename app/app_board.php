@@ -55,7 +55,7 @@
         <div class="form-group col-sm-12">
           <label for="descriptionInput"><?=$_SESSION['description']?></label>
           <div class="input-group">
-          <input class="form-control form-control-sm" type="text" name="description" id="descriptionInput" autocomplete="off"> 
+          <input class="form-control form-control-sm" type="text" name="description" id="descriptionInput" autocomplete="off">
         </div>
         </div>
       </form>
@@ -134,7 +134,6 @@ $(document).ready(()=>{
 });
 
 function saveInDB(card){
-    console.log(card);
     $.ajax({
           url: "/app/actions.php?action=saveCard",
           type: "POST",
@@ -144,14 +143,16 @@ function saveInDB(card){
           dataType: "json",
       }).done(function(back) {
         if (back.error) {
-          alert(back.message)
+          $('#modalAlert .modal-body').html(back.message);
+          $('#modalAlert').modal('toggle');
         } else {
-          alert('OK')
+          $('#modalAlert .modal-body').html('OK');
+          $('#modalAlert').modal('toggle');
         }
       });
   };
 
-function initializeBoards(){    
+function initializeBoards(){
     dataColors.forEach(item=>{
         let htmlString = `
         <div class="board">
@@ -182,14 +183,14 @@ function initializeCards(){
 
 function initializeComponents(dataArray){
     dataArray.cards.forEach(card=>{
-        appendComponents(card); 
+        appendComponents(card);
     })
 }
 
 function appendComponents(card){
     let htmlString = `
         <div id=${card.id.toString()} class="kanbanCard ${card.position}" draggable="true">
-            <div class="content">               
+            <div class="content">
                 <h4 class="title">${card.title}</h4>
                 <p class="description">${card.description}</p>
             </div>
@@ -256,7 +257,7 @@ function dragstart(){
     this.classList.add('is-dragging');
 }
 
-function drag(){  
+function drag(){
 }
 
 function dragend(){
@@ -271,7 +272,7 @@ function dragover({target}){
     this.classList.add('over');
     cardBeignDragged = document.querySelector('.is-dragging');
     if(this.id ==="yellow"){
-        removeClasses(cardBeignDragged, "yellow");  
+        removeClasses(cardBeignDragged, "yellow");
     }
     else if(this.id ==="green"){
         removeClasses(cardBeignDragged, "green");
@@ -283,7 +284,7 @@ function dragover({target}){
 }
 
 function dragleave(){
-  
+
     this.classList.remove('over');
 }
 
