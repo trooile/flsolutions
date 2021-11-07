@@ -1,16 +1,14 @@
 <?php
 include './includes/include.php';
-session_start();
 if(!isset($_SESSION['language'])){
 	$_SESSION['language'] = 'en-us.php';
 	include './languages/en-us.php';
-  }else if(isset($_GET['language'])){
+}else if(isset($_GET['language'])){
 	include './languages/'.$_GET['language'];
 	$_SESSION['language'] = $_GET['language'];
-  }
+}
 
-  if(isset($_SESSION['userLogged']) && !empty($_SESSION['userLogged'])){
+if(isset($_SESSION['userLogged']) && !empty($_SESSION['userLogged'])){
 	echo "<script>window.location='/user/profile.php'</script>";
-  }
-
+}
 ?>

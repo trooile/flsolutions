@@ -28,7 +28,7 @@
         <div class="mb-3">
           <input type="password" class="form-control" id="passwd" name="passwd" placeholder="<?=$_SESSION['your-passwd']?>">
         </div>
-        <button type="button" id="submit" class="btn btn-default btn-lg btn-orange"><?=$_SESSION['login']?></button>
+        <button type="button" id="login" class="btn btn-default btn-lg btn-orange"><?=$_SESSION['login']?></button>
       </form>
     </div>
   </div>
@@ -43,7 +43,7 @@ $(function(){
   toggleAlertSuccess();
 <?php } ?>
 });
-  $('#submit').click(function(){
+  $('#login').click(function(){
     $.ajax({
           url: "/user/actions.php?action=login",
           type: "POST",
@@ -54,7 +54,7 @@ $(function(){
           dataType: "json",
       }).done(function(back) {
         if (back.error) {
-            toggleAlertError();
+          toggleAlertError()
         } else {
           window.location.href = "profile.php";
         }
