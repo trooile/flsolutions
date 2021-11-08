@@ -1,4 +1,5 @@
 <?php include "include_view.php";
+ session_start();
 ?>
 
 

@@ -1,4 +1,6 @@
-<?php include "include_view.php";
+<?php 
+  include "include_view.php";
+  session_start();
   $names = $controller->toSchoolUnit->getAll();
   if(isset($_SESSION['userLogged']) && !empty($_SESSION['userLogged'])){
     echo "<script>window.location='/user/profile.php'</script>";
