@@ -59,24 +59,28 @@ class Controller extends DefaultControllers
     }
     public function changepw($params)
     {
+        
         try {
-            $user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged'] : 1;
+            $user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged'] : 3;
             $pw = $params['pw'];
             $nwpw = $params['nwpw'];
             $cfpw = $params['cfpw'];
-            $user = $this->toUsers->getAll("id_users =" . $user)[0];
-            $passwddb = $this->decrypt($user[0]['passwd']);
+            $user = $this->toUsers->getAll("id_users =" . $user);
+            //$passwddb = $this->decrypt($user[0]['passwd']);
             if ($pw=="123") {
-                echo"ok";
+                
                 if ($nwpw == $cfpw) {
-                  echo "ok";
+                  $back["message"] = "OK";
+                  var_dump($pw);
+                  
                 } else {
-                    $back['error'] = true;
+                    $back["message"] = "OK 2";
                 }
             } else {
                 $back['error'] = true;
             }
-            $this->return();
+            return true;
+            
         } catch (Exception $e) {
             $this->return($e);
         }
