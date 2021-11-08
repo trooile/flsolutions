@@ -6,7 +6,7 @@ $user = $controller->toUsers->getAll("id_school_unit=13")[0]; //("id=1") ("nome=
 $school = $controller->toSchoolUnit->getAll($user["id_school_unit"])[0];
 // $names = $controller->toUsers->insert(["name"=>"Augusto","email"=>"augusto.cardone@fatec.sp.gov.br","id_school_unit"=>"12"]); //(["nome"=>"Augusto","lastname"=>"Cardone"])
 */
-$_SESSION['userLogged'] = 3;
+$_SESSION['userLogged'] = 5;
 if (!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])) {
     echo "<script>window.location='/user/login.php'</script>";
 }

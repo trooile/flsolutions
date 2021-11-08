@@ -14,7 +14,7 @@
         <ul id="ulmenu">
             <li><a href=""><?=$_SESSION['home']?></a></li>
             <li><a href="../user/profile.php"><?=$_SESSION['profile']?></a></li>
-            <li><a href=""><?=$_SESSION['settings']?></a></li>
+            <li><a href="../user/settings.php"><?=$_SESSION['settings']?></a></li>
             <li><a><?=$_SESSION['logout']?></a></li>
         </ul>
     </nav>
