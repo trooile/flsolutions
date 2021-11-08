@@ -1,6 +1,6 @@
 <?php
-include "include_view.php";
 session_start();
+include "include_view.php";
 $nome = $_REQUEST["name"];
 $email = $_REQUEST["email"];
 $course = $_REQUEST["course"];

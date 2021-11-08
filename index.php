@@ -1,6 +1,6 @@
 <?php 
-  include "include_view.php";
-  session_start();?>
+session_start();
+  include "include_view.php";?>
 <body class="indexbody">
   <div class="container-fluid">
     <img src="./images/logo.svg" class="logo">

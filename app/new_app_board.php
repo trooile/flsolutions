@@ -1,5 +1,6 @@
-<?php include "include_view.php";
+<?php 
  session_start();
+ include "include_view.php";
 if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
   echo "<script>window.location='/user/login.php'</script>";
 }

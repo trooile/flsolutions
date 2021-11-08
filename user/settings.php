@@ -1,4 +1,6 @@
-<?php include "include_view.php";
+<?php 
+session_start();
+include "include_view.php";
 ?>
 
 <body class="settings" id="settings">
