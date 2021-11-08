@@ -36,8 +36,7 @@ class Controller extends DefaultControllers
         }
     }
 
-    public function login($params)
-    {
+    public function login($params){
         try {
             $email = $params['email'];
             $passwd = $params['passwd'];
@@ -47,16 +46,17 @@ class Controller extends DefaultControllers
                 if ($passwd == $passwdDB) {
                     $_SESSION['userLogged'] = $login[0]['id_users'];
                 } else {
-                    $back['error'] = true;
+                    $this->back['error'] = true;
                 }
             } else {
-                $back['error'] = true;
+                $this->back['error'] = true;
             }
             $this->return();
         } catch (Exception $e) {
             $this->return($e);
         }
     }
+
     public function changepw($params)
     {
         
