@@ -4,22 +4,25 @@ include_once '../includes/models/toSchoolUnit.php';
 include_once '../includes/models/toUsers.php';
 include_once '../includes/models/toCourses.php';
 
-Class Controller extends DefaultControllers{
+class Controller extends DefaultControllers
+{
 
-    function __construct(){
-        try{
+    function __construct()
+    {
+        try {
             parent::__construct();
             $this->toSchoolUnit = new ToSchoolUnit($this->masterMysqli);
             $this->toUsers = new ToUsers($this->masterMysqli);
             $this->toCourses = new toCourses($this->masterMysqli);
-            $this->back = ['error'=> false, 'data'=> [], 'message'=>''];
-        }catch(Exception $e){
+            $this->back = ['error' => false, 'data' => [], 'message' => ''];
+        } catch (Exception $e) {
             throw $e;
         }
     }
 
-    public function submitNewUser($params){
-        try{
+    public function submitNewUser($params)
+    {
+        try {
             $passwd = $this->encrypt($params['passwd']);
             $params['id_school_unit'] = $params['unit'];
             unset($params['unit']);
@@ -28,30 +31,54 @@ Class Controller extends DefaultControllers{
             $params['passwd'] = $passwd;
             $this->toUsers->insert($params);
             $this->return();
-        }catch(Exception $e){
+        } catch (Exception $e) {
             $this->return($e);
         }
     }
 
-    public function login($params){
-        try{
+    public function login($params)
+    {
+        try {
             $email = $params['email'];
             $passwd = $params['passwd'];
-            $login = $this->toUsers->getAll("email ='".$email."'");
-            if(!empty($login)){
+            $login = $this->toUsers->getAll("email ='" . $email . "'");
+            if (!empty($login)) {
                 $passwdDB = $this->decrypt($login[0]['passwd']);
-                if($passwd == $passwdDB){
+                if ($passwd == $passwdDB) {
                     $_SESSION['userLogged'] = $login[0]['id_users'];
-                }else{
+                } else {
                     $back['error'] = true;
                 }
-            }else{
+            } else {
                 $back['error'] = true;
             }
             $this->return();
-        }catch(Exception $e){
+        } catch (Exception $e) {
+            $this->return($e);
+        }
+    }
+    public function changepw($params)
+    {
+        try {
+            $user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged'] : 1;
+            $pw = $params['pw'];
+            $nwpw = $params['nwpw'];
+            $cfpw = $params['cfpw'];
+            $user = $this->toUsers->getAll("id_users =" . $user)[0];
+            $passwddb = $this->decrypt($user[0]['passwd']);
+            if ($pw=="123") {
+                echo"ok";
+                if ($nwpw == $cfpw) {
+                  echo "ok";
+                } else {
+                    $back['error'] = true;
+                }
+            } else {
+                $back['error'] = true;
+            }
+            $this->return();
+        } catch (Exception $e) {
             $this->return($e);
         }
     }
 }
-?>
