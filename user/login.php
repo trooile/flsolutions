@@ -41,44 +41,44 @@ include "include_view.php";
 
 <script type="text/javascript">
 $(function(){
-<?php if (isset($_REQUEST['registerSucess'])){?>
-  toggleAlertSuccess();
-<?php } ?>
-});
-  $('#login').click(function(){
-    $.ajax({
-          url: "/user/actions.php?action=login",
-          type: "POST",
-          data: {
-            email: $("#email").val(),
-            passwd: $("#passwd").val(),
-          },
-          dataType: "json",
-      }).done(function(back) {
-        if (back.error) {
-          toggleAlertError()
-        } else {
-          window.location.href = "profile.php";
-        }
-      });
+  <?php if (isset($_REQUEST['registerSucess'])){?>
+    toggleAlertSuccess();
+  <?php } ?>
+  });
+    $('#login').click(function(){
+      $.ajax({
+            url: "/user/actions.php?action=login",
+            type: "POST",
+            data: {
+              email: $("#email").val(),
+              passwd: $("#passwd").val(),
+            },
+            dataType: "json",
+        }).done(function(back) {
+          if (back.error) {
+            toggleAlertError()
+          } else {
+            window.location.href = "profile.php";
+          }
+        });
+    });
+
+  $('#close-modal-success').click(function(){
+    toggleAlertSuccess();
   });
 
-$('#close-modal-success').click(function(){
-  toggleAlertSuccess();
- });
+  function toggleAlertSuccess(){
+    $("#alert-success").toggleClass('show hide');
+    return false;
+  }
 
-function toggleAlertSuccess(){
-  $("#alert-success").toggleClass('show hide');
-  return false;
-}
+  $('#close-modal-error').click(function(){
+    toggleAlertError();
+  });
 
-$('#close-modal-error').click(function(){
-  toggleAlertError();
- });
-
-function toggleAlertError(){
-  $("#alert-error-login").toggleClass('show hide');
-  return false;
-}
+  function toggleAlertError(){
+    $("#alert-error-login").toggleClass('show hide');
+    return false;
+  }
 
 </script>

@@ -43,24 +43,9 @@ if ($_SERVER['REQUEST_URI'] == '/user/profile.php?language=pt-br.php' ||
 	$_SERVER['REQUEST_URI'] == '/user/changepassword.php?language=en-us.php'||
 	$_SERVER['REQUEST_URI'] == '/user/changepassword.php?language=pt-br.php'||
 	$_SERVER['REQUEST_URI'] == '/app/app_board.php' ||
-	$_SERVER['REQUEST_URI'] == '/app/new_app_board.php') {
+	$_SERVER['REQUEST_URI'] == '/app/new_app_board.php'
+) {
 	include "menu.php";
 }
 
 include_once "footer.php"; ?>
-
-<div class="modal fade" id="modalAlert" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><?=$_SESSION['alert']?></h5>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
