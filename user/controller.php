@@ -66,20 +66,25 @@ class Controller extends DefaultControllers
             $nwpw = $params['nwpw'];
             $cfpw = $params['cfpw'];
             $user = $this->toUsers->getAll("id_users =" . $user);
-            //$passwddb = $this->decrypt($user[0]['passwd']);
-            if ($pw=="123") {
-                
-                if ($nwpw == $cfpw) {
-                  $back["message"] = "OK";
-                  var_dump($pw);
-                  
+            $passwddb = $this->decrypt($user[0]['passwd']);
+            if ($pw==$passwddb) {
+                //verificar se o pw é igual o digitado com o que está no banco
+                if ($nwpw == $cfpw) {           
+                    $nwpw = $this->encrypt($nwpw);
+                    $this->toUsers->update(["passwd"=>$nwpw],"id_users=".$_SESSION['userLogged']);
+                                   
                 } else {
-                    $back["message"] = "OK 2";
+                    // Se o nwpw digitado não for igual cfpw
+                    $this->back['error'] = true;
+                    $this->back['data'] = "Mensagem qualquer 1";
                 }
             } else {
-                $back['error'] = true;
+                // Se o pw digitado não for igual ao do banco
+                $this->back['error'] = true;
+                $this->back['data'] = "Mensagem qualquer 2";
             }
-            return true;
+           
+            $this->return ();
             
         } catch (Exception $e) {
             $this->return($e);

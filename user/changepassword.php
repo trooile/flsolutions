@@ -48,10 +48,11 @@ include "include_view.php";
             dataType: "json",
         }).done(function(back) {
             if (back.error) {
-               
-            } else {
-                alert("ok")
-               // window.location.href = "profile.php";
+                alert(back.data);
+            }
+            else {
+                alert(back.data);
+               window.location.href = "profile.php";
             }
         });
     });
