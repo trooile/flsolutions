@@ -9,8 +9,8 @@ $user = isset($_SESSION['userLogged']) ? $_SESSION['userLogged'] : 1;
 $user = $controller->toUsers->getAll("id_users =" . $user)[0];
 $school = $controller->toSchoolUnit->getAll('id_school_unit = ' . $user["id_school_unit"])[0];
 $unit = $controller->toSchoolUnit->getAll();
-$course = $controller->toCourses->getAll("id_courses=" . $user["id_courses"])[0];
-
+$course_exists = $controller->toCourses->getAll("id_courses=" . $user["id_courses"]);
+$course = !empty($course_exists) ? $$course_exists[0]['name']: $_SESSION['notregistered'];
 ?>
 
 <body class="profile">
@@ -37,7 +37,7 @@ $course = $controller->toCourses->getAll("id_courses=" . $user["id_courses"])[0]
     <div class="row justify-content-md-center">
       <div class="col-md-auto" id="profile">
         <label id="profile"><?= $_SESSION['course'] ?></label><br>
-        <p id="profile"><?= $course["name"] ?></p>
+        <p id="profile"><?= $course ?></p>
       </div>
     </div>
     <div class="row justify-content-md-center">
