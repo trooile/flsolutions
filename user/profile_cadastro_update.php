@@ -9,7 +9,13 @@ $school = $_REQUEST["school"];
 if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
     echo "<script>window.location='/user/login.php'</script>";
   }
-$controller->toUsers->update(["name"=>"$nome","email"=>"$email","id_school_unit"=>"$school","id_courses"=>"$course"],"id_users=".$_SESSION['userLogged']);
+$data = [ "name"          => $nome,
+          "email"         => $email,
+          "id_school_unit"=> $school];
+if($course != 0){
+  $data['id_courses'] = $course;
+}
+$controller->toUsers->update($data,"id_users=".$_SESSION['userLogged']);
 
 ?>
 <meta http-equiv="Refresh" content="0; /user/profile.php">" />

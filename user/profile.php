@@ -10,7 +10,7 @@ $user = $controller->toUsers->getAll("id_users =" . $user)[0];
 $school = $controller->toSchoolUnit->getAll('id_school_unit = ' . $user["id_school_unit"])[0];
 $unit = $controller->toSchoolUnit->getAll();
 $course_exists = $controller->toCourses->getAll("id_courses=" . $user["id_courses"]);
-$course = !empty($course_exists) ? $$course_exists[0]['name']: $_SESSION['notregistered'];
+$course = !empty($course_exists) ? $course_exists[0]['name']: $_SESSION['notregistered'];
 ?>
 
 <body class="profile">
