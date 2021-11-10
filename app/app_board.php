@@ -124,7 +124,7 @@ $(document).ready(()=>{
             type: "POST",
             dataType: "json",
         }).done(function(back) {
-            dataCards = Object.assign({},back.data);
+            dataCards = back.data;
             initializeComponents(dataCards);
             console.log(dataCards)
         });
@@ -217,24 +217,28 @@ function initializeCards(){
 }
 
 function initializeComponents(dataArray){
-    dataArray.cards.forEach(card=>{
-        appendComponents(card);
-    })
+    // dataArray.cards.forEach(card=>{
+    //     appendComponents(card);
+    // })
+    $.each(dataArray.cards, function (key, value) { 
+        appendComponents(value)
+    });
+
 }
 
 function appendComponents(card){
     let htmlString = `
-        <div id=${card.id.toString()} class="kanbanCard ${card.position}" draggable="true">
+        <div id=${card.id} class="kanbanCard ${card.position}" draggable="true">
             <div class="content">
                 <h4 class="title">${card.title}</h4>
                 <p class="description">${card.description}</p>
             </div>
             <form class="row mx-auto justify-content-between">
-                <span id="span-${card.id.toString()}" onclick="togglePriority(event)" class="material-icons priority ${card.priority? "is-priority": ""}">
+                <span id="span-${card.id}" onclick="togglePriority(event)" class="material-icons priority ${card.priority? "is-priority": ""}">
                     star
                 </span>
                 <button class="invisibleBtn">
-                    <span class="material-icons delete" onclick="deleteCard(${card.id.toString()})">
+                    <span class="material-icons delete" onclick="deleteCard(${card.id})">
                         remove_circle
                     </span>
                 </button>
@@ -261,10 +265,23 @@ function deleteCard(id){
             let index = dataCards.cards.indexOf(card);
             console.log(index)
             dataCards.cards.splice(index, 1);
-            console.log(dataCards.cards);
+            deleteCardDB(id);
+            console.log(id);
             save();
+            
         }
     })
+}
+
+function deleteCardDB(id){
+    $.ajax({
+          url: "/app/actions.php?action=deleteCard",
+          type: "POST",
+          data: {
+            id: id
+          },
+          dataType: "json",
+      }).done(function(back) {}); 
 }
 
 function removeClasses(cardBeignDragged, color){

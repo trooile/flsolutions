@@ -60,6 +60,16 @@ Class Controller extends DefaultControllers{
         }
     }
 
+    public function deleteCard($params){
+        try{
+            $this->toCards->delete('cardscol ='.$params['id']);
+            $this->return();
+        }catch(Exception $e){
+            $this->return();
+        }
+    }
+
+
     public function addBoard($params){
         try{
             if($params['formdata'][1]['value'] != ''){
