@@ -63,4 +63,6 @@
     $_SESSION['addcard'] = 'Add Cartão';
     $_SESSION['matter'] = 'Matéria';
     $_SESSION['usersame'] = 'Usuários no mesmo curso';
+    $_SESSION['flsolutions'] = 'FLSoluções';
+    $_SESSION['cardadded'] = 'Cartão Adicionado';
 ?>

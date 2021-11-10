@@ -21,6 +21,19 @@
 <div class="title-giant">
     <label class='giant'><?=$_SESSION['studyplan']?></label>
 </div>
+<div role="alert" aria-live="assertive" style="position:relative;" id="toastCard" aria-atomic="true" class="toast hide" data-autohide="true">
+  <div class="toast-header">
+    <img src="../images/flsolutionsdx.svg" class="rounded mr-2" alt="5" style="width:12%;">
+    <strong class="mr-auto"><?=$_SESSION['flsolutions']?></strong>
+    <small>CollegeTool</small>
+    <button type="button" class="ml-2 mb-1 close" id="close-toast" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+  <?=$_SESSION['cardadded']?>!
+  </div>
+</div>
 <button type="button" class="btn btn-orange btncard"  data-toggle="modal" data-target="#modalCard"><?=$_SESSION['addcard']?></button>
 <!-- MODAL CARD -->
 <div class="modal fade" id="modalCard" tabindex="-1" role="dialog" aria-hidden="true">
@@ -94,6 +107,7 @@
   </div>
 </div>
 <?=include_once "../includes/footer.php"?>
+
 <script type="text/javascript">
 let cardBeignDragged;
 let dropzones = document.querySelectorAll('.dropzone');
@@ -165,11 +179,9 @@ function saveInDB(card){
           dataType: "json",
       }).done(function(back) {
         if (back.error) {
-          $('#modalAlert .modal-body').html(back.message);
-          $('#modalAlert').modal('toggle');
+            alert(back.message)
         } else {
-          $('#modalAlert .modal-body').html('OK');
-          $('#modalAlert').modal('toggle');
+            toggleAlertCard();
         }
       });
   };
@@ -312,6 +324,15 @@ function dragleave(){
 
 function drop(){
     this.classList.remove('over');
+}
+
+$('#close-toast').click(function(){
+    toggleAlertCard();
+});
+
+function toggleAlertCard(){
+    $("#toastCard").toggleClass('show hide');
+    return false;
 }
 
 </script>
