@@ -475,3 +475,33 @@ body::-webkit-scrollbar-thumb:horizontal {
     width: 620px;
     text-align: center;
  }
+
+.logo-black  {
+    position:absolute;
+    right: 0;
+
+    max-width: 260px;
+}
+
+@media(max-width:500px) {
+    .logo-black  {
+        max-width: 60px;
+    }
+}
+
+.btncard{
+    position:fixed;
+    right: 5;
+}
+
+.logo-white  {
+    position:initial;
+    float: right;
+    max-width: 260px;
+}
+
+@media(max-width:500px) {
+    .logo-white  {
+        max-width: 60px;
+    }
+}

@@ -4,12 +4,24 @@
   if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
     echo "<script>window.location='/user/login.php'</script>";
   }
-    $courses = $controller->toCourses->getAll();
+    $id_course = '';
+    $course = $_SESSION['notregistered'];
+    $usersame = $controller->toUsers->getAll('id_courses = 0');
+    $user = $controller->toUsers->getAll('id_users ='.$_SESSION['userLogged']);
+    if(isset($user['id_courses'])){
+        $courses = $controller->toCourses->getAll('id_courses ='.$user['id_courses']);
+        if(!empty($courses)){
+            $course = $courses[0]['name'];
+            $id_course = $courses[0]['id_courses'];
+            $usersame = $controller->toUsers->getAll('id_courses ='.$user['id_courses']);
+        }
+    }
 ?>
+<img src="../images/logo.svg" class="logo-black ">
 <div class="title-giant">
     <label class='giant'><?=$_SESSION['studyplan']?></label>
 </div>
-<button type="button" class="btn btn-orange" style="float:right;" data-toggle="modal" data-target="#modalCard"><?=$_SESSION['addcard']?></button>
+<button type="button" class="btn btn-orange btncard"  data-toggle="modal" data-target="#modalCard"><?=$_SESSION['addcard']?></button>
 <!-- MODAL CARD -->
 <div class="modal fade" id="modalCard" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
@@ -25,14 +37,18 @@
         <div class="form-group col-sm-12">
           <label for="course"><?=$_SESSION['course']?></label>
           <div class="input-group">
-          <select type="text" class="form-control" id="course" name="course">
-                <option value="" selected disabled><?=$_SESSION['select-course']?></option>
-                <?php foreach($courses as $value){?>
-                  <option value='<?=$value['id_courses']?>'><?=$value['name']?></option>
+            <input class="form-control form-control-sm" type="text"  value="<?=$course?>" disabled>
+            <input type="hidden" name="course" id="course" value="<?=$id_course?>">
+        </div>
+        </div><p></p>
+        <div class="form-group col-sm-12">
+            <label for="usersame"><?=$_SESSION['usersame']?></label>
+            <select type="text" class="form-control" id="usersame" name="usersame" multiple>
+                <?php foreach($usersame as $value){?>
+                    <option value="<?=$value['id_users']?>"><?=$value['name']?></option>
                 <?php } ?>
             </select>
         </div>
-        </div><p></p>
         <div class="form-group col-sm-12">
           <label for="semester"><?=$_SESSION['semester']?></label>
           <div class="input-group">
@@ -51,7 +67,7 @@
         </div>
         </div>
         <div class="form-group col-sm-12">
-          <label for="titleInput"><?=$_SESSION['subject']?></label>
+          <label for="titleInput"><?=$_SESSION['matter']?></label>
           <div class="input-group">
           <input class="form-control form-control-sm" type="text" name="title" id="titleInput" autocomplete="off">
         </div>
@@ -63,7 +79,7 @@
         </div>
         </div>
       </form>
-      <img src="../images/studyplan-background.svg" class="logo">
+      <img src="../images/studyplan-background.svg" class="logo-white">
     </div>
       </div>
       <div class="modal-footer">
@@ -95,6 +111,7 @@ let dataCards = {
 };
 
 $(document).ready(()=>{
+    $('#usersame').select2();
     initializeBoards();
     if(JSON.parse(localStorage.getItem('@kanban:data'))){
         dataCards = JSON.parse(localStorage.getItem('@kanban:data'));

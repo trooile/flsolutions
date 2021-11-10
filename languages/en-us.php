@@ -61,4 +61,6 @@
     $_SESSION['nameboard'] = 'Enter a name for the kanban';
     $_SESSION['alert'] = 'Alert';
     $_SESSION['addcard'] = 'Add Card';
+    $_SESSION['matter'] = 'Matter';
+    $_SESSION['usersame'] = 'Users in the same course';
 ?>
