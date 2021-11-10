@@ -52,7 +52,7 @@ include "include_view.php";
             }
             else {
                 alert(back.data);
-               window.location.href = "profile.php";
+               window.location.href = "home.php";
             }
         });
     });

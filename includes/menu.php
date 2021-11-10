@@ -12,7 +12,7 @@
 <body id="bodymenu">
     <nav id="navmenu">
         <ul id="ulmenu">
-            <li><a href=""><?=$_SESSION['home']?></a></li>
+            <li><a href="../user/home.php"><?=$_SESSION['home']?></a></li>
             <li><a href="../user/profile.php"><?=$_SESSION['profile']?></a></li>
             <li><a href="../user/settings.php"><?=$_SESSION['settings']?></a></li>
             <li><a href="../user/deslogar.php"><?=$_SESSION['logout']?></a></li>
