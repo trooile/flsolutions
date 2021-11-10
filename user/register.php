@@ -39,8 +39,8 @@
                   <?php } ?>
             </select>
           </div>
-          <button id="submit" type="button" class="btn btn-default btn-lg btn-orange "><?=$_SESSION['create-account']?></button>
         </form>
+        <button id="btnregister" type="button" class="btn btn-default btn-lg btn-orange "><?=$_SESSION['create-account']?></button>
       </div>
     </div>
     <label><?=$_SESSION['already-account']?></label>
@@ -50,32 +50,26 @@
 </div>
 
 <script type="text/javascript">
-$(function(){
-
-});
-  $('#submit').click(function(){
-    if($('#passwd').val() == $('#confirmpasswd').val()){
-      $.ajax({
-            url: "/user/actions.php?action=submitNewUser",
-            type: 'POST',
-            data: {
-              name: $('#name').val(),
-              email: $('#email').val(),
-              passwd: $('#passwd').val(),
-              confirmpasswd: $('#confirmpasswd').val(),
-              unit: $('#unit').val(),
-            },
-            dataType: 'json',
-        }).done(function(back) {
-          if (back.error) {
-                  alert(back.message)
-                } else {
-                  window.location.href = "login.php?registerSucess";
-                }
-        });
-    }else{
-      toggleAlert(); 
-    }
+$(function(){});
+  $('#btnregister').click(function(){
+    $.ajax({
+          url: "/user/actions.php?action=submitNewUser",
+          type: 'POST',
+          data: {
+            name: $('#name').val(),
+            email: $('#email').val(),
+            passwd: $('#passwd').val(),
+            confirmpasswd: $('#confirmpasswd').val(),
+            unit: $('#unit').val(),
+          },
+          dataType: 'json',
+      }).done(function(back) {
+        if (back.error) {
+            toggleAlert(); 
+        } else {
+          window.location.href = "login.php?registerSucess";
+        }
+      });
   });
 
  $('#close-modal').click(function(){

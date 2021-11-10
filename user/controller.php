@@ -20,16 +20,19 @@ class Controller extends DefaultControllers
         }
     }
 
-    public function submitNewUser($params)
-    {
+    public function submitNewUser($params){
         try {
-            $passwd = $this->encrypt($params['passwd']);
-            $params['id_school_unit'] = $params['unit'];
-            unset($params['unit']);
-            unset($params['confirmpasswd']);
-            unset($params['passwd']);
-            $params['passwd'] = $passwd;
-            $this->toUsers->insert($params);
+            if($params['passwd'] == $params['confirmpasswd']){                    
+                $passwd = $this->encrypt($params['passwd']);
+                $params['id_school_unit'] = $params['unit'];
+                unset($params['unit']);
+                unset($params['confirmpasswd']);
+                unset($params['passwd']);
+                $params['passwd'] = $passwd;
+                $this->toUsers->insert($params);
+            }else{
+                $this->back['error'] = true;
+            }
             $this->return();
         } catch (Exception $e) {
             $this->return($e);
