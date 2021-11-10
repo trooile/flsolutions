@@ -314,11 +314,11 @@ body::-webkit-scrollbar-thumb:horizontal {
     flex: 1;
     height: 100%;
     width: 100%;
-    border-top: 1px solid rgb(212, 212, 212);
+    border-top: 1px solid rgb(242, 242, 242);
 }
 
 .board {
-    background: #F5F5F5;
+    background: #F2F2F2;
     margin: 0 .5rem;
     padding: 0px;
     display: flex;
@@ -326,15 +326,28 @@ body::-webkit-scrollbar-thumb:horizontal {
     flex-direction: column;
 }
 
-.board h3 {
-    padding: 16px!important;
+.giant {
+    color: #EFA20C;
+    font-size: 58px;
     min-width: 300px;
+    margin: 3;
+    text-align: center;
+}
+
+.board h3 {
+    padding: 32px!important;
+    min-width: 200px;
+    min-height: 100px;
     width: 100%;
     margin: 0;
-    background-color: #FFFF;
-    font-weight: bold;
+    background-color: #999999;
     font-size: 18px;
-    color: #1C1C2E;
+    color: white;
+}
+
+.title-giant{
+    justify-content: center;
+    text-align: center;
 }
 
 .dropzone {
@@ -346,18 +359,20 @@ body::-webkit-scrollbar-thumb:horizontal {
 }
 
 .kanbanCard {
-    background-color: #FFFF;
+    background-color: #999999;
     padding: 16px;
     width: 250px;
     margin: auto;
+    color: white;
     margin-bottom: 2rem;
     border-radius: 4px;
     font-weight: 600;
     font-size: 16px;
+    box-shadow:  2px 2px 2px 1px#EEBE89;
 }
 
 .description {
-    color: #434343;
+    color: white;
     font-weight: normal;
     font-size: 14px;
 }

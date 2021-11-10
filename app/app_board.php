@@ -6,9 +6,11 @@
   }
     $courses = $controller->toCourses->getAll();
 ?>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCard"><?=$_SESSION['studyplan']?></button>
-<button class="btn btn-danger mx-2" id="deleteAll"><?=$_SESSION['deleteall']?></button>
-
+<div class="title-giant">
+    <label class='giant'><?=$_SESSION['studyplan']?></label>
+</div>
+<button type="button" class="btn btn-orange" style="float:right;" data-toggle="modal" data-target="#modalCard"><?=$_SESSION['addcard']?></button>
+<!-- MODAL CARD -->
 <div class="modal fade" id="modalCard" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
@@ -65,12 +67,13 @@
     </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="add"><?=$_SESSION['save']?></button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="add"><?=$_SESSION['save']?></button>
       </div>
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<!-- END MODAL CARD -->
+<div class="container">
   <div class="boards overflow-auto p-0" id="boardsContainer">
   </div>
 </div>

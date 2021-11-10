@@ -68,7 +68,7 @@ $(function(){
             dataType: 'json',
         }).done(function(back) {
           if (back.error) {
-                  alert(data.message)
+                  alert(back.message)
                 } else {
                   window.location.href = "login.php?registerSucess";
                 }

@@ -60,4 +60,5 @@
     $_SESSION['confirm-password'] = 'Confirm Password';
     $_SESSION['nameboard'] = 'Enter a name for the kanban';
     $_SESSION['alert'] = 'Alert';
+    $_SESSION['addcard'] = 'Add Card';
 ?>
