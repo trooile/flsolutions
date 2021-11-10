@@ -65,5 +65,6 @@
     $_SESSION['usersame'] = 'Users in the same course';
     $_SESSION['flsolutions'] = 'FLSolutions';
     $_SESSION['cardadded'] = 'Card Added';
-    $_SESSION['pwincorrect'] = 'Password Incorrect';
+    $_SESSION['board'] = 'Board';
+    $_SESSION['Google Scholar'] = 'Google Scholar';
 ?>
