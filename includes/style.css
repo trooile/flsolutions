@@ -266,7 +266,9 @@ div.container#changepassword {
     background-color: rgb(241, 215, 189);
 }
 
-div.container#changepassword input#changepassword {
+div.container.offset-sm-7#changepassword input#cfpw,
+input#nwpw,
+input#pw {
     border: orangered;
     border-radius: 5px;
     border-style: solid;
@@ -278,7 +280,7 @@ div.container#changepassword input#changepassword {
     margin-left: -1px;
 }
 
-div.container#changepassword input#btnchangepassword {
+div.container button#btnpw {
     width: 250px;
     margin: 3%;
     margin-left: -50px;
@@ -345,7 +347,7 @@ body::-webkit-scrollbar-thumb:horizontal {
     color: white;
 }
 
-.title-giant{
+.title-giant {
     justify-content: center;
     text-align: center;
 }
@@ -368,7 +370,7 @@ body::-webkit-scrollbar-thumb:horizontal {
     border-radius: 4px;
     font-weight: 600;
     font-size: 16px;
-    box-shadow:  2px 2px 2px 1px#EEBE89;
+    box-shadow: 2px 2px 2px 1px#EEBE89;
 }
 
 .description {
@@ -470,38 +472,37 @@ body::-webkit-scrollbar-thumb:horizontal {
 }
 
 .class_form {
-    place-content : center;
-    min-height    : 80vh;
+    place-content: center;
+    min-height: 80vh;
     width: 620px;
     text-align: center;
- }
+}
 
-.logo-black  {
-    position:absolute;
+.logo-black {
+    position: absolute;
     right: 0;
-
     max-width: 260px;
 }
 
 @media(max-width:500px) {
-    .logo-black  {
+    .logo-black {
         max-width: 60px;
     }
 }
 
-.btncard{
-    position:fixed;
+.btncard {
+    position: fixed;
     right: 5;
 }
 
-.logo-white  {
-    position:initial;
+.logo-white {
+    position: initial;
     float: right;
     max-width: 260px;
 }
 
 @media(max-width:500px) {
-    .logo-white  {
+    .logo-white {
         max-width: 60px;
     }
 }

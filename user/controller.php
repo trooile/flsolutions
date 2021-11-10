@@ -75,16 +75,17 @@ class Controller extends DefaultControllers
                 if ($nwpw == $cfpw) {           
                     $nwpw = $this->encrypt($nwpw);
                     $this->toUsers->update(["passwd"=>$nwpw],"id_users=".$_SESSION['userLogged']);
+                    $this->back['data'] = "Password changed";
                                    
                 } else {
                     // Se o nwpw digitado não for igual cfpw
                     $this->back['error'] = true;
-                    $this->back['data'] = "Mensagem qualquer 1";
+                    $this->back['data'] = "The passwords entered do not match";
                 }
             } else {
                 // Se o pw digitado não for igual ao do banco
                 $this->back['error'] = true;
-                $this->back['data'] = "Mensagem qualquer 2";
+                $this->back['data'] = "Password Incorrect";
             }
            
             $this->return ();
