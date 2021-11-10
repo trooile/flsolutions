@@ -2,7 +2,7 @@
 session_start();
 include "include_view.php";
   if(isset($_SESSION['userLogged']) && !empty($_SESSION['userLogged'])){
-    echo "<script>window.location='/user/profile.php'</script>";
+    echo "<script>window.location='/user/home.php'</script>";
   }
 ?>
 <div id="alert-success" class="alert alert-success alert-dismissible fade hide" role="alert">
