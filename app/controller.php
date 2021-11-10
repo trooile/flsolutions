@@ -26,10 +26,37 @@ Class Controller extends DefaultControllers{
 
     public function saveCard($params){
         try{
-            $this->ToCards->insert($params);         
+            $data = [   'id_app_board' => 1,
+                        'id_courses' => $params['card']['course'] != '' ? $params['card']['course']:0,
+                        'cardscol' => $params['card']['newCard']['id'],
+                        'name' => $params['card']['newCard']['title'],
+                        'semester' => $params['card']['semester'],
+                        'description' => $params['card']['newCard']['description'],
+                        'position' => $params['card']['newCard']['position'],
+                        'priority' => $params['card']['newCard']['priority']];
+                        $this->toCards->insert($data);
             $this->return();
         }catch(Exception $e){
             $this->return($e);
+        }
+    }
+
+    public function searchCards($params){
+        try{
+            $card = [];
+            $cards = $this->toCards->getAll();
+            foreach($cards as $value){
+                $card [] = ['description' => $value['description'],
+                            'id' => $value['cardscol'],
+                            'position' => $value['position'],
+                            'priority' => $value['priority'],
+                            'title' => $value['name']];
+            }
+            $this->back['data']['cards'] = $card;
+            $this->back['data']['config'] = $this->toCards->getLastValue()[0];
+            $this->return();
+        }catch(Exception $e){
+            $this->return();
         }
     }
 

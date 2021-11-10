@@ -55,14 +55,6 @@
         </div>
         </div><p></p>
         <div class="form-group col-sm-12">
-            <label for="usersame"><?=$_SESSION['usersame']?></label>
-            <select type="text" class="form-control" id="usersame" name="usersame" multiple>
-                <?php foreach($usersame as $value){?>
-                    <option value="<?=$value['id_users']?>"><?=$value['name']?></option>
-                <?php } ?>
-            </select>
-        </div>
-        <div class="form-group col-sm-12">
           <label for="semester"><?=$_SESSION['semester']?></label>
           <div class="input-group">
           <select type="text" class="form-control" id="semester" name="semester">
@@ -95,7 +87,7 @@
       <img src="../images/studyplan-background.svg" class="logo-white">
     </div>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" style="text-align:center;">
         <button type="button" class="btn btn-primary" data-dismiss="modal" id="add"><?=$_SESSION['save']?></button>
       </div>
     </div>
@@ -127,16 +119,25 @@ let dataCards = {
 $(document).ready(()=>{
     $('#usersame').select2();
     initializeBoards();
-    if(JSON.parse(localStorage.getItem('@kanban:data'))){
-        dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
-        initializeComponents(dataCards);
-        console.log(dataCards)
-    }
+    $.ajax({
+            url: "/app/actions.php?action=searchCards",
+            type: "POST",
+            dataType: "json",
+        }).done(function(back) {
+            dataCards = Object.assign({},back.data);
+            initializeComponents(dataCards);
+            console.log(dataCards)
+        });
+    // if(JSON.parse(localStorage.getItem('@kanban:data'))){
+    //     dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
+    //     initializeComponents(dataCards);
+    //     console.log(dataCards)
+    // }
     initializeCards();
     $('#add').click(()=>{
         const title = $('#titleInput').val()!==''?$('#titleInput').val():null;
         const description = $('#descriptionInput').val()!==''?$('#descriptionInput').val():null;
-        const course = $('#course').find(":selected").val();
+        const course = $('#course').val();
         const semester = $('#semester').find(":selected").val();
         $('#titleInput').val('');
         $('#descriptionInput').val('');
