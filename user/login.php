@@ -58,7 +58,7 @@ $(function(){
           if (back.error) {
             toggleAlertError()
           } else {
-            window.location.href = "profile.php";
+            window.location.href = "home.php";
           }
         });
     });
