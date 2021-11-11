@@ -23,7 +23,7 @@ class Controller extends DefaultControllers
     public function submitNewUser($params){
         try {
             if($params['passwd'] == $params['confirmpasswd']){                    
-                $passwd = $this->encrypt($params['passwd']);
+                $passwd = $params['passwd'];
                 $params['id_school_unit'] = $params['unit'];
                 unset($params['unit']);
                 unset($params['confirmpasswd']);
@@ -45,7 +45,7 @@ class Controller extends DefaultControllers
             $passwd = $params['passwd'];
             $login = $this->toUsers->getAll("email ='" . $email . "'");
             if (!empty($login)) {
-                $passwdDB = $this->decrypt($login[0]['passwd']);
+                $passwdDB = $login[0]['passwd'];
                 if ($passwd == $passwdDB) {
                     $_SESSION['userLogged'] = $login[0]['id_users'];
                 } else {
@@ -69,11 +69,11 @@ class Controller extends DefaultControllers
             $nwpw = $params['nwpw'];
             $cfpw = $params['cfpw'];
             $user = $this->toUsers->getAll("id_users =" . $user);
-            $passwddb = $this->decrypt($user[0]['passwd']);
+            $passwddb = $user[0]['passwd'];
             if ($pw==$passwddb) {
                 //verificar se o pw é igual o digitado com o que está no banco
                 if ($nwpw == $cfpw) {           
-                    $nwpw = $this->encrypt($nwpw);
+                    $nwpw = $nwpw;
                     $this->toUsers->update(["passwd"=>$nwpw],"id_users=".$_SESSION['userLogged']);
                     $this->back['data'] = "Password changed";
                                    
