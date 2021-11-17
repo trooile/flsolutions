@@ -2,12 +2,13 @@
  session_start();
  include "include_view.php";
 if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
-  echo "<script>window.location='/user/login.php'</script>";
+    echo "<script>window.location='/user/login.php'</script>";
 }
     $user = $controller->toUsers->getAll('id_users ='.$_SESSION['userLogged']);
     $unit = $controller->toSchoolUnit->getAll('id_school_unit ='.$user[0]['id_school_unit']);
     $course = !empty($user[0]['id_courses']) ? $controller->toCourses->getAll('id_courses ='.$user[0]['id_courses']):null;
-    $users = $controller->toUsers->getAll('id_school_unit = '.$user[0]['id_school_unit']);
+    $users = $controller->toUsers->getAll('id_school_unit = '.$user[0]['id_school_unit'].' AND id_courses ='.$user[0]['id_courses']);
+    $list_users = !empty($users) ? $users:null;
 ?>
 
 <div class="container-fluid class_form">
@@ -22,6 +23,19 @@ if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
                 <label class="control-label col-sm-3"><?=$_SESSION['nameProfile']?></label>
                 <div class="col-sm-12">
                     <input type='text' name='name' id='name' class='form-control' placeholder="<?=$_SESSION['nameboard']?>">
+                </div><br>
+                <label class="control-label col-sm-3"><?=$_SESSION['usersame']?>:</label>
+                <div class="col-sm-12">
+                    <select type="text" class="form-control" id="users" name="id_user" multiple>
+                    <?php foreach($list_users as $value){?>
+                        <option value="<?=$value['id_users']?>"
+                        <?php if($value['id_users'] == $_SESSION['userLogged']){
+                                echo 'selected>'.$_SESSION['onlyme'];
+                            }else{
+                                echo '>'. $value['name'];
+                            } ?>
+                        </option>
+                    <?php } ?>
                 </div>
             </div>
         </form>
@@ -31,22 +45,25 @@ if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
 
 
 <script type="text/javascript">
-  $('#submit').click(function(){
-      var formData = $('#formBoard').serializeArray();
-    $.ajax({
-          url: "/app/actions.php?action=addBoard",
-          type: "POST",
-          data: {
-            formdata: formData
-          },
-          dataType: "json",
-      }).done(function(back) {
-        if (back.error) {
-            $('#modalAlert .modal-body').html(back.message);
-            $('#modalAlert').modal('toggle');
-        } else {
-            window.location.href = "../user/home.php";
-        }
-      });
-  });
+    $(function(){
+        $('#users').select2();
+    })
+    $('#submit').click(function(){
+        var formData = $('#formBoard').serializeArray();
+        $.ajax({
+            url: "/app/actions.php?action=addBoard",
+            type: "POST",
+            data: {
+                formdata: formData
+            },
+            dataType: "json",
+        }).done(function(back) {
+            if (back.error) {
+                $('#modalAlert .modal-body').html(back.message);
+                $('#modalAlert').modal('toggle');
+            } else {
+                window.location.href = "../user/home.php";
+            }
+        });
+    });
 </script>

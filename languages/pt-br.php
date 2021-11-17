@@ -67,4 +67,5 @@
     $_SESSION['cardadded'] = 'Cartão Adicionado';
     $_SESSION['board'] = 'Board';
     $_SESSION['Google Scholar'] = 'Google Acadêmico';
+    $_SESSION['onlyme']  = 'Somente eu';
 ?>
