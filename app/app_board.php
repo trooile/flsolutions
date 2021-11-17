@@ -37,66 +37,80 @@
 <button type="button" class="btn btn-orange btncard"  data-toggle="modal" data-target="#modalCard"><?=$_SESSION['addcard']?></button>
 <!-- MODAL CARD -->
 <div class="modal fade" id="modalCard" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-xl" role="document">
-    <div class="modal-content">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <div class="controls p-3">
-      <form class="form-inline">
-        <div class="form-group col-sm-12">
-          <label for="course"><?=$_SESSION['course']?></label>
-          <div class="input-group">
-            <input class="form-control form-control-sm" type="text"  value="<?=$course?>" disabled>
-            <input type="hidden" name="course" id="course" value="<?=$id_course?>">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <div class="form-group col-sm-12">
+                        <div class="col-sm-3">
+                            <label for="course"><?=$_SESSION['course']?></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <input class="form-control form-control-sm" type="text"  value="<?=$course?>" disabled>
+                                <input type="hidden" name="course" id="course" value="<?=$id_course?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <div class="col-sm-3">
+                            <label for="semester"><?=$_SESSION['semester']?></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <select type="text" class="form-control" id="semester" name="semester">
+                                    <option value="1"><?=$_SESSION['first-semester']?></option>
+                                    <option value="2"><?=$_SESSION['second-semester']?></option>
+                                    <option value="3"><?=$_SESSION['third-semester']?></option>
+                                    <option value="4"><?=$_SESSION['fourth-semester']?></option>
+                                    <option value="5"><?=$_SESSION['fifth-semester']?></option>
+                                    <option value="6"><?=$_SESSION['sixth-semester']?></option>
+                                    <option value="7"><?=$_SESSION['seventh-semester']?></option>
+                                    <option value="8"><?=$_SESSION['eighth-semester']?></option>
+                                    <option value="9"><?=$_SESSION['ninth-semester']?></option>
+                                    <option value="10"><?=$_SESSION['tenth-semester']?></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <div class="col-sm-3">
+                            <label for="titleInput"><?=$_SESSION['matter']?></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <input class="form-control form-control-sm" type="text" name="title" id="titleInput" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <div class="col-sm-3">
+                            <label for="descriptionInput"><?=$_SESSION['description']?></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <input class="form-control form-control-sm" type="text" name="description" id="descriptionInput" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <img src="../images/studyplan-background.svg" class="logo-white">
+            </div>
+            <div class="modal-footer" style="text-align:center;">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="add"><?=$_SESSION['save']?></button>
+            </div>
         </div>
-        </div><p></p>
-        <div class="form-group col-sm-12">
-          <label for="semester"><?=$_SESSION['semester']?></label>
-          <div class="input-group">
-          <select type="text" class="form-control" id="semester" name="semester">
-            <option value="1"><?=$_SESSION['first-semester']?></option>
-            <option value="2"><?=$_SESSION['second-semester']?></option>
-            <option value="3"><?=$_SESSION['third-semester']?></option>
-            <option value="4"><?=$_SESSION['fourth-semester']?></option>
-            <option value="5"><?=$_SESSION['fifth-semester']?></option>
-            <option value="6"><?=$_SESSION['sixth-semester']?></option>
-            <option value="7"><?=$_SESSION['seventh-semester']?></option>
-            <option value="8"><?=$_SESSION['eighth-semester']?></option>
-            <option value="9"><?=$_SESSION['ninth-semester']?></option>
-            <option value="10"><?=$_SESSION['tenth-semester']?></option>
-          </select>
-        </div>
-        </div>
-        <div class="form-group col-sm-12">
-          <label for="titleInput"><?=$_SESSION['matter']?></label>
-          <div class="input-group">
-          <input class="form-control form-control-sm" type="text" name="title" id="titleInput" autocomplete="off">
-        </div>
-        </div>
-        <div class="form-group col-sm-12">
-          <label for="descriptionInput"><?=$_SESSION['description']?></label>
-          <div class="input-group">
-          <input class="form-control form-control-sm" type="text" name="description" id="descriptionInput" autocomplete="off">
-        </div>
-        </div>
-      </form>
-      <img src="../images/studyplan-background.svg" class="logo-white">
     </div>
-      </div>
-      <div class="modal-footer" style="text-align:center;">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" id="add"><?=$_SESSION['save']?></button>
-      </div>
-    </div>
-  </div>
 </div>
 <!-- END MODAL CARD -->
 <div class="container">
-  <div class="boards overflow-auto p-0" id="boardsContainer">
-  </div>
+    <div class="boards overflow-auto p-0" id="boardsContainer">
+    </div>
 </div>
 <?=include_once "../includes/footer.php"?>
 
@@ -119,20 +133,20 @@ let dataCards = {
 $(document).ready(()=>{
     $('#usersame').select2();
     initializeBoards();
-    $.ajax({
-            url: "/app/actions.php?action=searchCards",
-            type: "POST",
-            dataType: "json",
-        }).done(function(back) {
-            dataCards = back.data;
-            initializeComponents(dataCards);
-            console.log(dataCards)
-        });
-    // if(JSON.parse(localStorage.getItem('@kanban:data'))){
-    //     dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
-    //     initializeComponents(dataCards);
-    //     console.log(dataCards)
-    // }
+    // $.ajax({
+    //         url: "/app/actions.php?action=searchCards",
+    //         type: "POST",
+    //         dataType: "json",
+    //     }).done(function(back) {
+    //         dataCards = back.data;
+    //         initializeComponents(dataCards);
+    //         console.log(dataCards)
+    //     });
+    if(JSON.parse(localStorage.getItem('@kanban:data'))){
+        dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
+        initializeComponents(dataCards);
+        console.log(dataCards)
+    }
     initializeCards();
     $('#add').click(()=>{
         const title = $('#titleInput').val()!==''?$('#titleInput').val():null;
