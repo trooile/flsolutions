@@ -45,8 +45,7 @@ if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
             $('#modalAlert .modal-body').html(back.message);
             $('#modalAlert').modal('toggle');
         } else {
-            $('#modalAlert .modal-body').html(<?=$_SESSION['success']?>);
-            $('#modalAlert').modal('toggle');
+            window.location.href = "../user/home.php";
         }
       });
   });

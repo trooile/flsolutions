@@ -1,38 +1,38 @@
 <?php 
- session_start();
- include "include_view.php";
-  if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
+session_start();
+include "include_view.php";
+if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
     echo "<script>window.location='/user/login.php'</script>";
-  }
-    $id_course = '';
-    $course = $_SESSION['notregistered'];
-    $usersame = $controller->toUsers->getAll('id_courses = 0');
-    $user = $controller->toUsers->getAll('id_users ='.$_SESSION['userLogged']);
-    if(isset($user['id_courses'])){
-        $courses = $controller->toCourses->getAll('id_courses ='.$user['id_courses']);
-        if(!empty($courses)){
-            $course = $courses[0]['name'];
-            $id_course = $courses[0]['id_courses'];
-            $usersame = $controller->toUsers->getAll('id_courses ='.$user['id_courses']);
-        }
+}
+$id_course = '';
+$course = $_SESSION['notregistered'];
+$usersame = $controller->toUsers->getAll('id_courses = 0');
+$user = $controller->toUsers->getAll('id_users ='.$_SESSION['userLogged']);
+if(isset($user['id_courses'])){
+    $courses = $controller->toCourses->getAll('id_courses ='.$user['id_courses']);
+    if(!empty($courses)){
+        $course = $courses[0]['name'];
+        $id_course = $courses[0]['id_courses'];
+        $usersame = $controller->toUsers->getAll('id_courses ='.$user['id_courses']);
     }
+}
 ?>
 <img src="../images/logo.svg" class="logo-black ">
 <div class="title-giant">
     <label class='giant'><?=$_SESSION['studyplan']?></label>
 </div>
 <div role="alert" aria-live="assertive" style="position:relative;" id="toastCard" aria-atomic="true" class="toast hide" data-autohide="true">
-  <div class="toast-header">
-    <img src="../images/flsolutionsdx.svg" class="rounded mr-2" alt="5" style="width:12%;">
-    <strong class="mr-auto"><?=$_SESSION['flsolutions']?></strong>
-    <small>CollegeTool</small>
-    <button type="button" class="ml-2 mb-1 close" id="close-toast" data-dismiss="toast" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="toast-body">
-  <?=$_SESSION['cardadded']?>!
-  </div>
+    <div class="toast-header">
+        <img src="../images/flsolutionsdx.svg" class="rounded mr-2" alt="5" style="width:12%;">
+        <strong class="mr-auto"><?=$_SESSION['flsolutions']?></strong>
+        <small>CollegeTool</small>
+        <button type="button" class="ml-2 mb-1 close" id="close-toast" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="toast-body">
+        <?=$_SESSION['cardadded']?>!
+    </div>
 </div>
 <button type="button" class="btn btn-orange btncard"  data-toggle="modal" data-target="#modalCard"><?=$_SESSION['addcard']?></button>
 <!-- MODAL CARD -->
