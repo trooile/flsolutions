@@ -36,11 +36,12 @@ if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
                             } ?>
                         </option>
                     <?php } ?>
+                    </select>
                 </div>
             </div>
         </form>
-        <button type="button" id="submit" class="btn btn-default btn-lg btn-orange"><?=$_SESSION['save']?></button>
     </div>
+    <button type="button" id="submit" class="btn btn-default btn-lg btn-orange"><?=$_SESSION['save']?></button>
 </div>
 
 

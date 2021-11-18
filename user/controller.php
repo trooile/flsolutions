@@ -3,6 +3,9 @@ include_once '../includes/defaultControllers.php';
 include_once '../includes/models/toSchoolUnit.php';
 include_once '../includes/models/toUsers.php';
 include_once '../includes/models/toCourses.php';
+include_once '../includes/models/toCards.php';
+include_once '../includes/models/toUserXBoard.php';
+include_once '../includes/models/toAppBoard.php';
 
 class Controller extends DefaultControllers
 {
@@ -14,6 +17,9 @@ class Controller extends DefaultControllers
             $this->toSchoolUnit = new ToSchoolUnit($this->masterMysqli);
             $this->toUsers = new ToUsers($this->masterMysqli);
             $this->toCourses = new toCourses($this->masterMysqli);
+            $this->toCards = new ToCards($this->masterMysqli);
+            $this->toUserXBoard = new ToUserXBoard($this->masterMysqli);
+            $this->toAppBoard = new ToAppBoard($this->masterMysqli);
             $this->back = ['error' => false, 'data' => [], 'message' => ''];
         } catch (Exception $e) {
             throw $e;
