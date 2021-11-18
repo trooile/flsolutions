@@ -63,7 +63,7 @@ if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
                 $('#modalAlert .modal-body').html(back.message);
                 $('#modalAlert').modal('toggle');
             } else {
-                window.location.href = "../user/home.php";
+                window.location.href = "../user/home.php?createdBoard";
             }
         });
     });

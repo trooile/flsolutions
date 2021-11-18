@@ -12,7 +12,7 @@ foreach($user_boards as $value){
     <div class="container" id="home">
         <a class="offset-sm-2" id="home" href="/user/profile.php"><button type="button" id="btnhome" class="btn btn-default btn-orange"><?= $_SESSION['profile'] ?></button></a>
         <a class="offset-sm-2" id="home" href="../app/new_app_board.php"><button type="button" id="btnhome" class="btn btn-default btn-orange"><?= $_SESSION['studyplan'] ?></button></a>
-        <a class="offset-sm-2" data-toggle="modal" data-target="#modalBoards"><button type="button" class="btn btn-default btn-orange"><?= $_SESSION['board']?></button></a>
+        <a class="offset-sm-2" data-toggle="modal" data-target="#modalBoards"><button type="button" id='openModal' class="btn btn-default btn-orange"><?= $_SESSION['board']?></button></a>
         <a class="offset-sm-2" id="home" href="https://scholar.google.com.br" target="_blank"><button type="button" id="btnhome" class="btn btn-default btn-orange"><?= $_SESSION['Google Scholar'] ?></button></a>
     </div>
 </body> 
@@ -28,3 +28,11 @@ foreach($user_boards as $value){
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function(){
+        <?php if (isset($_REQUEST['createdBoard'])){?>
+            $('#openModal').click();
+        <?php } ?>
+    });
+</script>
