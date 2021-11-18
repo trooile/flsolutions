@@ -68,4 +68,6 @@
     $_SESSION['board'] = 'Board';
     $_SESSION['Google Scholar'] = 'Google Scholar';
     $_SESSION['onlyme']  = 'Only me';
+    $_SESSION['selectboard']  = 'Select the Board';
+    
 ?>

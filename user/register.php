@@ -3,7 +3,7 @@
   include "include_view.php";
   $names = $controller->toSchoolUnit->getAll();
   if(isset($_SESSION['userLogged']) && !empty($_SESSION['userLogged'])){
-    echo "<script>window.location='/user/profile.php'</script>";
+    echo "<script>window.location='/user/home.php'</script>";
   }
 ?>
 <div id="alert-error" class="alert alert-danger alert-dismissible fade hide" role="alert">

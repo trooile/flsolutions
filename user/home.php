@@ -20,6 +20,11 @@ foreach($user_boards as $value){
 <div class="modal fade" id="modalBoards" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
+            <div class="modal-header">
+                <div class="container">
+                    <h2><?=$_SESSION['selectboard']?></h2>
+                </div>
+            </div>
             <div class="modal-body">
                 <?php foreach($boards as $value){?>
                     <a class="offset-sm-2" href="/app/app_board.php?id_app_board=<?=$value['id_app_board']?>"><button type="button" class="btn btn-default btn-block btn-orange"><?=$value['name']?> ►</button></a><br>

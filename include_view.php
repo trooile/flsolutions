@@ -9,6 +9,6 @@ if(!isset($_SESSION['language'])){
 }
 
 if(isset($_SESSION['userLogged']) && !empty($_SESSION['userLogged'])){
-	echo "<script>window.location='/user/profile.php'</script>";
+	echo "<script>window.location='/user/home.php'</script>";
 }
 ?>
