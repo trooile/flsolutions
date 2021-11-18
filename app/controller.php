@@ -44,7 +44,7 @@ Class Controller extends DefaultControllers{
     public function searchCards($params){
         try{
             $card = [];
-            $cards = $this->toCards->getAll();
+            $cards = $this->toCards->getAll('id_app_board ='.$params['id_app_board']);
             foreach($cards as $value){
                 $card [] = ['description'   => $value['description'],
                             'id'            => $value['cardscol'],
@@ -53,7 +53,7 @@ Class Controller extends DefaultControllers{
                             'title'         => $value['name']];
             }
             $this->back['data']['cards'] = $card;
-            $this->back['data']['config'] = $this->toCards->getLastValue()[0];
+            $this->back['data']['config'] = $this->toCards->getLastValue('id_app_board ='.$params['id_app_board'])[0];
             $this->return();
         }catch(Exception $e){
             $this->return();

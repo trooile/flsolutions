@@ -16,6 +16,7 @@ if(isset($user['id_courses'])){
         $usersame = $controller->toUsers->getAll('id_courses ='.$user['id_courses']);
     }
 }
+$board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app_board'])[0]['name'];
 ?>
 <img src="../images/logo.svg" class="logo-black ">
 <div class="title-giant">
@@ -34,7 +35,9 @@ if(isset($user['id_courses'])){
         <?=$_SESSION['cardadded']?>!
     </div>
 </div>
-<button type="button" class="btn btn-orange btncard"  data-toggle="modal" data-target="#modalCard"><?=$_SESSION['addcard']?></button>
+<button type="button" class="btn btn-orange btncard btn-sm"  data-toggle="modal" data-target="#modalCard"><?=$_SESSION['addcard']?></button>
+<label class="app-name"><?=$_SESSION['board'] .': '. $board_name?></label>
+<button type="button" class="btn btn-orange btneditboard btn-sm"><?=$_SESSION['editboard']?></button>
 <!-- MODAL CARD -->
 <div class="modal fade" id="modalCard" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -133,15 +136,16 @@ let dataCards = {
 $(document).ready(()=>{
     $('#usersame').select2();
     initializeBoards();
-    // $.ajax({
-    //         url: "/app/actions.php?action=searchCards",
-    //         type: "POST",
-    //         dataType: "json",
-    //     }).done(function(back) {
-    //         dataCards = back.data;
-    //         initializeComponents(dataCards);
-    //         console.log(dataCards)
-    //     });
+    $.ajax({
+            url: "/app/actions.php?action=searchCards",
+            type: "POST",
+            dataType: "json",
+            data: {id_app_board: <?=$_REQUEST['id_app_board']?>}
+        }).done(function(back) {
+            dataCards = back.data;
+            initializeComponents(dataCards);
+            console.log(dataCards)
+        });
     if(JSON.parse(localStorage.getItem('@kanban:data'))){
         dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
         initializeComponents(dataCards);

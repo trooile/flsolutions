@@ -69,5 +69,5 @@
     $_SESSION['Google Scholar'] = 'Google Scholar';
     $_SESSION['onlyme']  = 'Only me';
     $_SESSION['selectboard']  = 'Select the Board';
-    
+    $_SESSION['editboard'] = 'Edit board';
 ?>

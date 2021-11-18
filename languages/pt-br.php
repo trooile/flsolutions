@@ -65,8 +65,9 @@
     $_SESSION['usersame'] = 'Usuários no mesmo curso';
     $_SESSION['flsolutions'] = 'FLSoluções';
     $_SESSION['cardadded'] = 'Cartão Adicionado';
-    $_SESSION['board'] = 'Board';
+    $_SESSION['board'] = 'Quadro';
     $_SESSION['Google Scholar'] = 'Google Acadêmico';
     $_SESSION['onlyme']  = 'Somente eu';
     $_SESSION['selectboard']  = 'Selecione o Quadro';
+    $_SESSION['editboard'] = 'Editar quadro';
 ?>
