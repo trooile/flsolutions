@@ -538,13 +538,11 @@ body::-webkit-scrollbar-thumb:horizontal {
 
 .btneditboard {
     position: absolute;
-    right: 5;
-    top: 5;
 }
 
 .app-name {
     position: absolute;
-    right: 350;
+    left: 5;
     top: 5;
     color: orange
 }

@@ -29,9 +29,13 @@
 	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </head>
-<a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
-<a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
+<?php 
+$app = isset($_REQUEST['id_app_board']) ? $_REQUEST['id_app_board']: 0;
+if($_SERVER['REQUEST_URI'] != '/app/app_board.php?id_app_board='.$app){?>
+	<a href="?language=en-us.php"><img src="../images/us.svg" width="25" height="20"></a>
+	<a href="?language=pt-br.php"><img src="../images/br.svg" width="30" height="20"></a>
 <?php
+}
 if ($_SERVER['REQUEST_URI'] == '/user/profile.php?language=pt-br.php' ||
 	$_SERVER['REQUEST_URI'] == '/user/profile_cadastro.php?language=pt-br.php' ||
 	$_SERVER['REQUEST_URI'] == '/user/profile.php?language=en-us.php' ||
@@ -44,7 +48,10 @@ if ($_SERVER['REQUEST_URI'] == '/user/profile.php?language=pt-br.php' ||
 	$_SERVER['REQUEST_URI'] == '/user/changepassword.php' ||
 	$_SERVER['REQUEST_URI'] == '/user/changepassword.php?language=en-us.php'||
 	$_SERVER['REQUEST_URI'] == '/user/changepassword.php?language=pt-br.php'||
+	$_SERVER['REQUEST_URI'] == '/app/new_app_board.php?language=en-us.php'||
+	$_SERVER['REQUEST_URI'] == '/app/new_app_board.php?language=pt-br.php'||
 	$_SERVER['REQUEST_URI'] == '/app/app_board.php' ||
+	$_SERVER['REQUEST_URI'] == '/app/app_board.php?id_app_board='.$app ||
 	$_SERVER['REQUEST_URI'] == '/app/new_app_board.php'||
 	$_SERVER['REQUEST_URI'] == '/user/home.php' ||
 	$_SERVER['REQUEST_URI'] == '/user/home.php?language=en-us.php' ||
