@@ -75,7 +75,15 @@ Class Controller extends DefaultControllers{
             if($params['formdata'][1]['value'] != ''){
                 $data = [   'id_school_unit'    => $params['formdata'][0]['value'],
                             'name'              => $params['formdata'][1]['value']];
-                $this->toAppBoard->insert($data);
+                $id_app_board = $this->toAppBoard->insert($data);
+                unset($params['formdata'][0]);
+                unset($params['formdata'][1]);
+                foreach($params['formdata'] as $value){
+                    $dataUsers = [  'id_app_board'  => $id_app_board,
+                                    'id_users'      => $value['value']
+                                ];
+                    $this->toUserXBoard->insert($dataUsers);
+                }
             }else{
                 $this->back['error'] = true;
                 $this->back['message'] = 'Name';
