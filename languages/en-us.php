@@ -62,7 +62,7 @@
     $_SESSION['alert'] = 'Alert';
     $_SESSION['addcard'] = 'Add Card';
     $_SESSION['matter'] = 'Matter';
-    $_SESSION['usersame'] = 'Users in the same course';
+    $_SESSION['usersame'] = 'Users in the same course and university';
     $_SESSION['flsolutions'] = 'FLSolutions';
     $_SESSION['cardadded'] = 'Card Added';
     $_SESSION['board'] = 'Board';
@@ -70,4 +70,5 @@
     $_SESSION['onlyme']  = 'Only me';
     $_SESSION['selectboard']  = 'Select the Board';
     $_SESSION['editboard'] = 'Edit board';
+    $_SESSION['createnewboard'] = 'Create new board';
 ?>

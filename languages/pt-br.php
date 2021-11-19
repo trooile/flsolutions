@@ -62,7 +62,7 @@
     $_SESSION['alert'] = 'Aviso';
     $_SESSION['addcard'] = 'Add Cartão';
     $_SESSION['matter'] = 'Matéria';
-    $_SESSION['usersame'] = 'Usuários no mesmo curso';
+    $_SESSION['usersame'] = 'Usuários no mesmo curso e faculdade';
     $_SESSION['flsolutions'] = 'FLSoluções';
     $_SESSION['cardadded'] = 'Cartão Adicionado';
     $_SESSION['board'] = 'Quadro';
@@ -70,4 +70,5 @@
     $_SESSION['onlyme']  = 'Somente eu';
     $_SESSION['selectboard']  = 'Selecione o Quadro';
     $_SESSION['editboard'] = 'Editar quadro';
+    $_SESSION['createnewboard'] = 'Criar novo quadro';
 ?>
