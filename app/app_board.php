@@ -138,21 +138,21 @@ let dataCards = {
 $(document).ready(()=>{
     $('#usersame').select2();
     initializeBoards();
-    // $.ajax({
-    //         url: "/app/actions.php?action=searchCards",
-    //         type: "POST",
-    //         dataType: "json",
-    //         data: {id_app_board: <?=$_REQUEST['id_app_board']?>}
-    //     }).done(function(back) {
-    //         dataCards = back.data;
-    //         initializeComponents(dataCards);
-    //         console.log(dataCards)
-    //     });
-    if(JSON.parse(localStorage.getItem('@kanban:data'))){
-        dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
-        initializeComponents(dataCards);
-        console.log(dataCards)
-    }
+    $.ajax({
+            url: "/app/actions.php?action=searchCards",
+            type: "POST",
+            dataType: "json",
+            data: {id_app_board: <?=$_REQUEST['id_app_board']?>}
+        }).done(function(back) {
+            dataCards = back.data;
+            initializeComponents(dataCards);
+            // console.log(dataCards)
+        });
+    // if(JSON.parse(localStorage.getItem('@kanban:data'))){
+    //     dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
+    //     initializeComponents(dataCards);
+    //     console.log(dataCards)
+    // }
     initializeCards();
     $('#add').click(()=>{
         const title = $('#titleInput').val()!==''?$('#titleInput').val():null;
@@ -178,7 +178,8 @@ $(document).ready(()=>{
             newCardDB = {
                     newCard,
                     course,
-                    semester
+                    semester,
+                    id_app_board: <?=$_REQUEST['id_app_board']?>
             }
             saveInDB(newCardDB);
         }
@@ -237,12 +238,12 @@ function initializeCards(){
 }
 
 function initializeComponents(dataArray){
-    dataArray.cards.forEach(card=>{
-        appendComponents(card);
-    })
-    // $.each(dataArray.cards, function (key, value) { 
-    //     appendComponents(value)
-    // });
+    // dataArray.cards.forEach(card=>{
+    //     appendComponents(card);
+    // })
+    $.each(dataArray.cards, function (key, value) { 
+        appendComponents(value)
+    });
 
 }
 
@@ -257,6 +258,7 @@ function appendComponents(card){
                 <span id="span-${card.id}" onclick="togglePriority(event)" class="material-icons priority ${card.priority? "is-priority": ""}">
                     star
                 </span>
+                <button type="button" class="btn btn-warning" onclick="openCardDetails(${card.id_cards})"><img src="../images/lupa.svg"></button>
                 <button class="invisibleBtn">
                     <span class="material-icons delete" onclick="deleteCard(${card.id})">
                         remove_circle
@@ -267,6 +269,21 @@ function appendComponents(card){
     `
     $(`#${card.position}`).append(htmlString);
     priorities = document.querySelectorAll(".priority");
+}
+
+function openCardDetails(id){
+    $.ajax({
+        type: "POST",
+        url: "/app/actions.php?action=searchCard",
+        data: {id_cards:id},
+        dataType: "json",
+    }).done(function(back){
+        if(back.error){
+            alert(back.message)
+        }else{
+            
+        }
+    })
 }
 
 function togglePriority(event){
@@ -306,8 +323,6 @@ function deleteCardDB(id){
 
 function removeClasses(cardBeignDragged, color){
     cardBeignDragged.classList.remove('red');
-    cardBeignDragged.classList.remove('blue');
-    cardBeignDragged.classList.remove('purple');
     cardBeignDragged.classList.remove('green');
     cardBeignDragged.classList.remove('yellow');
     cardBeignDragged.classList.add(color);

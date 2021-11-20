@@ -26,7 +26,7 @@ Class Controller extends DefaultControllers{
 
     public function saveCard($params){
         try{
-            $data = [   'id_app_board'  => 1,
+            $data = [   'id_app_board'  => $params['card']['id_app_board'],
                         'id_courses'    => $params['card']['course'] != '' ? $params['card']['course']:0,
                         'cardscol'      => $params['card']['newCard']['id'],
                         'name'          => $params['card']['newCard']['title'],
@@ -50,10 +50,21 @@ Class Controller extends DefaultControllers{
                             'id'            => $value['cardscol'],
                             'position'      => $value['position'],
                             'priority'      => $value['priority'],
-                            'title'         => $value['name']];
+                            'title'         => $value['name'],
+                            'id_card'       => $value['id_cards']];
             }
             $this->back['data']['cards'] = $card;
             $this->back['data']['config'] = $this->toCards->getLastValue('id_app_board ='.$params['id_app_board'])[0];
+            $this->return();
+        }catch(Exception $e){
+            $this->return();
+        }
+    }
+
+    public function searchCard($params){
+        try{
+            $card = $this->toCards->getAll('id_cards ='.$params['id_cards'])[0];
+            $this->back['data'] = $card;
             $this->return();
         }catch(Exception $e){
             $this->return();
@@ -94,6 +105,7 @@ Class Controller extends DefaultControllers{
                     $id_app_board = $this->toAppBoard->insert($data);
                     unset($params['formdata'][0]);
                     unset($params['formdata'][1]);
+                    unset($params['formdata'][2]);
                     foreach($params['formdata'] as $value){
                         $dataUsers = [  'id_app_board'  => $id_app_board,
                                         'id_users'      => $value['value']
