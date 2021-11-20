@@ -17,8 +17,9 @@ if(isset($user['id_courses'])){
     }
 }
 $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app_board'])[0]['name'];
+include_once "../includes/menu.php";
 ?>
-<img src="../images/logo.svg" class="logo-black ">
+<a href="../user/home.php"><img src="../images/logo.svg" class="logo-black "></a>
 <div class="title-giant">
     <label class='giant'><?=$_SESSION['studyplan']?></label>
 </div>
@@ -37,7 +38,7 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
 </div>
 <button type="button" class="btn btn-orange btncard btn-sm"  data-toggle="modal" data-target="#modalCard"><?=$_SESSION['addcard']?></button>
 <label class="app-name"><?=$_SESSION['board'] .': '. $board_name?><br>
-<button type="button" class="btn btn-orange btneditboard btn-sm"><?=$_SESSION['editboard']?></button>
+<a href="/app/new_app_board.php?editBoard=<?=$_REQUEST['id_app_board']?>"><button type="button" class="btn btn-orange btneditboard btn-sm"><?=$_SESSION['editboard']?></button></a>
 </label>
 <!-- MODAL CARD -->
 <div class="modal fade" id="modalCard" tabindex="-1" role="dialog" aria-hidden="true">
@@ -147,11 +148,11 @@ $(document).ready(()=>{
             initializeComponents(dataCards);
             console.log(dataCards)
         });
-    if(JSON.parse(localStorage.getItem('@kanban:data'))){
-        dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
-        initializeComponents(dataCards);
-        console.log(dataCards)
-    }
+    // if(JSON.parse(localStorage.getItem('@kanban:data'))){
+    //     dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
+    //     initializeComponents(dataCards);
+    //     console.log(dataCards)
+    // }
     initializeCards();
     $('#add').click(()=>{
         const title = $('#titleInput').val()!==''?$('#titleInput').val():null;

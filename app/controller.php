@@ -72,22 +72,49 @@ Class Controller extends DefaultControllers{
 
     public function addBoard($params){
         try{
-            if($params['formdata'][1]['value'] != ''){
+            if($params['formdata'][2]['value'] != ''){
+                $id_app_board = $params['formdata'][2]['value'];
                 $data = [   'id_school_unit'    => $params['formdata'][0]['value'],
                             'name'              => $params['formdata'][1]['value']];
-                $id_app_board = $this->toAppBoard->insert($data);
-                unset($params['formdata'][0]);
-                unset($params['formdata'][1]);
-                foreach($params['formdata'] as $value){
-                    $dataUsers = [  'id_app_board'  => $id_app_board,
-                                    'id_users'      => $value['value']
-                                ];
-                    $this->toUserXBoard->insert($dataUsers);
-                }
+                    $this->toAppBoard->update($data, 'id_app_board ='.$id_app_board);
+                    unset($params['formdata'][0]);
+                    unset($params['formdata'][1]);
+                    unset($params['formdata'][2]);
+                    $this->toUserXBoard->delete('id_app_board ='.$id_app_board);
+                    foreach($params['formdata'] as $value){
+                        $dataUsers = [  'id_app_board'  => $id_app_board,
+                                        'id_users'      => $value['value']
+                                    ];
+                        $this->toUserXBoard->insert($dataUsers);
+                    }
             }else{
-                $this->back['error'] = true;
-                $this->back['message'] = 'Name';
+                if($params['formdata'][1]['value'] != ''){
+                    $data = [   'id_school_unit'    => $params['formdata'][0]['value'],
+                                'name'              => $params['formdata'][1]['value']];
+                    $id_app_board = $this->toAppBoard->insert($data);
+                    unset($params['formdata'][0]);
+                    unset($params['formdata'][1]);
+                    foreach($params['formdata'] as $value){
+                        $dataUsers = [  'id_app_board'  => $id_app_board,
+                                        'id_users'      => $value['value']
+                                    ];
+                        $this->toUserXBoard->insert($dataUsers);
+                    }
+                }else{
+                    $this->back['error'] = true;
+                    $this->back['message'] = 'Name';
+                }
             }
+            $this->return();
+        }catch(Exception $e){
+            $this->return($e);
+        }
+    }
+
+    public function searchBoard($params){
+        try{
+            $this->back['data']['board'] = $this->toAppBoard->getAll('id_app_board ='.$params['id_app_board'])[0];
+            $this->back['data']['users']  = $this->toUserXBoard->getAll('id_app_board ='.$params['id_app_board']);
             $this->return();
         }catch(Exception $e){
             $this->return($e);

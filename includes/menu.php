@@ -1,5 +1,5 @@
 <input type="checkbox" id="menu">
-<label for="menu" id="labelmenu" ><img src="/images/icon-menu.svg" id="imgmenu"></span></label>
+<label for="menu" id="labelmenu" ><img src="/images/icon-menu.svg" id="imgmenu"></label>
 <?php
   if(isset($_GET['language'])){
     include '../languages/'.$_GET['language'];
