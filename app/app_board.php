@@ -138,21 +138,21 @@ let dataCards = {
 $(document).ready(()=>{
     $('#usersame').select2();
     initializeBoards();
-    $.ajax({
-            url: "/app/actions.php?action=searchCards",
-            type: "POST",
-            dataType: "json",
-            data: {id_app_board: <?=$_REQUEST['id_app_board']?>}
-        }).done(function(back) {
-            dataCards = back.data;
-            initializeComponents(dataCards);
-            console.log(dataCards)
-        });
-    // if(JSON.parse(localStorage.getItem('@kanban:data'))){
-    //     dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
-    //     initializeComponents(dataCards);
-    //     console.log(dataCards)
-    // }
+    // $.ajax({
+    //         url: "/app/actions.php?action=searchCards",
+    //         type: "POST",
+    //         dataType: "json",
+    //         data: {id_app_board: <?=$_REQUEST['id_app_board']?>}
+    //     }).done(function(back) {
+    //         dataCards = back.data;
+    //         initializeComponents(dataCards);
+    //         console.log(dataCards)
+    //     });
+    if(JSON.parse(localStorage.getItem('@kanban:data'))){
+        dataCards = JSON.parse(localStorage.getItem('@kanban:data'));
+        initializeComponents(dataCards);
+        console.log(dataCards)
+    }
     initializeCards();
     $('#add').click(()=>{
         const title = $('#titleInput').val()!==''?$('#titleInput').val():null;
@@ -237,12 +237,12 @@ function initializeCards(){
 }
 
 function initializeComponents(dataArray){
-    // dataArray.cards.forEach(card=>{
-    //     appendComponents(card);
-    // })
-    $.each(dataArray.cards, function (key, value) { 
-        appendComponents(value)
-    });
+    dataArray.cards.forEach(card=>{
+        appendComponents(card);
+    })
+    // $.each(dataArray.cards, function (key, value) { 
+    //     appendComponents(value)
+    // });
 
 }
 
