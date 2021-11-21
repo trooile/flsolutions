@@ -26,7 +26,6 @@ Class Controller extends DefaultControllers{
 
     public function saveCard($params){
         try{
-            print_r($params);
             $data = [   'id_app_board'  => $params['card'][0]['value'],
                         'id_courses'    => $params['card'][1]['value'] != '' ? $params['card'][0]['value']:0,
                         'cardscol'      => $params['card'][0]['value'],
@@ -35,7 +34,9 @@ Class Controller extends DefaultControllers{
                         'description'   => $params['card'][4]['value'],
                         'position'      => 'red',
                         'priority'      => 0];
-                        $this->toCards->insert($data);
+                        print_r($data);
+                        $add = $this->toCards->insert($data);
+                        print_r($add);
             $this->return();
         }catch(Exception $e){
             $this->return($e);
