@@ -34,9 +34,7 @@ Class Controller extends DefaultControllers{
                         'description'   => $params['card'][4]['value'],
                         'position'      => 'red',
                         'priority'      => 0];
-                        print_r($data);
                         $add = $this->toCards->insert($data);
-                        print_r($add);
             $this->return();
         }catch(Exception $e){
             $this->return($e);
