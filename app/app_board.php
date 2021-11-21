@@ -177,11 +177,11 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
             var dataCards = back.data;
             $.each(dataCards, function (key, value) { 
                  if(value.position == 'red'){
-                    $('#red').closest('div.container').find('ul').append('<li value="'+value.id_cards+'" class="card kanbanCard"><h4>'+value.name+'</h4><br>'+value.description+'<br>'+value.semester+'° <?=$_SESSION['semester']?></li>');
+                    $('#red').closest('div.container').find('ul').append('<li value="'+value.id_cards+'" class="card kanbanCard"><h4>'+value.name+'</h4><br>'+value.description+'<br>'+value.semester+'° <?=$_SESSION['semester']?><button class="invisibleBtn"><span class="material-icons delete" onclick="deleteCard('+value.id_cards+')">remove_circle</span></button></li>');
                  }else if(value.position == 'yellow'){
-                    $('#yellow').closest('div.container').find('ul').append('<li value="'+value.id_cards+'" class="card kanbanCard"><h4>'+value.name+'</h4><br>'+value.description+'<br>'+value.semester+'° <?=$_SESSION['semester']?></li>');
+                    $('#yellow').closest('div.container').find('ul').append('<li value="'+value.id_cards+'" class="card kanbanCard"><h4>'+value.name+'</h4><br>'+value.description+'<br>'+value.semester+'° <?=$_SESSION['semester']?><button class="invisibleBtn"><span class="material-icons delete" onclick="deleteCard('+value.id_cards+')">remove_circle</span></button></li>');
                  }else{
-                    $('#green').closest('div.container').find('ul').append('<li value="'+value.id_cards+'" class="card kanbanCard"><h4>'+value.name+'</h4><br>'+value.description+'<br>'+value.semester+'° <?=$_SESSION['semester']?></li>');
+                    $('#green').closest('div.container').find('ul').append('<li value="'+value.id_cards+'" class="card kanbanCard"><h4>'+value.name+'</h4><br>'+value.description+'<br>'+value.semester+'° <?=$_SESSION['semester']?><button class="invisibleBtn"><span class="material-icons delete" onclick="deleteCard('+value.id_cards+')">remove_circle</span></button></li>');
                  }
             });
         });
@@ -200,4 +200,16 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
           }
       })
   }
+
+  function deleteCard(id){
+      $.ajax({
+          type: "POST",
+          url: "/app/actions.php?action=deleteCard",
+          data: {id_cards: id},
+          dataType: "json",
+      }).done(function(){
+        location.reload();
+      })
+  }
+
   </script>    
