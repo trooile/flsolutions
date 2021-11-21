@@ -18,6 +18,8 @@ if(isset($user['id_courses'])){
 }
 $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app_board'])[0]['name'];
 ?>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <a href="../user/home.php"><img src="../images/logo.svg" class="logo-black "></a>
 <div class="title-giant">
     <label class='giant'><?=$_SESSION['studyplan']?></label>
@@ -154,20 +156,13 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
             alert(back.message)
         } else {
             toggleAlertCard();
+            location.reload();
         }
       });
-      location.reload();
-        // var txtNewItemName = $('#titleInput').val();
-        // var txtNewItemDescription = $('#descriptionInput').val();
-        // var txtNewItemSemester = $('#semester').val();
-        // $('#red').closest('div.container').find('ul').append('<li value="" class="card kanbanCard"><h4>'+txtNewItemName+'</h4><br>'+txtNewItemDescription+'<br>'+txtNewItemSemester+'° <?=$_SESSION['semester']?></li>');
     });  
   });
 
   function loadCards(){
-    // $('#red').closest('div.container').find('ul').hmtl('')
-    // $('#yellow').closest('div.container').find('ul').html('')
-    // $('#green').closest('div.container').find('ul').html('')
     $.ajax({
             url: "/app/actions.php?action=searchCards",
             type: "POST",
@@ -211,5 +206,10 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
         location.reload();
       })
   }
+
+function toggleAlertCard(){
+    $("#toastCard").toggleClass('show hide');
+    return false;
+}
 
   </script>    
