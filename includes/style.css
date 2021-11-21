@@ -421,7 +421,7 @@ div.container#home input#settings {
 
 .kanbanCard,
 .dropzone {
-    transition: 400ms;
+    transition: 0ms;
 }
 
 .over {
