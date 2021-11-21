@@ -26,15 +26,24 @@ Class Controller extends DefaultControllers{
 
     public function saveCard($params){
         try{
-            $data = [   'id_app_board'  => $params['card']['id_app_board'],
-                        'id_courses'    => $params['card']['course'] != '' ? $params['card']['course']:0,
-                        'cardscol'      => $params['card']['newCard']['id'],
-                        'name'          => $params['card']['newCard']['title'],
-                        'semester'      => $params['card']['semester'],
-                        'description'   => $params['card']['newCard']['description'],
-                        'position'      => $params['card']['newCard']['position'],
-                        'priority'      => $params['card']['newCard']['priority']];
+            $data = [   'id_app_board'  => $params['card'][0]['value'],
+                        'id_courses'    => $params['card'][1]['value'] != '' ? $params['card'][0]['value']:0,
+                        'cardscol'      => $params['card'][0]['value'],
+                        'name'          => $params['card'][3]['value'],
+                        'semester'      => $params['card'][2]['value'],
+                        'description'   => $params['card'][4]['value'],
+                        'position'      => 'red',
+                        'priority'      => 0];
                         $this->toCards->insert($data);
+            $this->return();
+        }catch(Exception $e){
+            $this->return($e);
+        }
+    }
+
+    public function updatePosition($params){
+        try{
+            $this->toCards->update(['position' => $params['position']], 'id_cards='.$params['id_cards']);
             $this->return();
         }catch(Exception $e){
             $this->return($e);
@@ -43,18 +52,8 @@ Class Controller extends DefaultControllers{
 
     public function searchCards($params){
         try{
-            $card = [];
             $cards = $this->toCards->getAll('id_app_board ='.$params['id_app_board']);
-            foreach($cards as $value){
-                $card [] = ['description'   => $value['description'],
-                            'id'            => $value['cardscol'],
-                            'position'      => $value['position'],
-                            'priority'      => $value['priority'],
-                            'title'         => $value['name'],
-                            'id_card'       => $value['id_cards']];
-            }
-            $this->back['data']['cards'] = $card;
-            $this->back['data']['config'] = $this->toCards->getLastValue('id_app_board ='.$params['id_app_board'])[0];
+            $this->back['data'] = $cards;
             $this->return();
         }catch(Exception $e){
             $this->return();
