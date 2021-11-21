@@ -42,7 +42,8 @@ if(!isset($_SESSION['userLogged']) || empty($_SESSION['userLogged'])){
             </div>
         </form>
     </div>
-    <button type="button" id="submit" class="btn btn-default btn-lg btn-orange"><?=$_SESSION['save']?></button>
+    <button type="button" id="submit" class="btn btn-default btn-lg btn-orange"><?=$_SESSION['save']?></button><br><br>
+    <a href="../user/home.php"><button type="button" class="btn btn-orange btn-sm"><?=$_SESSION['cancel']?></button></a>
 </div>
 
 

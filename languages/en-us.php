@@ -71,4 +71,6 @@
     $_SESSION['selectboard']  = 'Select the Board';
     $_SESSION['editboard'] = 'Edit board';
     $_SESSION['createnewboard'] = 'Create new board';
+    $_SESSION['back'] = 'Back';
+    $_SESSION['cancel'] = 'Cancel';
 ?>

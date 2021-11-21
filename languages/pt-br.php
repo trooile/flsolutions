@@ -71,4 +71,6 @@
     $_SESSION['selectboard']  = 'Selecione o Quadro';
     $_SESSION['editboard'] = 'Editar quadro';
     $_SESSION['createnewboard'] = 'Criar novo quadro';
+    $_SESSION['back'] = 'Voltar';
+    $_SESSION['cancel'] = 'Cancelar';
 ?>

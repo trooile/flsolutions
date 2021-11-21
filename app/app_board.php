@@ -39,7 +39,7 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
 </div>
 <button type="button" class="btn btn-orange btncard btn-sm"  data-toggle="modal" data-target="#modalCard"><?=$_SESSION['addcard']?></button>
 <label class="app-name"><?=$_SESSION['board'] .': '. $board_name?><br>
-<a href="/app/new_app_board.php?editBoard=<?=$_REQUEST['id_app_board']?>"><button type="button" class="btn btn-orange btneditboard btn-sm"><?=$_SESSION['editboard']?></button></a>
+<a href="../user/home.php"><button type="button" class="btn btn-orange btneditboard btn-sm"><?=$_SESSION['back']?></button></a>
 </label>
 <!-- MODAL CARD -->
 <div class="modal fade" id="modalCard" tabindex="-1" role="dialog" aria-hidden="true">
