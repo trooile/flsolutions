@@ -26,6 +26,7 @@ Class Controller extends DefaultControllers{
 
     public function saveCard($params){
         try{
+            print_r($params);
             $data = [   'id_app_board'  => $params['card'][0]['value'],
                         'id_courses'    => $params['card'][1]['value'] != '' ? $params['card'][0]['value']:0,
                         'cardscol'      => $params['card'][0]['value'],
