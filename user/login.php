@@ -43,6 +43,12 @@ include "include_view.php";
 $(function(){
   <?php if (isset($_REQUEST['registerSucess'])){?>
     toggleAlertSuccess();
+    $.ajax({
+      type: "POST",
+      url: "/user/actions.php?action=sendMail",
+      data: {email: '<?=$_REQUEST['email']?>'},
+      dataType: "json",
+    });
   <?php } ?>
   });
     $('#login').click(function(){

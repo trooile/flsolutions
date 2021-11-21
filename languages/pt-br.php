@@ -73,4 +73,5 @@
     $_SESSION['createnewboard'] = 'Criar novo quadro';
     $_SESSION['back'] = 'Voltar';
     $_SESSION['cancel'] = 'Cancelar';
+    $_SESSION['welcome'] = 'Bem vindo!';
 ?>

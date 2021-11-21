@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 
-function sendEmail($subject, $body,$altbody,$to){
+function sendEmail($subject, $body = null,$altbody,$to, $image = null){
 	$mail = new PHPMailer(true);
 try {
 	$mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -21,20 +21,23 @@ try {
  
 	$mail->setFrom('collegetool.flsolutions@gmail.com');
 	$mail->addAddress($to);
-	
  
 	$mail->isHTML(true);
 	$mail->Subject = $subject;
-	$mail->Body = $body;
+	if(!empty($image)){
+		$mail->AddEmbeddedImage($body, "image-attach", "image.png");
+		$mail->Body = '<a href="http://35.199.109.22/"><img alt="PHPMailer" src="cid:image-attach"></a>';
+	}else{
+		$mail->Body = $body;
+	}
 	$mail->AltBody = $altbody;
- 
+
 	if($mail->send()) {
 		echo 'Email enviado com sucesso';
 	} else {
 		echo 'Email nao enviado';
 	}
+	return;
 } catch (Exception $e) {
 	echo "Erro ao enviar mensagem: {$mail->ErrorInfo}";}
 }
-
-sendEmail('Assunto teste','Corpo do E-mail teste','alttest','augusto.cardone@hotmail.com');

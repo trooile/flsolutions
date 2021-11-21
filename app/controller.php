@@ -6,6 +6,7 @@ include_once '../includes/models/toCourses.php';
 include_once '../includes/models/toCards.php';
 include_once '../includes/models/toUserXBoard.php';
 include_once '../includes/models/toAppBoard.php';
+include '../includes/email.php';
 
 Class Controller extends DefaultControllers{
 

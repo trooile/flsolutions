@@ -212,4 +212,4 @@ function toggleAlertCard(){
     return false;
 }
 
-  </script>    
+</script>    

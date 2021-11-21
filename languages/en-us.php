@@ -73,4 +73,5 @@
     $_SESSION['createnewboard'] = 'Create new board';
     $_SESSION['back'] = 'Back';
     $_SESSION['cancel'] = 'Cancel';
+    $_SESSION['welcome'] = 'Welcome!';
 ?>

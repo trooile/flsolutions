@@ -67,7 +67,7 @@ $(function(){});
         if (back.error) {
             toggleAlert(); 
         } else {
-          window.location.href = "login.php?registerSucess";
+          window.location.href = "login.php?email="+$('#email').val()+"&registerSucess";
         }
       });
   });

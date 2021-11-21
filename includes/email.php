@@ -27,7 +27,6 @@ function enviarEmail ($from, $to, $subject, $body){
 		$mail->isHTML(true);
 		$mail->Subject = $subject;
 		$mail->Body = $body;
-		//$mail->AltBody = 'E-mail teste';
 
 		if ($mail->send()) {
 			echo 'Email enviado com sucesso';

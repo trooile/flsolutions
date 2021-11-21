@@ -6,6 +6,8 @@ include_once '../includes/models/toCourses.php';
 include_once '../includes/models/toCards.php';
 include_once '../includes/models/toUserXBoard.php';
 include_once '../includes/models/toAppBoard.php';
+require_once('../email/sendEmail.php');
+
 
 class Controller extends DefaultControllers
 {
@@ -41,6 +43,16 @@ class Controller extends DefaultControllers
             }
             $this->return();
         } catch (Exception $e) {
+            $this->return($e);
+        }
+    }
+
+    public function sendMail($params){
+        try{
+            $body = $_SESSION['language'] == 'en-us.php' ? '../images/welcome-email-en.png':'../images/welcome-email-pt.png';
+            sendEmail($_SESSION['welcome'], $body, $body, $params['email'], 1);
+            return; 
+        }catch(Exception $e){
             $this->return($e);
         }
     }
