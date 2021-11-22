@@ -82,9 +82,6 @@ Class Controller extends DefaultControllers{
     public function deleteCard($params){
         try{
             $this->toCards->delete('id_cards ='.$params['id_cards']);
-            $email = $this->toUsers->getAll('id_users='.$params['id'])[0]['email'];
-            $body = $_SESSION['language'] == 'en-us.php' ? '../images/removed-card-en.png':'../images/removed-card-pt.png';
-            sendEmail($_SESSION['flsolutions'], $body, $body, $email, 1);
             $this->return();
         }catch(Exception $e){
             $this->return();
