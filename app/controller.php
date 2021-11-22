@@ -36,9 +36,6 @@ Class Controller extends DefaultControllers{
                         'position'      => 'red',
                         'priority'      => 0];
                         $add = $this->toCards->insert($data);
-                        $email = $this->toUsers->getAll('id_users='.$_SESSION['userLogged'])[0]['email'];
-                        $body = $_SESSION['language'] == 'en-us.php' ? '../images/new-card-en.png':'../images/new-card-pt.png';
-                        sendEmail($_SESSION['cardadded'], $body, $body, $email, 1);
             $this->return();
         }catch(Exception $e){
             $this->return($e);
@@ -48,7 +45,7 @@ Class Controller extends DefaultControllers{
     public function updatePosition($params){
         try{
             $this->toCards->update(['position' => $params['position']], 'id_cards='.$params['id_cards']);
-            $email = $this->toUsers->getAll('id_users='.$_SESSION['userLogged'])[0]['email'];
+            $email = $this->toUsers->getAll('id_users='.$params['id'])[0]['email'];
             if($params['position'] == 'yellow'){
                 $body = $_SESSION['language'] == 'en-us.php' ? '../images/in-progess-en.png':'../images/in-progess-pt.png';
                 sendEmail($_SESSION['inprogress'], $body, $body, $email, 1);
@@ -85,7 +82,7 @@ Class Controller extends DefaultControllers{
     public function deleteCard($params){
         try{
             $this->toCards->delete('id_cards ='.$params['id_cards']);
-            $email = $this->toUsers->getAll('id_users='.$_SESSION['userLogged'])[0]['email'];
+            $email = $this->toUsers->getAll('id_users='.$params['id'])[0]['email'];
             $body = $_SESSION['language'] == 'en-us.php' ? '../images/removed-card-en.png':'../images/removed-card-pt.png';
             sendEmail($_SESSION['flsolutions'], $body, $body, $email, 1);
             $this->return();

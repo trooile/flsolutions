@@ -148,7 +148,8 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
           url: "/app/actions.php?action=saveCard",
           type: "POST",
           data: {
-            card: card
+            card: card,
+            id: <?=$_SESSION['userLogged']?>
           },
           dataType: "json",
       }).done(function(back) {
@@ -187,7 +188,8 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
           type: "POST",
           url: "/app/actions.php?action=updatePosition",
           data: {id_cards: id,
-                position: position},
+                position: position,
+                id: <?=$_SESSION['userLogged']?>},
           dataType: "json",
       }).done(function(back){
           if(back.error){
@@ -200,7 +202,8 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
       $.ajax({
           type: "POST",
           url: "/app/actions.php?action=deleteCard",
-          data: {id_cards: id},
+          data: {id_cards: id,
+            id: <?=$_SESSION['userLogged']?>},
           dataType: "json",
       }).done(function(){
         location.reload();
