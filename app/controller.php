@@ -6,7 +6,7 @@ include_once '../includes/models/toCourses.php';
 include_once '../includes/models/toCards.php';
 include_once '../includes/models/toUserXBoard.php';
 include_once '../includes/models/toAppBoard.php';
-include '../includes/email.php';
+require_once('../email/sendEmail.php');
 
 Class Controller extends DefaultControllers{
 
@@ -36,6 +36,9 @@ Class Controller extends DefaultControllers{
                         'position'      => 'red',
                         'priority'      => 0];
                         $add = $this->toCards->insert($data);
+                        $email = $this->toUsers->getAll('id_users='.$_SESSION['userLogged'])[0]['email'];
+                        $body = $_SESSION['language'] == 'en-us.php' ? '../images/new-card-en.png':'../images/new-card-pt.png';
+                        sendEmail($_SESSION['cardadded'], $body, $body, $email, 1);
             $this->return();
         }catch(Exception $e){
             $this->return($e);
@@ -45,6 +48,14 @@ Class Controller extends DefaultControllers{
     public function updatePosition($params){
         try{
             $this->toCards->update(['position' => $params['position']], 'id_cards='.$params['id_cards']);
+            $email = $this->toUsers->getAll('id_users='.$_SESSION['userLogged'])[0]['email'];
+            if($params['position'] == 'yellow'){
+                $body = $_SESSION['language'] == 'en-us.php' ? '../images/in-progess-en.png':'../images/in-progess-pt.png';
+                sendEmail($_SESSION['inprogress'], $body, $body, $email, 1);
+            }else if($params['position'] == 'green'){
+                $body = $_SESSION['language'] == 'en-us.php' ? '../images/card-done-en.png':'../images/card-done-pt.png';
+                sendEmail($_SESSION['done'], $body, $body, $email, 1);
+            }
             $this->return();
         }catch(Exception $e){
             $this->return($e);
@@ -74,6 +85,9 @@ Class Controller extends DefaultControllers{
     public function deleteCard($params){
         try{
             $this->toCards->delete('id_cards ='.$params['id_cards']);
+            $email = $this->toUsers->getAll('id_users='.$_SESSION['userLogged'])[0]['email'];
+            $body = $_SESSION['language'] == 'en-us.php' ? '../images/removed-card-en.png':'../images/removed-card-pt.png';
+            sendEmail($_SESSION['flsolutions'], $body, $body, $email, 1);
             $this->return();
         }catch(Exception $e){
             $this->return();
