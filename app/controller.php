@@ -65,7 +65,7 @@ Class Controller extends DefaultControllers{
             $this->back['data'] = $cards;
             $this->return();
         }catch(Exception $e){
-            $this->return();
+            $this->return($e);
         }
     }
 
@@ -75,7 +75,7 @@ Class Controller extends DefaultControllers{
             $this->back['data'] = $card;
             $this->return();
         }catch(Exception $e){
-            $this->return();
+            $this->return($e);
         }
     }
 
@@ -84,7 +84,16 @@ Class Controller extends DefaultControllers{
             $this->toCards->delete('id_cards ='.$params['id_cards']);
             $this->return();
         }catch(Exception $e){
+            $this->return($e);
+        }
+    }
+
+    public function deleteBoard($params){
+        try{
+            $this->toAppBoard->delete($params['id_app_board']);
             $this->return();
+        }catch(Exception $e){
+            $this->return($e);
         }
     }
 

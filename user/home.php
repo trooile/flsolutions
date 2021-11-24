@@ -4,7 +4,10 @@ include "include_view.php";
 $user_boards = $controller->toUserXBoard->getAll('id_users ='.$_SESSION['userLogged']);
 $boards = [];
 foreach($user_boards as $value){
-    $boards[] = $controller->toAppBoard->getAll('id_app_board ='.$value['id_app_board'])[0];
+    $data =  $controller->toAppBoard->getAll('id_app_board ='.$value['id_app_board']);
+    if(!empty($data)){
+        $boards[] = $data[0];
+    }
 }
 ?>
 
@@ -28,7 +31,14 @@ foreach($user_boards as $value){
             <div class="modal-body">
                 <?php if(!empty($boards)){
                         foreach($boards as $value){?>
-                            <a class="offset-sm-2" href="/app/app_board.php?id_app_board=<?=$value['id_app_board']?>"><button type="button" class="btn btn-default btn-block btn-orange"><?=$value['name']?> ►</button></a><br>
+                        <div class="btn-group col-md-12" role="group">
+                            <div class="col-md-11">
+                                <a class="offset-sm-2" href="/app/app_board.php?id_app_board=<?=$value['id_app_board']?>"><button type="button" class="btn btn-default btn-block btn-orange"><?=$value['name']?> ►</button></a>
+                            </div>
+                            <div class="col-md-1">
+                                <button type="button" class="btn btn-default" onclick="removeBoard(<?=$value['id_app_board']?>)" title="Remove"><img src="../images/Red_x.svg" style=" max-width:30px;max-height:30px;width:auto;height:auto;"></button><br>
+                            </div>
+                        </div>
                 <?php } 
                 }else{?>
                     <a class="offset-sm-2" href="/app/new_app_board.php"><button type="button" class="btn btn-default btn-block btn-green"><?= $_SESSION['createnewboard']?> ►</button></a><br>
@@ -56,4 +66,22 @@ foreach($user_boards as $value){
             $('#openModal').click();
         <?php } ?>
     });
+
+    function removeBoard(id){
+        var r = confirm("Confirm?");
+        if (r == true) {
+            $.ajax({
+                type: "POST",
+                url: "../app/actions.php?action=deleteBoard",
+                data: {id_app_board: id},
+                dataType: "json",
+            }).done(function(back){
+                if(back.error){
+                    alert(back.message)
+                }else{
+                    location.reload();
+                }
+            })
+        }
+    }
 </script>
