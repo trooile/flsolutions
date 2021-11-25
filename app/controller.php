@@ -79,15 +79,6 @@ Class Controller extends DefaultControllers{
         }
     }
 
-    public function deleteCard($params){
-        try{
-            $this->toCards->delete('id_cards ='.$params['id_cards']);
-            $this->return();
-        }catch(Exception $e){
-            $this->return($e);
-        }
-    }
-
     public function deleteBoard($params){
         try{
             $this->toAppBoard->delete($params['id_app_board']);

@@ -72,7 +72,7 @@ foreach($user_boards as $value){
         if (r == true) {
             $.ajax({
                 type: "POST",
-                url: "../app/actions.php?action=deleteBoard",
+                url: "/user/actions.php?action=deleteBoard",
                 data: {id_app_board: id},
                 dataType: "json",
             }).done(function(back){
