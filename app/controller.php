@@ -88,14 +88,14 @@ Class Controller extends DefaultControllers{
         }
     }
 
-    public function deleteBoard($params){
-        try{
-            $this->toAppBoard->delete($params['id_app_board']);
-            $this->return();
-        }catch(Exception $e){
-            $this->return($e);
-        }
-    }
+    // public function deleteBoard($params){
+    //     try{
+    //         $this->toAppBoard->delete($params['id_app_board']);
+    //         $this->return();
+    //     }catch(Exception $e){
+    //         $this->return($e);
+    //     }
+    // }
 
 
     public function addBoard($params){

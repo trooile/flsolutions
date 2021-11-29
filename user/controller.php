@@ -59,8 +59,8 @@ class Controller extends DefaultControllers
     
     public function deleteBoard($params){
         try{
-            print_r($params);
-            $this->toAppBoard->delete('id_app_board='.$params['id_app_board']);
+            $this->toAppBoard->delete('id_app_board ='.$params['id_app_board']);
+            print_r($this->toAppBoard->delete('id_app_board ='.$params['id_app_board']));
             $this->return();
         }catch(Exception $e){
             $this->return($e);
