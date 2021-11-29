@@ -201,6 +201,7 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
   }
 
   function deleteCard(id){
+    if (window.confirm("Remove card?")) {
       $.ajax({
           type: "POST",
           url: "/app/actions.php?action=deleteCard",
@@ -210,6 +211,7 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
       }).done(function(){
         location.reload();
       })
+    }
   }
 
 function toggleAlertCard(){
