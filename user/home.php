@@ -68,17 +68,13 @@ foreach($user_boards as $value){
     });
 
     function removeBoard(id){
-        $.ajax({
-            type: "POST",
-            url: "/user/actions.php?action=deleteBoard",
-            data: {id_app_board: id},
-            dataType: "json",
-        }).done(function(back){
-            if(back.error){
-                alert(back.message)
-            }else{
-                location.reload();
-            }
-        })
-    }
+      $.ajax({
+          type: "POST",
+          url: "/user/actions.php?action=deleteBoard",
+          data: {id_app_board: id},
+          dataType: "json",
+      }).done(function(){
+        location.reload();
+      })
+  }
 </script>
