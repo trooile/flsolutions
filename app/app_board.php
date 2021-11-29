@@ -194,6 +194,8 @@ $board_name = $controller->toAppBoard->getAll('id_app_board ='.$_REQUEST['id_app
       }).done(function(back){
           if(back.error){
               alert(back.message)
+          }else{
+            location.reload();
           }
       })
   }
