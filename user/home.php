@@ -75,7 +75,8 @@ foreach($user_boards as $value){
             data: {id_app_board: id},
             dataType: "json",
         }).done(function(){
-            location.reload();
+            window.location.href = "home.php?createdBoard";
+            // location.reload();
         })
     }
   }
