@@ -56,10 +56,10 @@ class Controller extends DefaultControllers
             $this->return($e);
         }
     }
-
-    public function deleteCard($params){
+    
+    public function deleteBoard($params){
         try{
-            $this->toCards->delete('id_cards ='.$params['id_cards']);
+            $this->toAppBoard->delete($params['id_app_board']);
             $this->return();
         }catch(Exception $e){
             $this->return($e);
