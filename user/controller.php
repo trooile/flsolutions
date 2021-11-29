@@ -18,7 +18,7 @@ class Controller extends DefaultControllers
             parent::__construct();
             $this->toSchoolUnit = new ToSchoolUnit($this->masterMysqli);
             $this->toUsers = new ToUsers($this->masterMysqli);
-            $this->toCourses = new toCourses($this->masterMysqli);
+            $this->toCourses = new ToCourses($this->masterMysqli);
             $this->toCards = new ToCards($this->masterMysqli);
             $this->toUserXBoard = new ToUserXBoard($this->masterMysqli);
             $this->toAppBoard = new ToAppBoard($this->masterMysqli);
